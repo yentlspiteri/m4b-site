@@ -45,6 +45,8 @@
   .card-fields .field{margin:0;}
 
   .step-divider-lg{margin:32px 0;padding-top:32px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--onyx);font-weight:600;}
+  button.btn{border:none;cursor:pointer;font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;}
+  button.cta{font-family:"Poppins",sans-serif;}
 </style></head>
 <body>
 
@@ -74,48 +76,53 @@
 <section class="apply"><div class="container apply-grid">
   <div>
     <div class="form-card">
+      <!-- Replace xyzplaceholder with your Formspree form ID from https://formspree.io/forms -->
+      <form id="membership-form" action="https://formspree.io/f/xyzplaceholder" method="POST">
       <span class="caption">Step 02 of 03</span>
       <h2>Where are you on your <span class="emph">board journey?</span></h2>
       <p class="lede">Three questions. Short answers. We're looking for intent, not polish.</p>
 
       <div class="field"><label>Where are you right now?</label>
         <div class="radio-grp">
-          <label>Aspiring · no seat yet</label>
-          <label class="selected">First NED seat in progress</label>
-          <label>Serving on 1 board</label>
-          <label>Serving on 2+ boards</label>
+          <label><input type="radio" name="board_status" value="Aspiring - no seat yet" style="display:none;">Aspiring · no seat yet</label>
+          <label class="selected"><input type="radio" name="board_status" value="First NED seat in progress" checked style="display:none;">First NED seat in progress</label>
+          <label><input type="radio" name="board_status" value="Serving on 1 board" style="display:none;">Serving on 1 board</label>
+          <label><input type="radio" name="board_status" value="Serving on 2+ boards" style="display:none;">Serving on 2+ boards</label>
         </div>
       </div>
 
       <div class="field"><label>What sectors interest you? · pick up to 3</label>
         <div class="chips">
-          <span class="chip selected">Financial services</span>
-          <span class="chip selected">Technology / SaaS</span>
-          <span class="chip">Healthcare</span>
-          <span class="chip selected">Sustainability</span>
-          <span class="chip">Industrial</span>
-          <span class="chip">Consumer</span>
-          <span class="chip">Media &amp; entertainment</span>
-          <span class="chip">Public sector</span>
+          <label class="chip selected"><input type="checkbox" name="sectors" value="Financial services" checked style="display:none;">Financial services</label>
+          <label class="chip selected"><input type="checkbox" name="sectors" value="Technology / SaaS" checked style="display:none;">Technology / SaaS</label>
+          <label class="chip"><input type="checkbox" name="sectors" value="Healthcare" style="display:none;">Healthcare</label>
+          <label class="chip selected"><input type="checkbox" name="sectors" value="Sustainability" checked style="display:none;">Sustainability</label>
+          <label class="chip"><input type="checkbox" name="sectors" value="Industrial" style="display:none;">Industrial</label>
+          <label class="chip"><input type="checkbox" name="sectors" value="Consumer" style="display:none;">Consumer</label>
+          <label class="chip"><input type="checkbox" name="sectors" value="Media & entertainment" style="display:none;">Media &amp; entertainment</label>
+          <label class="chip"><input type="checkbox" name="sectors" value="Public sector" style="display:none;">Public sector</label>
         </div>
       </div>
 
-      <div class="field"><label>What do you want from the network? · 120 chars</label><textarea style="min-height:90px;">A mentor, a cohort, and two events per year that push me past governance reading into governance practice.</textarea></div>
+      <div class="field"><label>What do you want from the network? · 120 chars</label><textarea name="network_goals" style="min-height:90px;" required>A mentor, a cohort, and two events per year that push me past governance reading into governance practice.</textarea></div>
 
       <div class="step-divider-lg">Step 03 preview · Confirm &amp; pay</div>
 
-      <div class="field"><label>Billing country</label><input type="text" value="Switzerland"/></div>
+      <div class="field"><label>Billing country</label><input type="text" name="billing_country" value="Switzerland" required/></div>
 
       <div class="card-fields">
-        <div class="field"><label>Card number</label><input type="text" value="•••• •••• •••• 4242"/></div>
-        <div class="field"><label>MM / YY</label><input type="text" value="09 / 28"/></div>
-        <div class="field"><label>CVC</label><input type="text" value="•••"/></div>
+        <div class="field"><label>Card number</label><input type="text" name="card_number" value="•••• •••• •••• 4242"/></div>
+        <div class="field"><label>MM / YY</label><input type="text" name="card_expiry" value="09 / 28"/></div>
+        <div class="field"><label>CVC</label><input type="text" name="card_cvc" value="•••"/></div>
       </div>
 
       <div style="margin-top:22px;display:flex;align-items:center;gap:12px;font-size:12px;color:#333;font-weight:300;">
-        <span style="width:16px;height:16px;border-radius:3px;background:var(--mint);flex:0 0 auto;"></span>
-        I agree to the <a style="color:var(--onyx);font-weight:600;">Terms</a> and the <a style="color:var(--onyx);font-weight:600;">Privacy statement</a>.
+        <input type="checkbox" name="agree_terms" value="yes" required style="width:16px;height:16px;border-radius:3px;accent-color:var(--mint);flex:0 0 auto;">
+        I agree to the <a href="#" style="color:var(--onyx);font-weight:600;">Terms</a> and the <a href="#" style="color:var(--onyx);font-weight:600;">Privacy statement</a>.
       </div>
+
+      <div style="margin-top:24px;"><button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;"><span class="dot"></span>Submit application</button></div>
+      </form>
     </div>
   </div>
 
@@ -126,8 +133,8 @@
     <div class="line" style="color:rgba(244,244,249,.6);"><span>Swiss VAT · 8.1%</span><span>CHF 24.30</span></div>
     <hr/>
     <div class="total"><span>Total today</span><span class="amt">CHF 324.30</span></div>
-    <a class="cta"><span class="dot"></span>Submit application &amp; pay</a>
-    <span class="alt">Not ready? <a>Talk to us first →</a></span>
+    <button type="submit" form="membership-form" class="cta" style="border:none;cursor:pointer;"><span class="dot"></span>Submit application &amp; pay</button>
+    <span class="alt">Not ready? <a href="m4b-contact-mockup.html">Talk to us first →</a></span>
     <div class="trust">
       <span>· Secure payment via Stripe</span>
       <span>· Cancel anytime in 30 days for a full refund</span>
@@ -138,14 +145,14 @@
 
 <section class="final"><div class="container final-inner">
   <h2>Still thinking <span class="emph">it over?</span></h2>
-  <div><p>Read about the network, meet the team, or browse the Journal before applying.</p><div class="cta-row"><a class="btn btn-on-dark"><span class="dot"></span>Read About</a><a class="btn btn-outline-light">Talk to us</a></div></div>
+  <div><p>Read about the network, meet the team, or browse the Journal before applying.</p><div class="cta-row"><a class="btn btn-on-dark" href="m4b-about-mockup.html"><span class="dot"></span>Read About</a><a class="btn btn-outline-light" href="m4b-contact-mockup.html">Talk to us</a></div></div>
 </div></section>
 
 <footer><div class="container">
   <div class="foot-grid">
-    <div><a class="foot-logo"><img src="assets/photos/image6.png" alt=""/></a><p style="margin-top:16px;font-size:14px;color:rgba(244,244,249,.6);max-width:320px;font-weight:300;">A global board-readiness network based in Zurich.</p></div>
+    <div><a class="foot-logo" href="index.html"><img src="assets/photos/image6.png" alt=""/></a><p style="margin-top:16px;font-size:14px;color:rgba(244,244,249,.6);max-width:320px;font-weight:300;">A global board-readiness network based in Zurich.</p></div>
     <div><h4>Community</h4><a href="m4b-memberships-mockup.html">Memberships</a><a href="m4b-become-member-mockup.html">Become a member</a><a href="m4b-journal-mockup.html">Events</a><a href="m4b-journal-mockup.html">Journal</a></div>
-    <div><h4>Company</h4><a href="m4b-about-mockup.html">About</a><a href="m4b-team-mockup.html">Team</a><a href="m4b-partnerships-mockup.html">Partnerships</a><a href="m4b-journal-mockup.html">Press</a></div>
+    <div><h4>Company</h4><a href="m4b-about-mockup.html">About</a><a href="m4b-team-mockup.html">Team</a><a href="m4b-partnerships-mockup.html">Partnerships</a><a href="m4b-journal-mockup.html">Press</a><a href="m4b-contact-mockup.html">Contact</a></div>
     <div><h4>Legal</h4><a href="#">Imprint</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
   </div>
   <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept v0.9 · Brand-strict</span></div>

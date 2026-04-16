@@ -2,53 +2,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/brand.css"/>
 <style>
-  /* ========== MASONRY BOARD GRID ========== */
+  /* ========== UNIFORM BOARD GRID — every tile is a 1:1 square so no portrait is ever upscaled ========== */
   .mb-masonry{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    grid-auto-rows:200px;
     gap:16px;
     padding:0 0 120px;
   }
-  .mb-tile{border-radius:6px;overflow:hidden;position:relative;transition:transform .22s cubic-bezier(.2,.6,.2,1),box-shadow .22s;}
+  .mb-tile{border-radius:6px;overflow:hidden;position:relative;transition:transform .22s cubic-bezier(.2,.6,.2,1),box-shadow .22s;aspect-ratio:1/1;}
   .mb-tile:hover{transform:translateY(-3px);box-shadow:0 18px 48px rgba(19,19,19,.12);}
 
   /* Portrait tile */
   .mb-tile.portrait{background:#e9e9ec;}
-  .mb-tile.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:grayscale(1) contrast(1.05);transition:transform .8s cubic-bezier(.2,.6,.2,1);}
+  .mb-tile.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:grayscale(1) contrast(1.05);transition:transform .8s cubic-bezier(.2,.6,.2,1);image-rendering:auto;}
   .mb-tile.portrait:hover img{transform:scale(1.04);}
   .mb-tile.portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(0,0,0,.65) 100%);z-index:1;}
-  .mb-tile.portrait .meta{position:absolute;left:20px;right:20px;bottom:18px;color:#fff;z-index:2;}
+  .mb-tile.portrait .meta{position:absolute;left:18px;right:18px;bottom:16px;color:#fff;z-index:2;}
   .mb-tile.portrait .meta h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:15px;line-height:1.1;letter-spacing:-0.005em;margin:0;}
-  .mb-tile.portrait .meta .role{font-size:12px;opacity:.88;margin-top:2px;}
-  .mb-tile.portrait .meta .cap{font-size:10px;letter-spacing:.22em;text-transform:uppercase;opacity:.7;font-weight:500;margin-bottom:6px;display:block;}
-  .mb-tile.portrait.lg .meta h3{font-size:26px;}
-  .mb-tile.portrait.lg .meta .role{font-size:14px;}
-  .mb-tile.portrait.wide .meta h3{font-size:20px;}
+  .mb-tile.portrait .meta .role{font-size:11px;opacity:.88;margin-top:2px;}
+  .mb-tile.portrait .meta .cap{font-size:9px;letter-spacing:.22em;text-transform:uppercase;opacity:.7;font-weight:500;margin-bottom:6px;display:block;}
 
-  /* Quote tiles */
-  .mb-tile.quote-mint{background:var(--mint);color:var(--onyx);padding:28px 30px 24px;display:flex;flex-direction:column;justify-content:space-between;}
-  .mb-tile.quote-mint blockquote{font-family:"Poppins",sans-serif;font-weight:500;font-size:16px;line-height:1.3;margin:0;letter-spacing:-0.005em;}
-  .mb-tile.quote-mint .attr{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;}
+  /* Quote tiles — also square, text sized to fit */
+  .mb-tile.quote-mint{background:var(--mint);color:var(--onyx);padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;}
+  .mb-tile.quote-mint blockquote{font-family:"Poppins",sans-serif;font-weight:500;font-size:14px;line-height:1.3;margin:0;letter-spacing:-0.005em;}
+  .mb-tile.quote-mint .attr{font-size:9px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;}
 
-  .mb-tile.quote-onyx{background:var(--onyx);color:var(--paper);padding:28px 30px;display:flex;flex-direction:column;justify-content:space-between;}
-  .mb-tile.quote-onyx blockquote{font-family:"Poppins",sans-serif;font-weight:300;font-size:18px;line-height:1.3;margin:0;letter-spacing:-0.005em;}
+  .mb-tile.quote-onyx{background:var(--onyx);color:var(--paper);padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;}
+  .mb-tile.quote-onyx blockquote{font-family:"Poppins",sans-serif;font-weight:300;font-size:15px;line-height:1.3;margin:0;letter-spacing:-0.005em;}
   .mb-tile.quote-onyx blockquote .emph{font-weight:600;color:var(--mint);}
-  .mb-tile.quote-onyx .attr{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--mint);}
+  .mb-tile.quote-onyx .attr{font-size:9px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--mint);}
 
   /* LinkedIn mark — appears on portrait hover */
-  .mb-tile .ln{position:absolute;top:14px;right:14px;z-index:3;background:rgba(255,255,255,.15);backdrop-filter:blur(6px);border-radius:999px;padding:6px 10px;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fff;opacity:0;transform:translateY(-4px);transition:opacity .22s,transform .22s;}
+  .mb-tile .ln{position:absolute;top:12px;right:12px;z-index:3;background:rgba(255,255,255,.18);backdrop-filter:blur(6px);border-radius:999px;padding:5px 9px;font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#fff;opacity:0;transform:translateY(-4px);transition:opacity .22s,transform .22s;}
   .mb-tile.portrait:hover .ln{opacity:1;transform:none;}
-
-  /* Explicit tile placements — the "masonry" pattern */
-  .mb-tile.a{grid-column:1/3;grid-row:1/3;}  /* Stephan — top-left 2x2 */
-  .mb-tile.b{grid-column:3/5;grid-row:1/2;}  /* Mint quote — top-right 2x1 */
-  .mb-tile.c{grid-column:3/4;grid-row:2/3;}  /* Gabriele 1x1 */
-  .mb-tile.d{grid-column:4/5;grid-row:2/3;}  /* Mirela 1x1 */
-  .mb-tile.e{grid-column:1/3;grid-row:3/5;}  /* Rosanna — 2x2 */
-  .mb-tile.f{grid-column:3/4;grid-row:3/4;}  /* Olivia 1x1 */
-  .mb-tile.g{grid-column:4/5;grid-row:3/4;}  /* Ian 1x1 */
-  .mb-tile.h{grid-column:3/5;grid-row:4/5;}  /* Onyx quote 2x1 */
 
   /* ========== FOUNDERS — compact list (unchanged) ========== */
   .founders{padding:60px 0 120px;}
@@ -73,14 +59,14 @@
   .press-logos{display:grid;grid-template-columns:repeat(5,1fr);gap:48px;align-items:center;padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:32px;}
   .press-logos span{font-family:"Poppins",sans-serif;font-weight:400;font-size:15px;color:#555;letter-spacing:-0.01em;text-align:center;}
 
-  /* Mobile fallback — stack tiles as uniform cards */
+  /* Mobile fallback — two uniform columns */
   @media (max-width: 1100px){
-    .mb-masonry{grid-template-columns:repeat(2,1fr);grid-auto-rows:260px;}
-    .mb-tile.a,.mb-tile.e{grid-column:1/3;grid-row:auto;}
-    .mb-tile.b,.mb-tile.h{grid-column:1/3;grid-row:auto;}
-    .mb-tile.c,.mb-tile.d,.mb-tile.f,.mb-tile.g{grid-column:auto;grid-row:auto;}
+    .mb-masonry{grid-template-columns:repeat(2,1fr);}
     .f-grid{grid-template-columns:repeat(2,1fr);}
     .adv-slots{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width: 600px){
+    .mb-masonry{grid-template-columns:1fr;}
   }
 </style></head>
 <body>
@@ -101,67 +87,61 @@
 </div></section>
 
 <div class="container">
-  <div class="section-head"><h2 class="section-h2">Management <span class="emph">Board.</span></h2><p class="body-p side">Seven sitting directors and operators. Click a tile for LinkedIn.</p></div>
+  <div class="section-head"><h2 class="section-h2">Management <span class="emph">Board.</span></h2></div>
 
   <div class="mb-masonry">
-    <!-- A. Stephan — hero tile 2x2 -->
-    <a class="mb-tile portrait lg a reveal" href="#">
+    <!-- Row 1: three portraits + mint quote -->
+    <a class="mb-tile portrait reveal" href="#">
       <img src="assets/photos/stephan-hillert.jpg" alt="Stephan Hillert"/>
       <span class="ln">LinkedIn →</span>
-      <div class="meta"><span class="cap">Chair · Financial Services</span><h3>Stephan Hillert</h3><div class="role">Chair of the Management Board · Founder</div></div>
+      <div class="meta"><span class="cap">Chair · Financial Services</span><h3>Stephan Hillert</h3><div class="role">Chair · Founder</div></div>
     </a>
 
-    <!-- B. Mint quote 2x1 — breaks the portrait rhythm -->
-    <div class="mb-tile quote-mint b reveal delay-1">
-      <blockquote>"The mentor pairing made the difference between reading about governance and doing it."</blockquote>
-      <span class="attr">Olivia Kinghorst · Cohort '24</span>
-    </div>
-
-    <!-- C. Gabriele 1x1 -->
-    <a class="mb-tile portrait c reveal delay-2" href="#">
+    <a class="mb-tile portrait reveal delay-1" href="#">
       <img src="assets/photos/gabriele-castegnaro.jpg" alt="Dr. Gabriele Castegnaro"/>
       <span class="ln">LinkedIn →</span>
       <div class="meta"><span class="cap">Governance · EU</span><h3>Dr. G. Castegnaro</h3></div>
     </a>
 
-    <!-- D. Mirela 1x1 -->
-    <a class="mb-tile portrait d reveal delay-3" href="#">
+    <a class="mb-tile portrait reveal delay-2" href="#">
       <img src="assets/photos/mirela-dimofte.jpg" alt="Mirela Dimofte"/>
       <span class="ln">LinkedIn →</span>
       <div class="meta"><span class="cap">Finance NED · EU</span><h3>Mirela Dimofte</h3></div>
     </a>
 
-    <!-- E. Rosanna — second hero tile 2x2 -->
-    <a class="mb-tile portrait lg e reveal" href="#">
+    <div class="mb-tile quote-mint reveal delay-3">
+      <blockquote>"The mentor pairing made the difference between reading about governance and doing it."</blockquote>
+      <span class="attr">Olivia Kinghorst · Member</span>
+    </div>
+
+    <!-- Row 2: three portraits + onyx quote -->
+    <a class="mb-tile portrait reveal" href="#">
       <img src="assets/photos/rosanna-cubelli.png" alt="Rosanna Cubelli"/>
       <span class="ln">LinkedIn →</span>
-      <div class="meta"><span class="cap">CHRO · Industrial</span><h3>Rosanna Cubelli</h3><div class="role">Management Board · Founder</div></div>
+      <div class="meta"><span class="cap">CHRO · Industrial</span><h3>Rosanna Cubelli</h3><div class="role">Founder</div></div>
     </a>
 
-    <!-- F. Olivia 1x1 -->
-    <a class="mb-tile portrait f reveal delay-1" href="#">
+    <a class="mb-tile portrait reveal delay-1" href="#">
       <img src="assets/photos/olivia-kinghorst.jpg" alt="Olivia Kinghorst"/>
       <span class="ln">LinkedIn →</span>
       <div class="meta"><span class="cap">NED · SaaS</span><h3>Olivia Kinghorst</h3></div>
     </a>
 
-    <!-- G. Ian 1x1 -->
-    <a class="mb-tile portrait g reveal delay-2" href="#">
+    <a class="mb-tile portrait reveal delay-2" href="#">
       <img src="assets/photos/ian-thompson.png" alt="Ian Thompson"/>
       <span class="ln">LinkedIn →</span>
       <div class="meta"><span class="cap">Finance NED · UK</span><h3>Ian Thompson</h3></div>
     </a>
 
-    <!-- H. Onyx stat block 2x1 — closing tile -->
-    <div class="mb-tile quote-onyx h reveal delay-3">
-      <blockquote>Seven directors. <span class="emph">Nine markets. Six sectors.</span></blockquote>
-      <span class="attr">Management Board · 2026</span>
+    <div class="mb-tile quote-onyx reveal delay-3">
+      <blockquote>Six directors. <span class="emph">Nine markets. Six sectors.</span></blockquote>
+      <span class="attr">Management Board</span>
     </div>
   </div>
 </div>
 
 <div class="container founders">
-  <div class="section-head"><h2 class="section-h2">Founders.</h2><p class="body-p side">Fourteen people who started the conversation this network was built on.</p></div>
+  <div class="section-head"><h2 class="section-h2">Founders.</h2></div>
   <div class="f-grid">
     <div class="founder reveal"><div class="av"><img src="assets/photos/stephan-hillert.jpg" alt=""/></div><div class="tx"><div class="name">Stephan Hillert</div><div class="role">Chair · Zurich</div></div></div>
     <div class="founder reveal"><div class="av"><img src="assets/photos/rosanna-cubelli.png" alt=""/></div><div class="tx"><div class="name">Rosanna Cubelli</div><div class="role">CHRO · Milan</div></div></div>
@@ -188,7 +168,7 @@
 </div></section>
 
 <section class="press"><div class="container">
-  <div class="section-head"><h2 class="section-h2">In the <span class="emph">press.</span></h2><p class="body-p side">Selected mentions across EU, UK, DACH.</p></div>
+  <div class="section-head"><h2 class="section-h2">In the <span class="emph">press.</span></h2></div>
   <div class="press-logos reveal"><span>Financial Times</span><span>Handelsblatt</span><span>Neue Zürcher Zeitung</span><span>Bilanz</span><span>Forbes DACH</span></div>
 </div></section>
 
@@ -201,7 +181,7 @@
   <div class="foot-grid">
     <div><a class="foot-logo" href="index.html"><img src="assets/photos/image6.png" alt=""/></a><p style="margin-top:16px;font-size:14px;color:rgba(244,244,249,.6);max-width:320px;font-weight:300;">A global board-readiness network based in Zurich, operating across Europe, the UK, and Asia.</p></div>
     <div><h4>Community</h4><a href="m4b-memberships-mockup.html">Memberships</a><a href="m4b-become-member-mockup.html">Become a member</a><a href="m4b-journal-mockup.html">Events</a><a href="m4b-journal-mockup.html">Journal</a></div>
-    <div><h4>Company</h4><a href="m4b-about-mockup.html">About</a><a href="m4b-team-mockup.html">Team</a><a href="m4b-partnerships-mockup.html">Partnerships</a><a href="m4b-journal-mockup.html">Press</a></div>
+    <div><h4>Company</h4><a href="m4b-about-mockup.html">About</a><a href="m4b-team-mockup.html">Team</a><a href="m4b-partnerships-mockup.html">Partnerships</a><a href="m4b-journal-mockup.html">Press</a><a href="m4b-contact-mockup.html">Contact</a></div>
     <div><h4>Legal</h4><a href="#">Imprint</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
   </div>
   <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept v0.9 · Brand-strict</span></div>

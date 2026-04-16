@@ -57,6 +57,7 @@
   .loc-card .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;color:var(--paper);background:linear-gradient(to top,rgba(19,19,19,.75),rgba(19,19,19,0) 55%);}
   .loc-card .ov b{font-family:"Poppins",sans-serif;font-weight:600;font-size:18px;letter-spacing:-0.005em;}
   .loc-card .ov span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mint);font-weight:600;margin-bottom:4px;}
+  button.btn{border:none;cursor:pointer;font-family:"Poppins",sans-serif;font-size:14px;font-weight:600;}
 </style></head>
 <body>
 
@@ -82,28 +83,31 @@
 
 <section class="c-main"><div class="container c-grid">
   <div class="form-card">
+    <!-- Replace xyzplaceholder with your Formspree form ID from https://formspree.io/forms -->
+    <form action="https://formspree.io/f/xyzplaceholder" method="POST">
     <span class="caption" style="margin-bottom:14px;display:block;">Step 01 · What brings you here?</span>
     <div class="chips">
-      <span class="chip"><span class="dot"></span>I want to become a member</span>
-      <span class="chip selected"><span class="dot"></span>Corporate partnership</span>
-      <span class="chip"><span class="dot"></span>I'd like to mentor or speak</span>
-      <span class="chip"><span class="dot"></span>Media / press</span>
-      <span class="chip"><span class="dot"></span>Something else</span>
+      <label class="chip"><input type="radio" name="inquiry_type" value="Become a member" style="display:none;"><span class="dot"></span>I want to become a member</label>
+      <label class="chip selected"><input type="radio" name="inquiry_type" value="Corporate partnership" checked style="display:none;"><span class="dot"></span>Corporate partnership</label>
+      <label class="chip"><input type="radio" name="inquiry_type" value="Mentor or speak" style="display:none;"><span class="dot"></span>I'd like to mentor or speak</label>
+      <label class="chip"><input type="radio" name="inquiry_type" value="Media / press" style="display:none;"><span class="dot"></span>Media / press</label>
+      <label class="chip"><input type="radio" name="inquiry_type" value="Something else" style="display:none;"><span class="dot"></span>Something else</label>
     </div>
     <div class="row2">
-      <div class="field"><label>Full name</label><input type="text" value="Anna Meier"/></div>
-      <div class="field"><label>Work email</label><input type="email" value="anna.meier@example.com"/></div>
+      <div class="field"><label>Full name</label><input type="text" name="full_name" value="Anna Meier" required/></div>
+      <div class="field"><label>Work email</label><input type="email" name="email" value="anna.meier@example.com" required/></div>
     </div>
     <div class="row2">
-      <div class="field"><label>Company</label><input type="text" value="Helvetia Industries AG"/></div>
-      <div class="field"><label>Your role</label><input type="text" value="Head of Talent Strategy"/></div>
+      <div class="field"><label>Company</label><input type="text" name="company" value="Helvetia Industries AG"/></div>
+      <div class="field"><label>Your role</label><input type="text" name="role" value="Head of Talent Strategy"/></div>
     </div>
     <div class="row2">
-      <div class="field"><label>Country</label><input type="text" value="Switzerland"/></div>
-      <div class="field"><label>Budget range · corporate</label><input type="text" value="CHF 15k – 50k / year"/><span class="hint">Field appears based on your selection above.</span></div>
+      <div class="field"><label>Country</label><input type="text" name="country" value="Switzerland"/></div>
+      <div class="field"><label>Budget range · corporate</label><input type="text" name="budget_range" value="CHF 15k – 50k / year"/><span class="hint">Field appears based on your selection above.</span></div>
     </div>
-    <div class="field"><label>What's the best first conversation?</label><textarea>Exploring a sponsored cohort for our European business — recruiting under-40 directors and hosting a joint governance roundtable in Q3.</textarea></div>
-    <div class="submit-row"><span class="caption">Replied within two working days</span><a class="btn btn-primary"><span class="dot"></span>Send message</a></div>
+    <div class="field"><label>What's the best first conversation?</label><textarea name="message">Exploring a sponsored cohort for our European business — recruiting under-40 directors and hosting a joint governance roundtable in Q3.</textarea></div>
+    <div class="submit-row"><span class="caption">Replied within two working days</span><button type="submit" class="btn btn-primary"><span class="dot"></span>Send message</button></div>
+    </form>
   </div>
   <div class="direct-block">
     <div class="direct-card">
@@ -111,7 +115,7 @@
       <h3 style="margin-top:10px;">Prefer email?</h3>
       <p>Write directly to the inbox closest to your reason for getting in touch.</p>
       <p class="email">hello@millennials4boards.com</p>
-      <a class="ln">LinkedIn →</a>
+      <a class="ln" href="#">LinkedIn →</a>
     </div>
     <div class="book-card">
       <span class="caption" style="color:rgba(244,244,249,.6);">Senior inbound</span>
@@ -119,13 +123,13 @@
       <p>For corporate partners and directors — three of us hold open slots each week.</p>
       <div class="team"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div></div>
       <div class="av-names">Stephan, Olivia, Rosanna</div>
-      <a class="btn" style="background:var(--mint);color:var(--onyx);align-self:flex-start;margin-top:4px;"><span class="dot" style="background:var(--onyx);"></span>Book a 20-min call</a>
+      <a class="btn" style="background:var(--mint);color:var(--onyx);align-self:flex-start;margin-top:4px;" href="#"><span class="dot" style="background:var(--onyx);"></span>Book a 20-min call</a>
     </div>
   </div>
 </div></section>
 
 <section class="locations reveal"><div class="container">
-  <div class="section-head" style="margin-bottom:28px;"><h2 class="section-h2">Where we <span class="emph">meet.</span></h2><p class="body-p side">Zurich HQ · London + Singapore satellites.</p></div>
+  <div class="section-head" style="margin-bottom:28px;"><h2 class="section-h2">Where we <span class="emph">meet.</span></h2></div>
   <div class="loc-grid">
     <div class="loc-card"><img src="assets/photos/02.png" alt="Zurich"/><div class="ov"><span>Headquarters</span><b>Kilchberg · Zurich</b></div></div>
     <div class="loc-card"><img src="assets/photos/04.png" alt="London"/><div class="ov"><span>Satellite</span><b>London · Mayfair</b></div></div>
@@ -141,14 +145,14 @@
 
 <section class="final"><div class="container final-inner">
   <h2>Not ready to reach out? <span class="emph">Start here.</span></h2>
-  <div><p>Read about the network, meet the team, or browse the Journal before the first conversation.</p><div class="cta-row"><a class="btn btn-on-dark"><span class="dot"></span>Read About</a><a class="btn btn-outline-light">Journal</a></div></div>
+  <div><p>Read about the network, meet the team, or browse the Journal before the first conversation.</p><div class="cta-row"><a class="btn btn-on-dark" href="m4b-about-mockup.html"><span class="dot"></span>Read About</a><a class="btn btn-outline-light" href="m4b-journal-mockup.html">Journal</a></div></div>
 </div></section>
 
 <footer><div class="container">
   <div class="foot-grid">
-    <div><a class="foot-logo"><img src="assets/photos/image6.png" alt=""/></a><p style="margin-top:16px;font-size:14px;color:rgba(244,244,249,.6);max-width:320px;font-weight:300;">A global board-readiness network based in Zurich.</p></div>
+    <div><a class="foot-logo" href="index.html"><img src="assets/photos/image6.png" alt=""/></a><p style="margin-top:16px;font-size:14px;color:rgba(244,244,249,.6);max-width:320px;font-weight:300;">A global board-readiness network based in Zurich.</p></div>
     <div><h4>Community</h4><a href="m4b-memberships-mockup.html">Memberships</a><a href="m4b-become-member-mockup.html">Become a member</a><a href="m4b-journal-mockup.html">Events</a><a href="m4b-journal-mockup.html">Journal</a></div>
-    <div><h4>Company</h4><a href="m4b-about-mockup.html">About</a><a href="m4b-team-mockup.html">Team</a><a href="m4b-partnerships-mockup.html">Partnerships</a><a href="m4b-journal-mockup.html">Press</a></div>
+    <div><h4>Company</h4><a href="m4b-about-mockup.html">About</a><a href="m4b-team-mockup.html">Team</a><a href="m4b-partnerships-mockup.html">Partnerships</a><a href="m4b-journal-mockup.html">Press</a><a href="m4b-contact-mockup.html">Contact</a></div>
     <div><h4>Legal</h4><a href="#">Imprint</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
   </div>
   <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept v0.9 · Brand-strict</span></div>

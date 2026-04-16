@@ -1,11 +1,32 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Millennials4Boards — Website concept review</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Anton&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/brand.css"/>
 <style>
 
+  /* ============ PROPOSAL CREDIT — tiny "Web proposal by [Von Peach]" at the very top ============ */
+  .proposal-credit{
+    position:relative;z-index:50;
+    background:var(--paper);border-bottom:1px solid var(--line);
+  }
+  .proposal-credit-inner{
+    max-width:1280px;margin:0 auto;padding:18px 40px;
+    display:flex;align-items:center;gap:14px;
+    font-family:"Poppins",sans-serif;font-weight:300;font-size:11px;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+  }
+  .proposal-credit .label{white-space:nowrap;}
+  .proposal-credit .vp-mark{
+    display:inline-flex;align-items:center;text-decoration:none;
+    font-family:"Anton","Impact","Arial Narrow",sans-serif;
+    font-weight:400;font-size:18px;letter-spacing:-0.3px;
+    color:#131313;transform:skewX(-8deg);
+    transition:opacity .18s;
+  }
+  .proposal-credit .vp-mark:hover{opacity:.7;}
+
   /* ============ COVER — paper, editorial ============ */
   .cover{
-    position:relative;padding:140px 0 80px;background:var(--paper);overflow:hidden;
+    position:relative;padding:80px 0 80px;background:var(--paper);overflow:hidden;
   }
   .cover-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:end;max-width:1280px;margin:0 auto;padding:0 40px;}
   .cover-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
@@ -102,20 +123,39 @@
   .page-card:hover .go::after{transform:translateX(4px);}
 
   /* ============ CLOSE — the ONE onyx moment ============ */
-  .close{padding:120px 0;background:var(--onyx);color:var(--paper);}
-  .close-inner{max-width:880px;margin:0 auto;padding:0 40px;text-align:center;display:flex;flex-direction:column;gap:28px;align-items:center;}
-  .close h2{
-    font-family:"Poppins",sans-serif;font-weight:300;color:#fff;
+  /* Close section — bulletproof dark theme, no variable fallback */
+  .sec-wrap[data-sec="close"]{background:#131313 !important;}
+  .sec-wrap[data-sec="close"] .sec-toggle{background:#222 !important;border-color:#333 !important;}
+  .sec-wrap[data-sec="close"] .sec-toggle svg{stroke:#fff !important;}
+  section.close{padding:120px 0 !important;background:#131313 !important;color:#F4F4F9 !important;}
+  section.close .close-inner{max-width:880px;margin:0 auto;padding:0 40px;text-align:center;display:flex;flex-direction:column;gap:28px;align-items:center;}
+  section.close h2{
+    font-family:"Poppins",sans-serif;font-weight:300;color:#ffffff !important;
     font-size:clamp(32px,4.8vw,56px);line-height:1.05;letter-spacing:-0.025em;margin:0;
   }
-  .close h2 .emph{font-weight:600;color:var(--mint);}
-  .close p{color:rgba(244,244,249,.72);font-size:15px;max-width:520px;line-height:1.55;margin:0;font-weight:300;}
-  .close .cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:4px;}
-  .close .cta-row .btn{font-size:12px;padding:14px 24px;}
-  .close .btn-on-dark{background:var(--mint);color:var(--onyx);border:1px solid var(--mint);}
-  .close .btn-on-dark .dot{background:var(--onyx);}
-  .close .btn-outline-light{border:1px solid rgba(244,244,249,.35);color:#fff;background:transparent;}
-  .close .btn-outline-light:hover{background:rgba(244,244,249,.08);}
+  section.close h2 .emph{font-weight:600;color:#05CEAA !important;}
+  section.close p{color:rgba(255,255,255,.82) !important;font-size:15px;max-width:520px;line-height:1.55;margin:0;font-weight:300;}
+  section.close .cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:4px;}
+  section.close .cta-row .btn{font-size:12px;padding:14px 24px;}
+  section.close .btn-on-dark{background:#05CEAA !important;color:#131313 !important;border:1px solid #05CEAA !important;}
+  section.close .btn-on-dark:hover{background:#fff !important;border-color:#fff !important;color:#131313 !important;}
+  section.close .btn-on-dark .dot{background:#131313 !important;}
+  section.close .btn-outline-light{border:1px solid rgba(255,255,255,.45) !important;color:#ffffff !important;background:transparent !important;}
+  section.close .btn-outline-light:hover{background:rgba(255,255,255,.1) !important;border-color:#ffffff !important;color:#ffffff !important;}
+
+  /* ============ MIGRATION ============ */
+  .migration{padding:96px 0;background:var(--paper);border-top:1px solid var(--line);}
+  .migration .mig-head{max-width:760px;margin:0 0 48px;}
+  .migration .mig-head h2{font-size:clamp(22px,2.4vw,30px);margin:0 0 12px;}
+  .migration .mig-head p{font-size:14px;color:#333;max-width:580px;font-weight:300;line-height:1.55;margin:0;}
+  .mig-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .mig-card{background:var(--paper);padding:32px 28px;display:flex;flex-direction:column;gap:10px;}
+  .mig-card .n{font-size:11px;font-weight:600;color:var(--mint);letter-spacing:.22em;text-transform:uppercase;}
+  .mig-card h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:14px;line-height:1.22;letter-spacing:-0.005em;margin:0;}
+  .mig-card p{font-size:13px;line-height:1.55;color:#333;margin:0;font-weight:300;}
+  .mig-card code{font-size:11px;color:var(--onyx);background:#fff;border:1px solid var(--line);padding:2px 6px;border-radius:3px;}
+  .mig-note{margin-top:32px;padding:24px 28px;background:#fff;border:1px solid var(--line);border-radius:6px;font-size:13px;line-height:1.55;color:#333;font-weight:300;}
+  .mig-note b{font-weight:600;color:var(--onyx);}
 
   /* ============ DESIGN SYSTEM ============ */
   .ds{padding:96px 0;background:var(--paper);border-top:1px solid var(--line);}
@@ -254,6 +294,14 @@
 </style></head>
 <body>
 
+<!-- ========== PROPOSAL CREDIT (very top, paper) ========== -->
+<div class="proposal-credit">
+  <div class="proposal-credit-inner">
+    <span class="label">Web proposal by</span>
+    <a class="vp-mark" href="https://vonpeach.com" target="_blank" rel="noopener">VON PEACH</a>
+  </div>
+</div>
+
 <!-- No floating pill nav on the concept deck — TOC is the only navigator here.
      The pill nav lives on all eight site pages (Home, About, Team, etc.). -->
 
@@ -265,8 +313,9 @@
     <a class="toc-chip" href="#principles"><span class="n">02</span>Principles</a>
     <a class="toc-chip" href="#nav-ba"><span class="n">03</span>Nav</a>
     <a class="toc-chip" href="#design-system"><span class="n">04</span>Design system</a>
-    <a class="toc-chip" href="#pages"><span class="n">05</span>Pages</a>
-    <a class="toc-chip" href="#close"><span class="n">06</span>Next</a>
+    <a class="toc-chip" href="#migration"><span class="n">05</span>Migration</a>
+    <a class="toc-chip" href="#pages"><span class="n">06</span>Pages</a>
+    <a class="toc-chip" href="#close"><span class="n">07</span>Next</a>
   </div>
 </nav>
 
@@ -276,7 +325,7 @@
     <div>
       <div class="cover-eyebrow"><span class="bar"></span><span class="caption">Millennials4Boards · Website refresh · v0.9</span></div>
       <h1 class="reveal">A clearer <span class="emph">path in.</span></h1>
-      <p class="cover-lede reveal delay-1">A refresh of <b>millennials4boards.com</b> with one job: make it easier for the right people to become members. Same story, same brand — tuned for the way boards and operators actually decide.</p>
+      <p class="cover-lede reveal delay-1">A refresh of <b>millennials4boards.com</b> focused on making it easier for the right people to become members. Same story, same brand — clearer navigation and a faster path to join.</p>
       <div class="cover-cta-row reveal delay-2">
         <a class="btn btn-primary" href="#pages"><span class="dot"></span>Walk through the pages</a>
         <a class="btn btn-ghost" href="#audit">See what we optimised</a>
@@ -284,7 +333,6 @@
     </div>
     <div class="reveal delay-1">
       <div class="cover-figure"><img src="assets/photos/miro-portrait.png" alt=""/></div>
-      <div class="cover-meta"><span>Cohort '26</span><span>Kilchberg · Zurich</span></div>
     </div>
   </div>
 </section>
@@ -295,7 +343,7 @@
     <span><b class="counter" data-target="8">0</b> pages</span>
     <span><b class="counter" data-target="1">0</b> funnel</span>
     <span><b class="counter" data-target="1">0</b> design system</span>
-    <span>Same story, sharper path</span>
+    <span>Same story, clearer path</span>
     <span>Refresh · v0.9 · Apr 2026</span>
   </div>
 </div>
@@ -308,29 +356,29 @@
   <div class="lead">
     <div class="eyebrow"><span class="bar"></span><span class="caption">01 · Six UX moments, tightened</span></div>
     <h2 class="section-h2">Keep the story. <span class="emph">Sharpen the path.</span></h2>
-    <p class="q">The proposition and the people are unchanged. Six moments on the path to membership are.</p>
+    <p class="q">The proposition and the people stay the same. Six things change in how visitors become members.</p>
   </div>
 
   <div class="audit-grid">
     <div class="audit-card">
       <span class="n">01 · Three doors</span>
-      <h3>Routed on arrival.</h3>
-      <p>Aspiring · sitting · corporate — each reaches their own page in under five seconds. No generic homepage.</p>
+      <h3>Visitors are routed on arrival.</h3>
+      <p>Aspiring directors, sitting directors, and corporates each reach their own page within five seconds.</p>
     </div>
     <div class="audit-card">
       <span class="n">02 · Proof first</span>
-      <h3>Above the fold, before any ask.</h3>
-      <p>Names, seats, sourced stats and press marquee. Credibility visible before the invitation to join.</p>
+      <h3>Proof shown before any ask.</h3>
+      <p>Names, board seats, stats, and press mentions are visible before the invitation to join.</p>
     </div>
     <div class="audit-card">
       <span class="n">03 · Named team</span>
-      <h3>Masonry of portraits, not a carousel.</h3>
-      <p>Role, sector, LinkedIn on every tile. The network is the offer — shown, not described.</p>
+      <h3>Named team with portraits.</h3>
+      <p>Role, sector, and LinkedIn on every tile. The network is shown, not described.</p>
     </div>
     <div class="audit-card">
       <span class="n">04 · One nav</span>
-      <h3>Six destinations on a floating pill.</h3>
-      <p>Centred logo, Join alongside. One move away from joining, on every page.</p>
+      <h3>Six links on a floating pill nav.</h3>
+      <p>Logo centred, "Join" button alongside. One click from joining, on every page.</p>
     </div>
     <div class="audit-card">
       <span class="n">05 · Faster checkout</span>
@@ -356,14 +404,14 @@
   <div class="p-head">
     <div class="eyebrow"><span class="bar"></span><span class="caption">02 · Five rules</span></div>
     <h2 class="section-h2">Less, <span class="emph">better placed.</span></h2>
-    <p>Five rules shaped every section. They're a useful handover brief for anyone writing, designing, or extending the site next.</p>
+    <p>Five rules that shaped every section. Useful as a handover brief for anyone writing or building the site.</p>
   </div>
   <div class="p-grid">
-    <div class="p-card reveal"><span class="n">01</span><h3>Specific over generic.</h3><p>Sourced stats. Named testimonials. Real article titles.</p></div>
-    <div class="p-card reveal delay-1"><span class="n">02</span><h3>Three doors.</h3><p>Aspiring · Sitting · Corporate — each routed in under five seconds.</p></div>
-    <div class="p-card reveal delay-2"><span class="n">03</span><h3>Proof before pitch.</h3><p>Names, press, member wins — placed before any invitation.</p></div>
-    <div class="p-card reveal delay-3"><span class="n">04</span><h3>Brand-strict.</h3><p>Poppins Light + SemiBold only. Mint as the single accent.</p></div>
-    <div class="p-card reveal delay-4"><span class="n">05</span><h3>Commercial clarity.</h3><p>Two cards · three-step wizard · Stripe. Transparent total.</p></div>
+    <div class="p-card reveal"><span class="n">01</span><h3>Specific over generic.</h3><p>Real stats, named testimonials, actual article titles.</p></div>
+    <div class="p-card reveal delay-1"><span class="n">02</span><h3>Three audience paths.</h3><p>Aspiring directors, sitting directors, and corporates each get their own entry point.</p></div>
+    <div class="p-card reveal delay-2"><span class="n">03</span><h3>Proof before pitch.</h3><p>Names, press mentions, and member results shown before any ask.</p></div>
+    <div class="p-card reveal delay-3"><span class="n">04</span><h3>Brand-strict.</h3><p>Poppins Light + SemiBold. Mint as the single accent colour.</p></div>
+    <div class="p-card reveal delay-4"><span class="n">05</span><h3>Clear pricing.</h3><p>Two pricing cards, a three-step form, and Stripe checkout.</p></div>
   </div>
 </div></section>
 
@@ -378,20 +426,20 @@
   <div class="ba-head">
     <div class="eyebrow"><span class="bar"></span><span class="caption">03 · The navigation, simplified</span></div>
     <h2 class="section-h2">Six destinations, <span class="emph">one click.</span></h2>
-    <p>A floating pill with the logo at its centre. The "Join" action lives alongside it — so joining is always one move away, on every page.</p>
+    <p>A floating pill with the logo at its centre. The "Join" button sits alongside, so joining is always one click away.</p>
   </div>
   <div class="ba-grid">
     <div class="ba before reveal">
       <span class="label">Today</span>
       <div class="nav-mock">Home · Team · About us · Memberships · News and events · Partnerships · Contact us</div>
       <h3>Seven items, single "Join Us!" CTA.</h3>
-      <p>Currently one flat row of links. The refresh consolidates to six destinations and lets the mark — and the action — step forward.</p>
+      <p>Currently a flat row of seven links. The refresh consolidates to six and puts the logo and join action front and centre.</p>
     </div>
     <div class="ba after reveal delay-1">
       <span class="label">Proposed</span>
       <div class="nav-mock">About · Team · Memberships · <span class="logo-dot"></span> · Partnerships · Journal · Contact</div>
       <h3>Floating pill, logo-centred, CTA alongside.</h3>
-      <p>Six links split around the mark. "Journal" replaces "News and events." "Join the network" sits alongside the pill — the mark and the act of joining, visually separated.</p>
+      <p>Six links split around the logo. "Journal" replaces "News and events." A separate "Join" pill sits next to it.</p>
     </div>
   </div>
 </div></section>
@@ -407,7 +455,7 @@
   <div class="ds-head reveal">
     <div class="eyebrow"><span class="bar"></span><span class="caption">04 · For the dev team</span></div>
     <h2 class="section-h2">The <span class="emph">design system.</span></h2>
-    <p>Colour, type, spacing, components, motion. Hand this to a developer and they can ship the site brand-accurate.</p>
+    <p>Colour, type, spacing, components, and motion rules. A developer can use this to build the site exactly as designed.</p>
   </div>
 
   <!-- 01 · Colour -->
@@ -533,42 +581,104 @@
   </div>
 </div>
 
+<!-- ========== MIGRATION — handover instructions ========== -->
+<div class="sec-wrap" data-sec="migration">
+  <button class="sec-toggle" aria-label="Collapse section" aria-expanded="true"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+  <div class="sec-body">
+<section class="migration" id="migration"><div class="container">
+  <div class="mig-head">
+    <div class="eyebrow"><span class="bar"></span><span class="caption">05 · Handover to development</span></div>
+    <h2 class="section-h2">How to <span class="emph">build this.</span></h2>
+    <p>Everything a developer needs to turn these mockups into a production site. Each card is one step — work top to bottom.</p>
+  </div>
+
+  <div class="mig-grid">
+    <div class="mig-card reveal">
+      <span class="n">01 · Stack</span>
+      <h3>Static site generator + headless CMS.</h3>
+      <p>Use Astro, Next.js (static export), or Eleventy. Content lives in a headless CMS (Sanity, Storyblok, or Notion). The HTML files in this repo are the source of truth for layout and styling.</p>
+    </div>
+    <div class="mig-card reveal delay-1">
+      <span class="n">02 · Styles</span>
+      <h3>Use <code>brand.css</code> as-is.</h3>
+      <p>All colour tokens, type scale, spacing, and component styles are in one file. Copy it into the project. The design system section above documents every rule.</p>
+    </div>
+    <div class="mig-card reveal">
+      <span class="n">03 · Pages</span>
+      <h3>One template per page type.</h3>
+      <p>Eight pages, three templates: editorial (Home, About, Journal), grid (Team, Partnerships), and form (Contact, Become a member, Memberships). Copy the HTML structure from each mockup.</p>
+    </div>
+    <div class="mig-card reveal delay-1">
+      <span class="n">04 · Navigation</span>
+      <h3>Floating pill nav on every page.</h3>
+      <p>The nav is a fixed-position pill centred at top. Logo dot in the middle, six links split around it. A separate "Join" pill sits alongside. Code is in each mockup's header.</p>
+    </div>
+    <div class="mig-card reveal">
+      <span class="n">05 · Forms</span>
+      <h3>Contact and Become a member use Formspree.</h3>
+      <p>Both forms POST to Formspree. Replace the placeholder ID (<code>xyzplaceholder</code>) in each form's <code>action</code> attribute with a real Formspree form ID. Fields have <code>name</code> attributes and HTML5 validation.</p>
+    </div>
+    <div class="mig-card reveal delay-1">
+      <span class="n">06 · Payments</span>
+      <h3>Stripe for membership checkout.</h3>
+      <p>The "Become a member" page has a three-step wizard with a sticky order summary. Wire step 3 to Stripe Checkout or Stripe Elements. Two products: Individual (CHF 300/yr) and Corporate (from CHF 15k/yr).</p>
+    </div>
+    <div class="mig-card reveal">
+      <span class="n">07 · Content</span>
+      <h3>CMS content types to create.</h3>
+      <p>Team Member (name, role, portrait, LinkedIn, sector). Journal Entry (title, date, body, category). Partnership (name, logo, tier, case study). Membership Tier (name, price, features).</p>
+    </div>
+    <div class="mig-card reveal delay-1">
+      <span class="n">08 · Hosting</span>
+      <h3>Deploy to Vercel, Netlify, or GitHub Pages.</h3>
+      <p>Static output, no server required. Connect the Git repo, set build command, deploy. Add a custom domain and SSL is automatic. Current staging is on GitHub Pages.</p>
+    </div>
+  </div>
+
+  <div class="mig-note">
+    <b>Timeline estimate:</b> A developer familiar with the chosen stack can ship a production-ready site in 2–3 weeks. The mockups are pixel-complete — no design decisions left to make. The CMS setup adds another 2–3 days depending on content migration.
+  </div>
+</div></section>
+
+  </div>
+</div>
+
 <!-- ========== PAGE MAP ========== -->
 <div class="sec-wrap" data-sec="pages">
   <button class="sec-toggle" aria-label="Collapse section" aria-expanded="true"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
   <div class="sec-body">
 <section class="pages" id="pages"><div class="container">
   <div class="pm-head">
-    <div class="eyebrow"><span class="bar"></span><span class="caption">05 · The eight pages</span></div>
+    <div class="eyebrow"><span class="bar"></span><span class="caption">06 · The eight pages</span></div>
     <h2 class="section-h2">Eight pages, <span class="emph">one path.</span></h2>
     <p>Click any card to open the full mockup. Discover · Decide · Convert — left-to-right.</p>
   </div>
 
   <div class="funnel">
-    <div class="stage"><span class="n">Discover</span><h3>Meet the network.</h3><p>Home · About · Team · Journal — trust and interest, in under ninety seconds.</p></div>
-    <div class="stage"><span class="n">Decide</span><h3>Price, fit, and proof.</h3><p>Memberships · Partnerships — one screen each, one decision each.</p></div>
-    <div class="stage"><span class="n">Convert</span><h3>Two minutes to member.</h3><p>Contact · Become a member — audience-aware forms, transparent total, Stripe.</p></div>
+    <div class="stage"><span class="n">Discover</span><h3>Meet the network.</h3><p>Home, About, Team, Journal — build trust and interest.</p></div>
+    <div class="stage"><span class="n">Decide</span><h3>See the offer.</h3><p>Memberships and Partnerships — pricing and proof on one screen each.</p></div>
+    <div class="stage"><span class="n">Convert</span><h3>Join in two minutes.</h3><p>Contact and Become a member — simple forms, clear pricing, Stripe checkout.</p></div>
   </div>
 
   <div class="page-grid">
     <a class="page-card reveal" href="m4b-home-mockup.html">
       <span class="stage-tag">01 · Discover</span><h2>Home</h2>
-      <p>Full-bleed hero, three audience paths, named testimonials, press strip.</p>
+      <p>Full-width hero, three audience paths, testimonials, and press mentions.</p>
       <span class="go">Open the mockup</span>
     </a>
     <a class="page-card reveal delay-1" href="m4b-about-mockup.html">
       <span class="stage-tag">01 · Discover</span><h2>About</h2>
-      <p>The problem, the shift, the timeline, a signed founders' note.</p>
+      <p>The problem, the mission, timeline, and a founders' note.</p>
       <span class="go">Open the mockup</span>
     </a>
     <a class="page-card reveal" href="m4b-team-mockup.html">
       <span class="stage-tag">01 · Discover</span><h2>Team</h2>
-      <p>Masonry of named portraits — role, sector, LinkedIn.</p>
+      <p>Named portraits with role, sector, and LinkedIn links.</p>
       <span class="go">Open the mockup</span>
     </a>
     <a class="page-card reveal delay-1" href="m4b-journal-mockup.html">
       <span class="stage-tag">01 · Discover</span><h2>Journal</h2>
-      <p>Essays, events, member wins — editorial credibility in one place.</p>
+      <p>Articles, events, and member updates in one place.</p>
       <span class="go">Open the mockup</span>
     </a>
     <a class="page-card reveal" href="m4b-memberships-mockup.html">
@@ -578,7 +688,7 @@
     </a>
     <a class="page-card reveal delay-1" href="m4b-partnerships-mockup.html">
       <span class="stage-tag">02 · Decide</span><h2>Partnerships</h2>
-      <p>Logo wall, three tiers, four case stories — one slot reserved for the next partner.</p>
+      <p>Partner logos, three tiers, and four case stories.</p>
       <span class="go">Open the mockup</span>
     </a>
     <a class="page-card reveal" href="m4b-contact-mockup.html">
@@ -603,7 +713,7 @@
   <div class="sec-body">
 <section class="close"><div class="close-inner">
   <h2>Ready when <span class="emph">you are.</span></h2>
-  <p>A clickable prototype, a design system, and every page in one archive — ready to hand to engineering.</p>
+  <p>A clickable prototype, a design system, and all eight pages — ready to hand to a developer.</p>
   <div class="cta-row">
     <a class="btn btn-on-dark" href="m4b-home-mockup.html"><span class="dot"></span>Start with the home page</a>
     <a class="btn btn-outline-light" href="m4b-contact-mockup.html">Send feedback</a>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 42" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Von Peach">
+  <defs>
+    <style type="text/css"><![CDATA[
+      @import url('https://fonts.googleapis.com/css2?family=Anton&amp;display=swap');
+      .vp{font-family:'Anton','Impact','Oswald','Arial Narrow',sans-serif;font-weight:400;font-size:44px;letter-spacing:-0.5px;fill:#131313;}
+    ]]></style>
+  </defs>
+  <g transform="translate(2,34) skewX(-10)">
+    <text class="vp">VON PEACH</text>
+  </g>
+</svg>
