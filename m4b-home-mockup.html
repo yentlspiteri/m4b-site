@@ -52,17 +52,23 @@
     font-size:15px;line-height:1.55;color:rgba(244,244,249,.82);
     max-width:340px;margin:0;
   }
-  .hero-right .small-label{
-    font-size:11px;letter-spacing:.22em;text-transform:uppercase;
-    color:rgba(244,244,249,.55);font-weight:500;
+  .hero-sub{
+    font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;
+    letter-spacing:.22em;text-transform:uppercase;color:var(--mint);margin:0;
   }
-  .hero-cta-row{display:flex;gap:12px;flex-wrap:wrap;}
-  .hero-cta-row .btn-primary{background:var(--mint);color:var(--onyx);}
-  .hero-cta-row .btn-ghost-light{
-    border:1px solid rgba(244,244,249,.38);color:var(--paper);
-    background:transparent;
+  .hero-doors{display:flex;flex-direction:column;gap:0;}
+  .door{
+    display:flex;align-items:center;gap:14px;
+    padding:16px 0;border-bottom:1px solid rgba(244,244,249,.12);
+    text-decoration:none;color:var(--paper);
+    transition:padding-left .2s,color .2s;
   }
-  .hero-cta-row .btn-ghost-light:hover{border-color:var(--paper);}
+  .door:first-child{border-top:1px solid rgba(244,244,249,.12);}
+  .door:hover{padding-left:8px;color:var(--mint);}
+  .door-n{font-family:"Poppins",sans-serif;font-weight:600;font-size:10px;letter-spacing:.22em;color:var(--mint);flex:0 0 auto;}
+  .door-label{font-family:"Poppins",sans-serif;font-weight:300;font-size:15px;flex:1;}
+  .door-go{font-size:14px;color:var(--mint);opacity:.6;transition:opacity .2s,transform .2s;}
+  .door:hover .door-go{opacity:1;transform:translateX(4px);}
 
   .hero-spark{
     position:absolute;right:48px;top:52%;z-index:3;
@@ -108,6 +114,17 @@
   /* Paths — staggered asymmetric grid, rounded cards */
   .paths{padding:140px 0 160px;background:var(--paper);}
   .paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;}
+
+  /* Explore section — replaces old paths + story with simple nav cards */
+  .explore{padding:96px 0;background:var(--paper);border-top:1px solid var(--line);}
+  .explore-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .explore-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:32px 28px;display:flex;flex-direction:column;gap:10px;text-decoration:none;transition:transform .22s cubic-bezier(.2,.6,.2,1),border-color .2s,box-shadow .22s;}
+  .explore-card:hover{transform:translateY(-3px);border-color:var(--onyx);box-shadow:0 14px 40px rgba(19,19,19,.08);}
+  .explore-card h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:16px;margin:0;color:var(--onyx);}
+  .explore-card p{font-size:13px;line-height:1.55;color:#444;margin:0;font-weight:300;}
+  .explore-card .go{margin-top:auto;font-size:12px;font-weight:500;color:var(--onyx);}
+  .explore-card .go::after{content:" →";color:var(--mint);font-weight:600;display:inline-block;transition:transform .2s;}
+  .explore-card:hover .go::after{transform:translateX(4px);}
   .path{background:#fff;border:1px solid var(--line);border-radius:6px;padding:40px 32px 32px;display:flex;flex-direction:column;min-height:400px;transition:transform .22s cubic-bezier(.2,.6,.2,1),box-shadow .22s,border-color .22s;}
   .path:nth-child(2){margin-top:72px;background:var(--onyx);color:var(--paper);border-color:transparent;}
   .path:nth-child(3){margin-top:24px;}
@@ -245,11 +262,11 @@
       <h1 class="hero-mega word-reveal">Boardrooms, meet your <span class="emph">next leaders.</span></h1>
     </div>
     <div class="hero-right reveal delay-2">
-      <span class="small-label">Cohort '26 · Applications close 30 May</span>
-      <p>A global community where the next generation of directors is paired with the operators already sitting in the seat — and the companies quietly looking for them.</p>
-      <div class="hero-cta-row">
-        <a class="btn btn-primary" href="m4b-become-member-mockup.html"><span class="dot"></span>Apply to join</a>
-        <a class="btn btn-ghost-light" href="m4b-partnerships-mockup.html">Partner with us</a>
+      <p class="hero-sub">Pick your path.</p>
+      <div class="hero-doors">
+        <a class="door" href="m4b-memberships-mockup.html"><span class="door-n">01</span><span class="door-label">I want a board seat</span><span class="door-go">→</span></a>
+        <a class="door" href="m4b-team-mockup.html"><span class="door-n">02</span><span class="door-label">I'm a sitting director</span><span class="door-go">→</span></a>
+        <a class="door" href="m4b-partnerships-mockup.html"><span class="door-n">03</span><span class="door-label">I represent a company</span><span class="door-go">→</span></a>
       </div>
     </div>
   </div>
@@ -274,14 +291,14 @@
   <span class="item"><b>500+</b> members</span><span class="sep">·</span>
   <span class="item"><b>15</b> countries</span><span class="sep">·</span>
   <span class="item"><b>48</b> partnered boards</span><span class="sep">·</span>
-  <span class="item"><b>Cohort '26</b> — applications close 30 May</span><span class="sep">·</span>
+  <span class="item"><b>Applications</b> now open</span><span class="sep">·</span>
   <span class="item"><b>12</b> sitting directors mentoring</span><span class="sep">·</span>
   <span class="item"><b>3</b> new partnerships in Q1</span><span class="sep">·</span>
   <!-- duplicate for seamless loop -->
   <span class="item"><b>500+</b> members</span><span class="sep">·</span>
   <span class="item"><b>15</b> countries</span><span class="sep">·</span>
   <span class="item"><b>48</b> partnered boards</span><span class="sep">·</span>
-  <span class="item"><b>Cohort '26</b> — applications close 30 May</span><span class="sep">·</span>
+  <span class="item"><b>Applications</b> now open</span><span class="sep">·</span>
   <span class="item"><b>12</b> sitting directors mentoring</span><span class="sep">·</span>
   <span class="item"><b>3</b> new partnerships in Q1</span><span class="sep">·</span>
 </div></div>
@@ -292,30 +309,19 @@
   <div class="stat reveal delay-2"><div class="num"><span class="counter" data-target="75">0</span><span class="unit">%</span></div><p class="body-p">Of the global workforce is now millennial or Gen Z.</p><span class="caption src">Deloitte Global, 2025</span></div>
 </div></section>
 
-<section class="paths"><div class="container">
-  <div class="section-head"><h2 class="section-h2">Three ways <span class="emph">into the room.</span></h2></div>
-  <div class="paths-grid">
-    <a class="path reveal" href="m4b-memberships-mockup.html"><div class="ic"><img src="assets/icons/growth-steps.png" alt=""/></div><div class="n">01</div><h3>For aspiring directors.</h3><p>Board-readiness assessment, a sitting-director mentor, and a shortlist of open seats our partners are quietly filling.</p><span class="go">Read the member path</span></a>
-    <a class="path reveal delay-1" href="m4b-team-mockup.html"><div class="ic"><img src="assets/icons/collaboration.png" alt=""/></div><div class="n">02</div><h3>For sitting directors.</h3><p>Mentor a cohort, co-host an off-the-record session, and keep a pulse on how the next generation sees governance.</p><span class="go">Read the mentor path</span></a>
-    <a class="path reveal delay-2" href="m4b-partnerships-mockup.html"><div class="ic"><img src="assets/icons/bridge-building.png" alt=""/></div><div class="n">03</div><h3>For corporates.</h3><p>Recruit younger directors, sponsor a cohort, or partner on a governance series your board will actually read.</p><span class="go">Read the partner path</span></a>
+<section class="explore"><div class="container">
+  <div class="section-head"><h2 class="section-h2">Explore the <span class="emph">network.</span></h2></div>
+  <div class="explore-grid">
+    <a class="explore-card reveal" href="m4b-about-mockup.html"><h3>About</h3><p>Why this network exists and how it works.</p><span class="go">Read more</span></a>
+    <a class="explore-card reveal delay-1" href="m4b-team-mockup.html"><h3>Team</h3><p>The directors and operators behind M4B.</p><span class="go">Meet the team</span></a>
+    <a class="explore-card reveal delay-2" href="m4b-memberships-mockup.html"><h3>Memberships</h3><p>What you get and what it costs.</p><span class="go">See pricing</span></a>
   </div>
-</div></section>
-
-<section class="story"><div class="container story-grid">
-  <div class="reveal">
-    <span class="caption" style="color:rgba(244,244,249,.55);">The case for a new kind of director</span>
-    <h2 style="margin-top:24px;">The risks have changed. The room <span class="emph">hasn't.</span></h2>
-    <p>Climate, cyber, AI governance, workforce composition — the questions a board is now expected to answer are not the questions most boards were assembled to answer.</p>
-    <p style="margin-top:12px;">Millennials4Boards exists to close that gap, deliberately and with the people already sitting in the seat.</p>
-    <div class="pull">We don't want to disrupt the boardroom. We want to <span class="emph">finish building it.</span></div>
-  </div>
-  <div class="story-figure reveal delay-1"><img src="assets/photos/portrait-placeholder.png" alt=""/></div>
 </div></section>
 
 <section class="testi"><div class="container">
-  <div class="section-head"><h2 class="section-h2">Members, <span class="emph">in their own words.</span></h2></div>
+  <div class="section-head"><h2 class="section-h2">What members <span class="emph">say.</span></h2></div>
   <div class="testi-grid">
-    <div class="quote reveal"><blockquote>"The mentor pairing made the difference between reading about governance and doing it."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Olivia Kinghorst</b><span>Management Board · Cohort '24</span></div></div></div>
+    <div class="quote reveal"><blockquote>"The mentor pairing made the difference between reading about governance and doing it."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Olivia Kinghorst</b><span>Management Board · NED, SaaS</span></div></div></div>
     <div class="quote reveal delay-1"><blockquote>"I've chaired boards for twenty years. This network reminded me why I started."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Stephan Hillert</b><span>Management Board · Chair</span></div></div></div>
     <div class="quote reveal delay-2"><blockquote>"We hired our first under-forty NED within a quarter of partnering."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Rosanna Cubelli</b><span>Management Board · Founder</span></div></div></div>
   </div>
@@ -324,9 +330,9 @@
 <section class="rail"><div class="container">
   <div class="section-head"><h2 class="section-h2">From the <span class="emph">Journal.</span></h2></div>
   <div class="rail-grid">
-    <a href="m4b-journal-mockup.html" class="art feat"><div class="cat">Partnership · Apr 2026</div><h3>HeadsQuarters &amp; M4B: the first under-forty director shortlist in DACH.</h3><p>A new recruiting lane for boards that have, frankly, run out of ideas on where to look.</p><span class="more">Read the announcement →</span></a>
-    <a href="m4b-journal-mockup.html" class="art"><div class="cat">Essay · Mar 2026</div><h3>What a board needs to know about AI governance.</h3><p>Seven questions we wish every director was being asked — and the ones they are instead.</p><span class="more">Read →</span></a>
-    <a href="m4b-journal-mockup.html" class="art"><div class="cat">Member win · Feb 2026</div><h3>From program to first NED seat, in nine months.</h3><p>How one '25 cohort member landed her first non-exec role — and what she negotiated on day one.</p><span class="more">Read →</span></a>
+    <a href="m4b-journal-mockup.html" class="art feat"><div class="cat">Partnership · Apr 2026 · 3 min read</div><h3>HeadsQuarters &amp; M4B: the first under-forty director shortlist in DACH.</h3><p>A new recruiting lane for boards that have, frankly, run out of ideas on where to look.</p><span class="more">Read the announcement →</span></a>
+    <a href="m4b-journal-mockup.html" class="art"><div class="cat">Essay · Mar 2026 · 5 min read</div><h3>What a board needs to know about AI governance.</h3><p>Seven questions we wish every director was being asked — and the ones they are instead.</p><span class="more">Read →</span></a>
+    <a href="m4b-journal-mockup.html" class="art"><div class="cat">Member win · Feb 2026 · 4 min read</div><h3>From program to first NED seat, in nine months.</h3><p>How one member landed her first non-exec role — and what she negotiated on day one.</p><span class="more">Read →</span></a>
   </div>
 </div></section>
 
@@ -366,8 +372,8 @@
 </section>
 
 <section class="final"><div class="container final-inner">
-  <h2>Welcoming a new generation to the <span class="emph">table.</span></h2>
-  <div><p>If you are ready to apply, mentor, or partner — the first conversation takes twenty minutes.</p><div class="cta-row"><a class="btn btn-on-dark" href="m4b-become-member-mockup.html"><span class="dot"></span>Apply to join</a><a class="btn btn-outline-light" href="m4b-contact-mockup.html">Talk to us</a></div></div>
+  <h2>Ready to join the <span class="emph">table?</span></h2>
+  <div><div class="cta-row"><a class="btn btn-on-dark" href="m4b-become-member-mockup.html"><span class="dot"></span>Apply to join</a><a class="btn btn-outline-light" href="m4b-contact-mockup.html">Talk to us</a></div></div>
 </div></section>
 
 <footer><div class="container">
@@ -377,7 +383,7 @@
     <div><h4>Company</h4><a href="m4b-about-mockup.html">About</a><a href="m4b-team-mockup.html">Team</a><a href="m4b-partnerships-mockup.html">Partnerships</a><a href="m4b-journal-mockup.html">Press</a><a href="m4b-contact-mockup.html">Contact</a></div>
     <div><h4>Legal</h4><a href="#">Imprint</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
   </div>
-  <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept v0.9 · Brand-strict</span></div>
+  <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Brand-strict</span></div>
 </div></footer>
 
 </div><!-- /page-body -->
