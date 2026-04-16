@@ -48,9 +48,31 @@
   .sb-content .who{margin-top:20px;}
   .sb-content .who b{font-weight:600;}
 
-  .press-strip{padding:80px 0;}
-  .press-logos{display:grid;grid-template-columns:repeat(5,1fr);gap:48px;align-items:center;padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:32px;}
-  .press-logos span{font-family:"Poppins",sans-serif;font-weight:400;font-size:14px;color:#555;text-align:center;}
+  .press-strip{padding:80px 0 40px;}
+  .press-marquee{padding:36px 0 40px;overflow:hidden;margin-top:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    -webkit-mask-image:linear-gradient(to right,transparent 0,#000 120px,#000 calc(100% - 120px),transparent 100%);
+            mask-image:linear-gradient(to right,transparent 0,#000 120px,#000 calc(100% - 120px),transparent 100%);}
+  .press-marquee .marquee-track{gap:72px;align-items:center;}
+  .press-logo{display:inline-flex;align-items:center;color:var(--onyx);opacity:.55;transition:opacity .25s;white-space:nowrap;line-height:1;}
+  .press-logo:hover{opacity:1;}
+  .press-logo .lg-ft{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:#BE3A34;font-style:italic;}
+  .press-logo .lg-hb{font-family:Georgia,serif;font-weight:700;font-size:22px;letter-spacing:-0.005em;}
+  .press-logo .lg-nzz{font-family:Georgia,serif;font-weight:800;font-size:20px;letter-spacing:0.02em;}
+  .press-logo .lg-bbg{font-family:"Poppins",sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.02em;}
+  .press-logo .lg-reu{font-family:"Poppins",sans-serif;font-weight:700;font-size:15px;letter-spacing:0.22em;}
+  .press-logo .lg-eco{font-family:Georgia,serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;background:#BE3A34;color:#fff;padding:5px 12px;}
+  .press-logo .lg-eco em{font-style:italic;font-weight:400;margin-right:5px;}
+  .press-logo .lg-faz{font-family:Georgia,serif;font-weight:700;font-size:19px;font-variant:small-caps;letter-spacing:0.04em;}
+  .press-logo .lg-bilanz{font-family:"Poppins",sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.01em;text-transform:uppercase;}
+  .press-logo .lg-fbs{font-family:Georgia,serif;font-weight:900;font-size:23px;letter-spacing:-0.025em;}
+  .press-logo .lg-sz{font-family:Georgia,serif;font-weight:700;font-size:20px;color:#005AA7;letter-spacing:-0.005em;}
+  .press-logo .lg-fuw{font-family:Georgia,serif;font-weight:600;font-size:18px;letter-spacing:-0.005em;}
+  .press-logo .lg-mm{font-family:"Poppins",sans-serif;font-weight:600;font-size:18px;letter-spacing:-0.01em;font-style:italic;}
+  .press-logo .lg-leche{font-family:"Poppins",sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;text-transform:uppercase;}
+  @media (prefers-reduced-motion: reduce){
+    .press-marquee{mask-image:none;-webkit-mask-image:none;}
+    .press-marquee .marquee-track{flex-wrap:wrap;justify-content:center;min-width:0;gap:40px 56px;}
+  }
 
   .newsletter{padding:100px 0;text-align:center;}
   .newsletter h3{font-family:"Poppins",sans-serif;font-weight:300;font-size:40px;letter-spacing:-0.005em;margin:0 0 14px;line-height:1.0;}
@@ -113,10 +135,40 @@
   <div class="sb-content"><span class="caption">Member story</span><h2 class="section-h2">"The boardroom got twenty years younger the day I walked in. <span class="emph">That was the point.</span>"</h2><p class="body-p">Olivia Kinghorst joined the 2024 cohort with a question, not a CV. Nine months later she took her first NED seat at a European SaaS company.</p><div class="who"><b>Olivia Kinghorst</b> · <span style="color:var(--muted);">NED · Cohort '24 · Zurich</span></div></div>
 </div></section>
 
-<section class="press-strip"><div class="container">
-  <div class="section-head" style="margin-bottom:16px;"><h2 class="section-h2">In the <span class="emph">press.</span></h2><p class="body-p side">Selected mentions.</p></div>
-  <div class="press-logos"><span>Financial Times</span><span>Handelsblatt</span><span>Neue Zürcher Zeitung</span><span>Bilanz</span><span>Forbes DACH</span></div>
-</div></section>
+<section class="press-strip reveal">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:16px;"><h2 class="section-h2">In the <span class="emph">press.</span></h2><p class="body-p side">Selected mentions across European business media.</p></div>
+  </div>
+  <div class="press-marquee marquee"><div class="marquee-track">
+    <a class="press-logo"><span class="lg-ft">Financial Times</span></a>
+    <a class="press-logo"><span class="lg-hb">Handelsblatt</span></a>
+    <a class="press-logo"><span class="lg-nzz">Neue Zürcher Zeitung</span></a>
+    <a class="press-logo"><span class="lg-bilanz">Bilanz</span></a>
+    <a class="press-logo"><span class="lg-fbs">Forbes</span></a>
+    <a class="press-logo"><span class="lg-bbg">Bloomberg</span></a>
+    <a class="press-logo"><span class="lg-faz">Frankfurter Allgemeine</span></a>
+    <a class="press-logo"><span class="lg-eco"><em>The</em>Economist</span></a>
+    <a class="press-logo"><span class="lg-reu">REUTERS</span></a>
+    <a class="press-logo"><span class="lg-sz">Süddeutsche Zeitung</span></a>
+    <a class="press-logo"><span class="lg-fuw">Finanz und Wirtschaft</span></a>
+    <a class="press-logo"><span class="lg-mm">Manager Magazin</span></a>
+    <a class="press-logo"><span class="lg-leche">Les Echos</span></a>
+    <!-- duplicate for seamless loop -->
+    <a class="press-logo" aria-hidden="true"><span class="lg-ft">Financial Times</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-hb">Handelsblatt</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-nzz">Neue Zürcher Zeitung</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-bilanz">Bilanz</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-fbs">Forbes</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-bbg">Bloomberg</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-faz">Frankfurter Allgemeine</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-eco"><em>The</em>Economist</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-reu">REUTERS</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-sz">Süddeutsche Zeitung</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-fuw">Finanz und Wirtschaft</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-mm">Manager Magazin</span></a>
+    <a class="press-logo" aria-hidden="true"><span class="lg-leche">Les Echos</span></a>
+  </div></div>
+</section>
 
 <section class="newsletter"><div class="container">
   <span class="caption">Subscribe</span>

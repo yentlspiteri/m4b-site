@@ -4,8 +4,23 @@
 <style>
   .logo-wall{padding:0 0 100px;}
   .wall-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--line);}
-  .slot{background:#fff;padding:44px 20px;text-align:center;font-family:"Poppins",sans-serif;font-weight:400;font-size:16px;color:#444;letter-spacing:-0.01em;}
-  .slot.dim{color:#bbb;}
+  .slot{background:#fff;padding:44px 20px;display:flex;align-items:center;justify-content:center;min-height:120px;transition:background .2s;}
+  .slot:hover{background:var(--paper);}
+  .slot.dim{color:#bbb;font-family:"Poppins",sans-serif;font-weight:400;font-size:13px;letter-spacing:.06em;text-align:center;}
+  /* Typographic wordmarks */
+  .lg{font-family:"Poppins",sans-serif;color:#1a1a1a;line-height:1;white-space:nowrap;}
+  .lg-hq{font-weight:600;font-size:20px;letter-spacing:-0.02em;}
+  .lg-hq em{font-style:normal;color:var(--mint);font-weight:600;}
+  .lg-wbn{font-weight:300;font-size:14px;letter-spacing:.18em;text-transform:uppercase;}
+  .lg-wbn b{font-weight:600;color:#1a1a1a;}
+  .lg-fln{font-weight:500;font-size:18px;letter-spacing:-0.01em;font-style:italic;}
+  .lg-fln::before{content:"◆ ";font-style:normal;color:var(--brick);font-size:10px;vertical-align:middle;margin-right:4px;}
+  .lg-ez{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:22px;letter-spacing:-0.01em;color:#222;}
+  .lg-ez span{font-weight:700;}
+  .lg-ss{font-weight:700;font-size:14px;letter-spacing:.22em;text-transform:uppercase;}
+  .lg-ss::after{content:" ·";color:var(--mint);}
+  .lg-del{font-weight:700;font-size:22px;letter-spacing:-0.02em;color:#111;}
+  .lg-del span{color:var(--mint);}
 
   .why{padding:0 0 120px;}
   .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
@@ -88,12 +103,12 @@
 
 <section class="logo-wall"><div class="container">
   <div class="wall-grid">
-    <div class="slot">HeadsQuarters</div>
-    <div class="slot">Worldwide Broker Network</div>
-    <div class="slot">Female Leaders Network</div>
-    <div class="slot">Egon Zehnder</div>
-    <div class="slot">Spencer Stuart</div>
-    <div class="slot">Deloitte DACH</div>
+    <div class="slot"><span class="lg lg-hq">Heads<em>Quarters</em></span></div>
+    <div class="slot"><span class="lg lg-wbn"><b>WBN</b> · Worldwide Broker Network</span></div>
+    <div class="slot"><span class="lg lg-fln">Female Leaders Network</span></div>
+    <div class="slot"><span class="lg lg-ez">Egon <span>Zehnder</span></span></div>
+    <div class="slot"><span class="lg lg-ss">Spencer Stuart</span></div>
+    <div class="slot"><span class="lg lg-del">Deloitte<span>.</span></span></div>
     <div class="slot dim">+ Your logo</div>
     <div class="slot dim">+ Your logo</div>
   </div>

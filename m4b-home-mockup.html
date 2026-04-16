@@ -91,22 +91,18 @@
   .ticker .item b{color:var(--mint);font-weight:600;font-size:14px;letter-spacing:-0.005em;text-transform:none;}
   .ticker .sep{opacity:.3;}
 
-  /* Stats — asymmetric: lead stat large, two supporting stats stepped down */
+  /* Stats — three even columns, baseline-aligned numbers */
   .stats{padding:120px 0;border-bottom:1px solid var(--line);background:var(--paper);}
-  .stats-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:48px;align-items:start;}
-  .stat{padding-right:24px;}
-  .stat:nth-child(2){padding-top:48px;}
-  .stat:nth-child(3){padding-top:96px;}
-  .stat .num{font-family:"Poppins",sans-serif;font-weight:600;font-size:76px;line-height:.94;letter-spacing:-0.035em;color:var(--onyx);display:flex;align-items:flex-start;}
-  .stat:nth-child(1) .num{font-size:108px;}
-  .stat .num sup{font-size:.22em;font-weight:400;color:var(--muted);margin-left:6px;margin-top:.22em;}
-  .stat .body-p{margin-top:16px;max-width:260px;}
+  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;align-items:start;}
+  .stat{padding-right:12px;display:flex;flex-direction:column;}
+  .stat .num{font-family:"Poppins",sans-serif;font-weight:600;font-size:92px;line-height:1;letter-spacing:-0.035em;color:var(--onyx);display:flex;align-items:baseline;gap:8px;}
+  .stat .num .unit{font-size:20px;font-weight:400;color:var(--muted);letter-spacing:-0.005em;line-height:1;}
+  .stat .body-p{margin-top:20px;max-width:280px;}
   .stat .src{margin-top:10px;}
   @media (max-width: 1100px){
     .stats-grid{grid-template-columns:1fr;gap:40px;}
-    .stat:nth-child(2),.stat:nth-child(3){padding-top:0;}
-    .stat:nth-child(1) .num{font-size:68px;}
-    .stat .num{font-size:56px;}
+    .stat .num{font-size:64px;}
+    .stat .num .unit{font-size:16px;}
   }
 
   /* Paths — staggered asymmetric grid, rounded cards */
@@ -292,9 +288,9 @@
 </div></div>
 
 <section class="stats"><div class="container stats-grid">
-  <div class="stat reveal"><div class="num"><span class="counter" data-target="57">0</span><sup>yrs</sup></div><p class="body-p">Average age of a newly appointed European board director.</p><span class="caption src">Egon Zehnder, 2024</span></div>
-  <div class="stat reveal delay-1"><div class="num"><span class="counter" data-target="5">0</span><sup>%</sup></div><p class="body-p">Share of S&amp;P 500 directors under the age of fifty.</p><span class="caption src">Spencer Stuart Board Index</span></div>
-  <div class="stat reveal delay-2"><div class="num"><span class="counter" data-target="75">0</span><sup>%</sup></div><p class="body-p">Of the global workforce is now millennial or Gen Z.</p><span class="caption src">Deloitte Global, 2025</span></div>
+  <div class="stat reveal"><div class="num"><span class="counter" data-target="57">0</span><span class="unit">yrs</span></div><p class="body-p">Average age of a newly appointed European board director.</p><span class="caption src">Egon Zehnder, 2024</span></div>
+  <div class="stat reveal delay-1"><div class="num"><span class="counter" data-target="5">0</span><span class="unit">%</span></div><p class="body-p">Share of S&amp;P 500 directors under the age of fifty.</p><span class="caption src">Spencer Stuart Board Index</span></div>
+  <div class="stat reveal delay-2"><div class="num"><span class="counter" data-target="75">0</span><span class="unit">%</span></div><p class="body-p">Of the global workforce is now millennial or Gen Z.</p><span class="caption src">Deloitte Global, 2025</span></div>
 </div></section>
 
 <section class="paths"><div class="container">
