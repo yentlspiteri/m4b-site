@@ -2,120 +2,122 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/brand.css"/>
 <style>
-  body{background:#0c0c0c;}
-
-  /* ============ COVER HERO ============ */
+  /* ============ COVER — paper, editorial ============ */
   .cover{
-    position:relative;min-height:100vh;
-    background:var(--onyx);color:var(--paper);
-    overflow:hidden;display:flex;flex-direction:column;
+    position:relative;padding:140px 0 80px;background:var(--paper);overflow:hidden;
   }
-  .cover-bg{position:absolute;inset:0;z-index:0;opacity:.28;}
-  .cover-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);}
-  .cover-veil{position:absolute;inset:0;z-index:1;
-    background:linear-gradient(180deg, rgba(12,12,12,.65) 0%, rgba(12,12,12,.4) 45%, rgba(12,12,12,.85) 100%);}
-  .cover-inner{position:relative;z-index:2;flex:1;max-width:1440px;margin:0 auto;width:100%;padding:180px 48px 64px;}
-  .cover-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:36px;}
+  .cover-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:end;max-width:1280px;margin:0 auto;padding:0 40px;}
+  .cover-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
   .cover-eyebrow .bar{width:28px;height:1px;background:var(--mint);}
-  .cover-eyebrow .caption{color:rgba(244,244,249,.72);}
   .cover h1{
     font-family:"Poppins",sans-serif;font-weight:300;
-    font-size:clamp(48px,7vw,120px);line-height:.98;letter-spacing:-0.03em;
-    margin:0;max-width:14ch;color:var(--paper);
+    font-size:clamp(40px,5.2vw,76px);line-height:1.02;letter-spacing:-0.02em;
+    margin:0;max-width:14ch;color:var(--onyx);
   }
   .cover h1 .emph{font-weight:600;color:var(--mint);}
   .cover-lede{
     font-family:"Poppins",sans-serif;font-weight:300;
-    font-size:20px;line-height:1.55;color:rgba(244,244,249,.78);
-    max-width:560px;margin:40px 0 0;
+    font-size:17px;line-height:1.55;color:#2a2a2a;
+    max-width:440px;margin:28px 0 0;
   }
-  .cover-cta-row{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap;}
-  .cover-cta-row .btn-primary{background:var(--mint);color:var(--onyx);}
-  .cover-cta-row .btn-ghost-light{border:1px solid rgba(244,244,249,.4);color:var(--paper);background:transparent;}
-
-  .cover-foot{
-    position:relative;z-index:2;max-width:1440px;margin:0 auto;width:100%;
-    padding:22px 48px;border-top:1px solid rgba(244,244,249,.14);
-    display:flex;justify-content:space-between;font-size:12px;
-    color:rgba(244,244,249,.62);font-weight:300;letter-spacing:.04em;
+  .cover-lede b{font-weight:500;color:var(--onyx);}
+  .cover-cta-row{display:flex;gap:10px;margin-top:28px;flex-wrap:wrap;}
+  .cover-cta-row .btn{font-size:12px;padding:12px 20px;}
+  .cover-figure{
+    aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:var(--mint);
   }
-  .cover-foot .right{letter-spacing:.22em;text-transform:uppercase;font-weight:500;}
+  .cover-figure img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);}
+  .cover-meta{
+    display:flex;justify-content:space-between;margin-top:18px;
+    font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;
+  }
 
-  /* ============ REST OF PAGE ============ */
-  .page-body{background:var(--paper);position:relative;z-index:3;}
+  .cover-bar{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:18px 0;background:var(--paper);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500;
+  }
+  .cover-bar-inner{max-width:1280px;margin:0 auto;padding:0 40px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+  .cover-bar b{color:var(--onyx);font-weight:600;}
 
-  /* Problem section: what we saw on the current site */
-  .audit{padding:120px 0;background:var(--paper);}
-  .audit .lead{max-width:820px;margin:0 0 64px;}
-  .audit h2{margin:0 0 20px;}
-  .audit .q{font-family:"Poppins",sans-serif;font-weight:300;font-size:21px;line-height:1.5;color:#2a2a2a;margin:0;max-width:720px;}
-  .audit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .audit-card{background:var(--paper);padding:44px 40px;display:flex;flex-direction:column;gap:14px;}
+  /* ============ AUDIT ============ */
+  .audit{padding:96px 0 48px;background:var(--paper);}
+  .audit .lead{max-width:760px;margin:0 0 56px;}
+  .audit h2{margin:0 0 16px;font-size:clamp(28px,3vw,40px);}
+  .audit .q{font-family:"Poppins",sans-serif;font-weight:300;font-size:17px;line-height:1.55;color:#2a2a2a;margin:0;max-width:700px;}
+  .audit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .audit-card{background:var(--paper);padding:32px 28px;display:flex;flex-direction:column;gap:12px;min-height:280px;}
   .audit-card .n{font-size:11px;font-weight:600;color:var(--mint);letter-spacing:.22em;text-transform:uppercase;}
-  .audit-card h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:26px;line-height:1.15;letter-spacing:-0.005em;margin:0;}
-  .audit-card p{font-size:15px;line-height:1.6;color:#333;margin:0;font-weight:300;}
-  .audit-card .quote{font-style:normal;font-size:13px;color:var(--muted);font-weight:300;border-left:2px solid var(--mint);padding-left:12px;margin-top:4px;line-height:1.5;}
+  .audit-card h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:20px;line-height:1.2;letter-spacing:-0.005em;margin:0;}
+  .audit-card p{font-size:14px;line-height:1.55;color:#333;margin:0;font-weight:300;}
+  .audit-card .quote{font-size:12px;color:var(--muted);font-weight:300;border-left:2px solid var(--mint);padding-left:10px;margin-top:auto;line-height:1.5;}
   .audit-card .quote b{color:var(--onyx);font-weight:600;}
 
-  /* Principles: the five rules that drive the redesign */
-  .principles{padding:120px 0;background:var(--onyx);color:var(--paper);}
-  .principles .section-head h2{color:var(--paper);}
-  .principles .section-head h2 .emph{color:var(--mint);}
-  .principles .side{color:rgba(244,244,249,.72);}
-  .p-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(244,244,249,.12);border-top:1px solid rgba(244,244,249,.12);border-bottom:1px solid rgba(244,244,249,.12);}
-  .p-card{background:var(--onyx);padding:40px 28px;display:flex;flex-direction:column;gap:14px;min-height:260px;}
-  .p-card .n{font-family:"Poppins",sans-serif;font-weight:600;font-size:14px;color:var(--mint);letter-spacing:-0.005em;}
-  .p-card h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:22px;line-height:1.15;letter-spacing:-0.005em;margin:0;color:var(--paper);}
-  .p-card p{font-size:14px;line-height:1.55;color:rgba(244,244,249,.72);margin:0;font-weight:300;}
+  /* ============ PRINCIPLES — paper with mint rules ============ */
+  .principles{padding:96px 0;background:var(--paper);border-top:1px solid var(--line);}
+  .p-head{max-width:760px;margin:0 0 48px;}
+  .p-head h2{font-size:clamp(28px,3vw,40px);margin:0 0 16px;}
+  .p-head p{font-size:16px;color:#333;max-width:540px;font-weight:300;line-height:1.55;margin:0;}
+  .p-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:32px;}
+  .p-card{padding:24px 0 0;border-top:1px solid var(--onyx);display:flex;flex-direction:column;gap:10px;}
+  .p-card .n{font-family:"Poppins",sans-serif;font-weight:600;font-size:12px;color:var(--mint);letter-spacing:.22em;text-transform:uppercase;}
+  .p-card h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:18px;line-height:1.2;letter-spacing:-0.005em;margin:0;color:var(--onyx);}
+  .p-card p{font-size:13px;line-height:1.55;color:#333;margin:0;font-weight:300;}
 
-  /* Before / after nav comparison */
-  .nav-before-after{padding:120px 0;background:var(--paper);border-top:1px solid var(--line);}
-  .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px;}
-  .ba{background:#fff;border:1px solid var(--line);border-radius:6px;padding:36px;display:flex;flex-direction:column;gap:18px;min-height:280px;}
-  .ba .label{color:var(--muted);}
+  /* ============ NAV BEFORE/AFTER ============ */
+  .nav-ba{padding:96px 0;background:var(--paper);border-top:1px solid var(--line);}
+  .ba-head{max-width:720px;margin:0 0 40px;}
+  .ba-head h2{font-size:clamp(28px,3vw,40px);margin:0 0 12px;}
+  .ba-head p{font-size:15px;line-height:1.55;color:#333;font-weight:300;margin:0;}
+  .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .ba{background:#fff;border:1px solid var(--line);border-radius:6px;padding:28px;display:flex;flex-direction:column;gap:14px;min-height:240px;}
+  .ba .label{color:var(--muted);font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;}
   .ba.before .label{color:var(--brick);}
-  .ba h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:22px;margin:0;line-height:1.2;}
-  .ba p{font-size:14px;line-height:1.6;color:#333;margin:0;font-weight:300;}
-  .ba .nav-mock{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:14px 18px;font-size:12px;color:#555;font-weight:500;}
-  .ba.after .nav-mock{background:var(--onyx);color:var(--paper);border-color:transparent;display:flex;gap:14px;align-items:center;justify-content:center;}
-  .ba.after .nav-mock .logo-dot{width:20px;height:20px;border-radius:999px;background:var(--mint);flex:0 0 auto;}
+  .ba.after .label{color:var(--mint);}
+  .ba h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:18px;margin:0;line-height:1.25;letter-spacing:-0.005em;}
+  .ba p{font-size:13px;line-height:1.55;color:#333;margin:0;font-weight:300;}
+  .ba .nav-mock{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:12px 16px;font-size:11px;color:#555;font-weight:500;}
+  .ba.after .nav-mock{background:var(--onyx);color:var(--paper);border-color:transparent;display:flex;gap:12px;align-items:center;justify-content:center;}
+  .ba.after .nav-mock .logo-dot{width:16px;height:16px;border-radius:999px;background:var(--mint);flex:0 0 auto;}
 
-  /* Page map */
-  .pages{padding:120px 0;background:var(--paper);}
-  .pages .section-head .side{max-width:380px;}
-  .funnel{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:32px;margin-bottom:48px;}
-  .stage{padding:32px;border:1px solid var(--line);border-radius:6px;background:#fff;display:flex;flex-direction:column;gap:8px;min-height:140px;}
+  /* ============ PAGE MAP ============ */
+  .pages{padding:96px 0;background:var(--paper);border-top:1px solid var(--line);}
+  .pm-head{max-width:760px;margin:0 0 32px;}
+  .pm-head h2{font-size:clamp(28px,3vw,40px);margin:0 0 12px;}
+  .pm-head p{font-size:15px;line-height:1.55;color:#333;font-weight:300;margin:0;}
+  .funnel{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:48px;}
+  .stage{padding:28px;background:var(--paper);display:flex;flex-direction:column;gap:6px;}
   .stage .n{font-size:11px;font-weight:600;color:var(--mint);letter-spacing:.22em;text-transform:uppercase;}
-  .stage h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:24px;margin:0;line-height:1.15;letter-spacing:-0.005em;}
-  .stage p{font-size:14px;line-height:1.55;color:#444;margin:0;font-weight:300;}
+  .stage h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:20px;margin:0;line-height:1.15;letter-spacing:-0.005em;}
+  .stage p{font-size:13px;line-height:1.55;color:#444;margin:0;font-weight:300;}
 
-  .page-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
-  .page-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:36px 32px;display:flex;flex-direction:column;gap:14px;transition:transform .15s,border-color .2s;min-height:220px;}
-  .page-card:hover{transform:translateY(-2px);border-color:var(--onyx);}
+  .page-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .page-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:28px 26px;display:flex;flex-direction:column;gap:12px;transition:transform .22s cubic-bezier(.2,.6,.2,1),border-color .2s,box-shadow .22s;min-height:180px;}
+  .page-card:hover{transform:translateY(-3px);border-color:var(--onyx);box-shadow:0 14px 40px rgba(19,19,19,.08);}
   .page-card .stage-tag{font-size:10px;font-weight:600;color:var(--mint);letter-spacing:.24em;text-transform:uppercase;}
-  .page-card h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:32px;letter-spacing:-0.01em;line-height:1.05;margin:0;}
-  .page-card p{font-size:14px;line-height:1.6;color:#444;margin:0;font-weight:300;}
-  .page-card .go{margin-top:auto;font-size:13px;font-weight:500;display:inline-flex;align-items:center;gap:6px;}
+  .page-card h2{font-family:"Poppins",sans-serif;font-weight:600;font-size:24px;letter-spacing:-0.005em;line-height:1.1;margin:0;}
+  .page-card p{font-size:13px;line-height:1.55;color:#444;margin:0;font-weight:300;}
+  .page-card .go{margin-top:auto;font-size:12px;font-weight:500;display:inline-flex;align-items:center;gap:6px;}
   .page-card .go::after{content:"→";color:var(--mint);font-weight:600;transition:transform .2s;display:inline-block;}
   .page-card:hover .go::after{transform:translateX(4px);}
 
-  /* Closing CTA */
-  .close{padding:120px 0;background:var(--onyx);color:var(--paper);}
-  .close-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:end;max-width:1280px;margin:0 auto;padding:0 40px;}
+  /* ============ CLOSE — the ONE onyx moment ============ */
+  .close{padding:96px 0;background:var(--onyx);color:var(--paper);}
+  .close-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;max-width:1280px;margin:0 auto;padding:0 40px;}
   .close h2{
     font-family:"Poppins",sans-serif;font-weight:300;
-    font-size:clamp(44px,5.5vw,76px);line-height:1.0;letter-spacing:-0.02em;margin:0;
+    font-size:clamp(36px,4vw,56px);line-height:1.04;letter-spacing:-0.015em;margin:0;
   }
   .close h2 .emph{font-weight:600;color:var(--mint);}
-  .close p{color:rgba(244,244,249,.78);font-size:16px;max-width:400px;line-height:1.6;}
-  .close .cta-row{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap;}
+  .close p{color:rgba(244,244,249,.78);font-size:15px;max-width:380px;line-height:1.6;}
+  .close .cta-row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;}
+  .close .cta-row .btn{font-size:12px;padding:12px 20px;}
   .close .btn-on-dark{background:var(--mint);color:var(--onyx);}
   .close .btn-outline-light{border:1px solid rgba(244,244,249,.4);color:#fff;background:transparent;}
 
   @media (max-width: 1100px){
+    .cover-grid,.close-inner,.ba-grid,.page-grid,.funnel{grid-template-columns:1fr;gap:32px;}
     .audit-grid{grid-template-columns:1fr;}
-    .p-grid{grid-template-columns:repeat(2,1fr);}
-    .ba-grid,.page-grid,.funnel,.close-inner{grid-template-columns:1fr;}
+    .p-grid{grid-template-columns:repeat(2,1fr);gap:24px;}
   }
 </style></head>
 <body>
@@ -123,36 +125,53 @@
 <!-- ========== FLOATING PILL NAV ========== -->
 <header class="nav-floating">
   <div class="pill">
-    <nav><a href="m4b-about-mockup.html">About</a><a href="m4b-team-mockup.html">Team</a><a href="m4b-memberships-mockup.html">Memberships</a></nav>
+    <nav>
+      <a href="m4b-about-mockup.html">About</a>
+      <a href="m4b-team-mockup.html">Team</a>
+      <a href="m4b-memberships-mockup.html">Memberships</a>
+    </nav>
     <a class="pill-logo" href="index.html"><img src="assets/photos/image6.png" alt="M4B"/></a>
-    <nav><a href="m4b-partnerships-mockup.html">Partnerships</a><a href="m4b-journal-mockup.html">Journal</a><a href="m4b-contact-mockup.html">Contact</a></nav>
+    <nav>
+      <a href="m4b-partnerships-mockup.html">Partnerships</a>
+      <a href="m4b-journal-mockup.html">Journal</a>
+      <a href="m4b-contact-mockup.html">Contact</a>
+    </nav>
   </div>
   <a class="pill-cta" href="m4b-become-member-mockup.html"><span class="dot"></span>Join the network</a>
 </header>
 
-<!-- ========== COVER ========== -->
+<!-- ========== COVER (paper) ========== -->
 <section class="cover">
-  <div class="cover-bg"><img src="assets/photos/miro-portrait.png" alt=""/></div>
-  <div class="cover-veil"></div>
-  <div class="cover-inner">
-    <div class="cover-eyebrow"><span class="bar"></span><span class="caption">Millennials4Boards · Website concept v0.6</span></div>
-    <h1>A new website for the <span class="emph">next generation of directors.</span></h1>
-    <p class="cover-lede">A concept review of <b style="color:var(--paper);font-weight:500;">millennials4boards.com</b> — what we heard, what we'd change, and a clickable walk-through of the eight pages. Built brand-strict on the new identity system.</p>
-    <div class="cover-cta-row">
-      <a class="btn btn-primary" href="#pages"><span class="dot"></span>Walk through the pages</a>
-      <a class="btn btn-ghost-light" href="#audit">See what changes and why</a>
+  <div class="cover-grid">
+    <div>
+      <div class="cover-eyebrow"><span class="bar"></span><span class="caption">Millennials4Boards · Website concept v0.6</span></div>
+      <h1 class="reveal">A new website for the <span class="emph">next generation of directors.</span></h1>
+      <p class="cover-lede reveal delay-1">A concept review of <b>millennials4boards.com</b> — what we heard, what we'd change, and a clickable walk-through of the eight pages. Built brand-strict on the new identity system.</p>
+      <div class="cover-cta-row reveal delay-2">
+        <a class="btn btn-primary" href="#pages"><span class="dot"></span>Walk through the pages</a>
+        <a class="btn btn-ghost" href="#audit">See what changes and why</a>
+      </div>
     </div>
-  </div>
-  <div class="cover-foot">
-    <span>Prepared for Millennials4Boards · Kilchberg</span>
-    <span class="right">Concept v0.6 · Brand-strict · Apr 2026</span>
+    <div class="reveal delay-1">
+      <div class="cover-figure"><img src="assets/photos/miro-portrait.png" alt=""/></div>
+      <div class="cover-meta"><span>Cohort '26</span><span>Kilchberg · Zurich</span></div>
+    </div>
   </div>
 </section>
 
-<div class="page-body">
+<!-- Fact bar — gives the cover a second register -->
+<div class="cover-bar">
+  <div class="cover-bar-inner">
+    <span><b>8</b> pages</span>
+    <span><b>1</b> brand system</span>
+    <span><b>6</b> audit points</span>
+    <span><b>5</b> design rules</span>
+    <span>Concept · v0.6 · Apr 2026</span>
+  </div>
+</div>
 
 <!-- ========== AUDIT ========== -->
-<section class="audit" id="audit"><div class="container">
+<section class="audit reveal" id="audit"><div class="container">
   <div class="lead">
     <div class="eyebrow"><span class="bar"></span><span class="caption">01 · What we saw on the current site</span></div>
     <h2 class="section-h2">The <span class="emph">foundation is good.</span> The story isn't landing.</h2>
@@ -163,139 +182,134 @@
     <div class="audit-card">
       <span class="n">01 · Proof missing</span>
       <h3>Strong stats, no sources.</h3>
-      <p>"57" and "75%" land hard — but without attribution, sceptical readers (chairs, GCs, CHROs) discount them. The current site asserts. The new site cites.</p>
+      <p>"57" and "75%" land hard — but without attribution, sceptical readers discount them. The current site asserts. The new site cites.</p>
       <p class="quote">Current: <b>"57 the average age of new Board members in Europe"</b> — unsourced.<br>Proposed: <b>57 yrs · Egon Zehnder, 2024.</b></p>
     </div>
     <div class="audit-card">
       <span class="n">02 · One CTA, three audiences</span>
       <h3>"Join Us!" asks too much, too soon.</h3>
-      <p>Aspiring directors, sitting directors, and corporates arrive on the same page with the same single ask. Each needs a different conversation — and the home page should tell them which one.</p>
-      <p class="quote">Proposed: three paths on the home page — <b>Aspiring · Sitting · Corporate</b> — each routed to its own first ninety days.</p>
+      <p>Aspiring directors, sitting directors, and corporates arrive on the same page with the same single ask. Each needs a different conversation.</p>
+      <p class="quote">Proposed: three paths on the home page — <b>Aspiring · Sitting · Corporate</b>.</p>
     </div>
     <div class="audit-card">
       <span class="n">03 · Vision before proof</span>
       <h3>Mission statements sit where testimonials should.</h3>
-      <p>"Vibrant community" and "dynamic mentor-mentor program" are abstractions. Boardroom buyers want to see names, seats landed, press clippings — not adjectives.</p>
-      <p class="quote">Proposed: <b>named testimonials</b> with role &amp; cohort, a <b>press pullquote</b> strip (FT · Handelsblatt · NZZ), and a <b>journal rail</b> with real titles.</p>
+      <p>"Vibrant community" and "dynamic mentor-mentor program" are abstractions. Boardroom buyers want to see names, seats landed, press clippings.</p>
+      <p class="quote">Proposed: <b>named testimonials</b>, a <b>press pullquote</b> strip, and a <b>journal rail</b> with real titles.</p>
     </div>
     <div class="audit-card">
       <span class="n">04 · Team without names</span>
       <h3>Board carousel, no identities.</h3>
-      <p>A rotating photo strip with no labels does the opposite of what a team page should — it hides the network's best asset. Who these people are is <em>the</em> offer.</p>
-      <p class="quote">Proposed: uniform B&amp;W 4:5 portraits, named cards, role, sector expertise, LinkedIn — Management Board first, Founders below, Advisory Council last.</p>
+      <p>A rotating photo strip with no labels hides the network's best asset. Who these people are is <em>the</em> offer.</p>
+      <p class="quote">Proposed: uniform B&amp;W portraits, named cards, role, sector, LinkedIn — in a varied masonry grid.</p>
     </div>
     <div class="audit-card">
       <span class="n">05 · Commercial path buried</span>
       <h3>Memberships page doesn't close.</h3>
       <p>Tiered pricing exists, but there's no structured checkout, no trust cues, and no transparent VAT/total. For a CHF 300+ purchase, decision hygiene matters.</p>
-      <p class="quote">Proposed: two pricing cards side-by-side, then a <b>three-step wizard</b> (About you · Ambition · Confirm &amp; pay) with a sticky order summary.</p>
+      <p class="quote">Proposed: two pricing cards side-by-side, then a <b>three-step wizard</b> with a sticky order summary.</p>
     </div>
     <div class="audit-card">
       <span class="n">06 · Look and feel, 2018</span>
       <h3>The brand has moved on. The site hasn't.</h3>
-      <p>Navigation is a flat top bar, typography mixes weights, and the photography is stocky. The new identity system (Poppins, Mint Leaf accent, editorial tone) never makes it to the live site.</p>
-      <p class="quote">Proposed: <b>floating pill nav</b>, <b>full-bleed typographic hero</b>, <b>B&amp;W portraits</b>, mint-only accent, Poppins Light + SemiBold throughout.</p>
+      <p>Flat top bar, mixed weights, stocky photography. The new identity system (Poppins, Mint Leaf, editorial tone) never makes it to the live site.</p>
+      <p class="quote">Proposed: <b>floating pill nav</b>, <b>full-bleed typographic hero</b>, <b>B&amp;W portraits</b>, mint-only accent.</p>
     </div>
   </div>
 </div></section>
 
-<!-- ========== PRINCIPLES ========== -->
+<!-- ========== PRINCIPLES (paper, minimal) ========== -->
 <section class="principles"><div class="container">
-  <div class="section-head">
-    <h2 class="section-h2">Five rules <span class="emph">we held to.</span></h2>
-    <p class="body-p side">Every decision on every page can be traced to one of these. If a section didn't earn its place against one of the five, we cut it.</p>
+  <div class="p-head">
+    <div class="eyebrow"><span class="bar"></span><span class="caption">02 · Five rules we held to</span></div>
+    <h2 class="section-h2">Every decision <span class="emph">earns its place.</span></h2>
+    <p>If a section didn't land against one of the five, we cut it. The result is a site that does less, but says more.</p>
   </div>
   <div class="p-grid">
-    <div class="p-card"><span class="n">01</span><h3>Specific over generic.</h3><p>Sources on every stat. Named testimonials. Real article titles. No "vibrant community" anywhere.</p></div>
-    <div class="p-card"><span class="n">02</span><h3>Three audiences, three doors.</h3><p>Aspiring · Sitting · Corporate. Each routed in under five seconds from the home page.</p></div>
-    <div class="p-card"><span class="n">03</span><h3>Proof before pitch.</h3><p>Press, testimonials, and member wins appear early — before any mission statement.</p></div>
-    <div class="p-card"><span class="n">04</span><h3>Brand-strict.</h3><p>Poppins Light + SemiBold only. Mint Leaf as the single accent. Real logo, B&amp;W portraits.</p></div>
-    <div class="p-card"><span class="n">05</span><h3>Commercial clarity.</h3><p>Memberships → wizard → Stripe. Transparent VAT. Trust micro-copy at the exact moment of decision.</p></div>
+    <div class="p-card reveal"><span class="n">01</span><h3>Specific over generic.</h3><p>Sources on every stat. Named testimonials. Real article titles.</p></div>
+    <div class="p-card reveal delay-1"><span class="n">02</span><h3>Three audiences, three doors.</h3><p>Aspiring · Sitting · Corporate — each routed in under five seconds.</p></div>
+    <div class="p-card reveal delay-2"><span class="n">03</span><h3>Proof before pitch.</h3><p>Press, testimonials, and member wins appear early — before any mission statement.</p></div>
+    <div class="p-card reveal delay-3"><span class="n">04</span><h3>Brand-strict.</h3><p>Poppins Light + SemiBold only. Mint Leaf as the single accent.</p></div>
+    <div class="p-card reveal delay-4"><span class="n">05</span><h3>Commercial clarity.</h3><p>Memberships → wizard → Stripe. Transparent VAT. Trust at the decision moment.</p></div>
   </div>
 </div></section>
 
 <!-- ========== NAV BEFORE / AFTER ========== -->
-<section class="nav-before-after"><div class="container">
-  <div class="section-head">
-    <h2 class="section-h2">The navigation, <span class="emph">in one picture.</span></h2>
-    <p class="body-p side">Small change, outsized effect. A floating pill with the logo at the centre and the CTA floating alongside. Reads as premium, modern, and deliberately different from the sea of flat top bars.</p>
+<section class="nav-ba"><div class="container">
+  <div class="ba-head">
+    <div class="eyebrow"><span class="bar"></span><span class="caption">03 · The navigation, in one picture</span></div>
+    <h2 class="section-h2">A small change, <span class="emph">outsized effect.</span></h2>
+    <p>A floating pill with the logo at the centre and the CTA alongside. Reads as premium, modern, and deliberately different from the sea of flat top bars.</p>
   </div>
   <div class="ba-grid">
-    <div class="ba before">
-      <span class="label caption">Today</span>
+    <div class="ba before reveal">
+      <span class="label">Today</span>
       <div class="nav-mock">Home · Team · About us · Memberships · News and events · Partnerships · Contact us</div>
       <h3>Flat top bar, seven links, one CTA.</h3>
-      <p>Functional but anonymous. Visually indistinguishable from a thousand other sites in the space. "Join Us!" asks one question of three very different audiences.</p>
+      <p>Functional but anonymous. Visually indistinguishable from a thousand other sites. "Join Us!" asks one question of three very different audiences.</p>
     </div>
-    <div class="ba after">
-      <span class="label caption">Proposed</span>
+    <div class="ba after reveal delay-1">
+      <span class="label">Proposed</span>
       <div class="nav-mock">About · Team · Memberships · <span class="logo-dot"></span> · Partnerships · Journal · Contact</div>
       <h3>Floating pill, logo-centred, CTA alongside.</h3>
-      <p>Six links split around the mark. "Journal" replaces "News and events." "Join the network" lives alongside the pill, not inside it — so the mark and the act of joining are visually separated.</p>
+      <p>Six links split around the mark. "Journal" replaces "News and events." "Join the network" lives alongside the pill — so the mark and the act of joining are visually separated.</p>
     </div>
   </div>
 </div></section>
 
 <!-- ========== PAGE MAP ========== -->
 <section class="pages" id="pages"><div class="container">
-  <div class="section-head">
-    <h2 class="section-h2">Walk through the <span class="emph">eight pages.</span></h2>
-    <p class="body-p side">Click any card to open the full mockup. The funnel runs left-to-right: discover the network, decide to join, convert on checkout.</p>
+  <div class="pm-head">
+    <div class="eyebrow"><span class="bar"></span><span class="caption">04 · Walk through the eight pages</span></div>
+    <h2 class="section-h2">Eight pages, <span class="emph">one funnel.</span></h2>
+    <p>Click any card to open the full mockup. Discover · Decide · Convert — left-to-right through the site.</p>
   </div>
 
   <div class="funnel">
-    <div class="stage"><span class="n">Discover</span><h3>First encounter.</h3><p>Home, About, Team, Journal — earn attention and trust in ninety seconds.</p></div>
-    <div class="stage"><span class="n">Decide</span><h3>Commercial clarity.</h3><p>Memberships and Partnerships — price, fit, and proof in one screen each.</p></div>
-    <div class="stage"><span class="n">Convert</span><h3>Frictionless close.</h3><p>Contact and Become a member — audience-aware forms, transparent checkout.</p></div>
+    <div class="stage"><span class="n">Discover</span><h3>First encounter.</h3><p>Home · About · Team · Journal — earn attention and trust in ninety seconds.</p></div>
+    <div class="stage"><span class="n">Decide</span><h3>Commercial clarity.</h3><p>Memberships · Partnerships — price, fit, and proof in one screen each.</p></div>
+    <div class="stage"><span class="n">Convert</span><h3>Frictionless close.</h3><p>Contact · Become a member — audience-aware forms, transparent checkout.</p></div>
   </div>
 
   <div class="page-grid">
-    <a class="page-card" href="m4b-home-mockup.html">
-      <span class="stage-tag">01 · Discover</span>
-      <h2>Home</h2>
-      <p>Full-bleed hero with floating pill nav, three audience paths, named testimonials, press pullquotes, and a journal rail.</p>
+    <a class="page-card reveal" href="m4b-home-mockup.html">
+      <span class="stage-tag">01 · Discover</span><h2>Home</h2>
+      <p>Full-bleed hero, three audience paths, named testimonials, press pullquotes, journal rail.</p>
       <span class="go">Open the mockup</span>
     </a>
-    <a class="page-card" href="m4b-about-mockup.html">
-      <span class="stage-tag">01 · Discover</span>
-      <h2>About</h2>
-      <p>Story arc earning trust in sixty seconds. Brick Ember problem section ("57 yrs" in white), three-block shift, 2022→2026 timeline, signed founders' note.</p>
+    <a class="page-card reveal delay-1" href="m4b-about-mockup.html">
+      <span class="stage-tag">01 · Discover</span><h2>About</h2>
+      <p>Problem section ("57 yrs" in white on brick), three-block shift, 2022→2026 timeline, signed founders' note.</p>
       <span class="go">Open the mockup</span>
     </a>
-    <a class="page-card" href="m4b-team-mockup.html">
-      <span class="stage-tag">01 · Discover</span>
-      <h2>Team</h2>
-      <p>Management Board as uniform B&amp;W 4:5 portraits with names, role, sector. Founders grid quieter below. Advisory Council placeholder. Press strip.</p>
+    <a class="page-card reveal" href="m4b-team-mockup.html">
+      <span class="stage-tag">01 · Discover</span><h2>Team</h2>
+      <p>Masonry grid of named portraits with role, sector, LinkedIn. Founders below, Advisory Council last.</p>
       <span class="go">Open the mockup</span>
     </a>
-    <a class="page-card" href="m4b-journal-mockup.html">
-      <span class="stage-tag">01 · Discover</span>
-      <h2>Journal</h2>
-      <p>Editorial credibility. Segmented tabs (Essays · Events · Member wins), featured event card, six-article news grid, member story portrait, newsletter capture.</p>
+    <a class="page-card reveal delay-1" href="m4b-journal-mockup.html">
+      <span class="stage-tag">01 · Discover</span><h2>Journal</h2>
+      <p>Editorial credibility. Tabs (Essays · Events · Member wins), featured event, news grid, member story.</p>
       <span class="go">Open the mockup</span>
     </a>
-    <a class="page-card" href="m4b-memberships-mockup.html">
-      <span class="stage-tag">02 · Decide</span>
-      <h2>Memberships</h2>
-      <p>Two equal-weight pricing cards — white Individual (CHF 300) and Onyx Corporate (From CHF 15k). Member outcomes with avatars. FAQ accordion.</p>
+    <a class="page-card reveal" href="m4b-memberships-mockup.html">
+      <span class="stage-tag">02 · Decide</span><h2>Memberships</h2>
+      <p>Two equal-weight pricing cards — Individual (CHF 300) and Corporate (From CHF 15k). FAQ accordion.</p>
       <span class="go">Open the mockup</span>
     </a>
-    <a class="page-card" href="m4b-partnerships-mockup.html">
-      <span class="stage-tag">02 · Decide</span>
-      <h2>Partnerships</h2>
-      <p>Logo wall as proof. Three partnership tiers (Corporate · Network · Media). Four case stories — including a deliberate "your partnership here" slot.</p>
+    <a class="page-card reveal delay-1" href="m4b-partnerships-mockup.html">
+      <span class="stage-tag">02 · Decide</span><h2>Partnerships</h2>
+      <p>Logo wall, three tiers (Corporate · Network · Media), four case stories — including a "your partnership here" slot.</p>
       <span class="go">Open the mockup</span>
     </a>
-    <a class="page-card" href="m4b-contact-mockup.html">
-      <span class="stage-tag">03 · Convert</span>
-      <h2>Contact</h2>
-      <p>Audience chips that adapt the form to who's writing. Book-a-call card for senior inbound. Direct email + LinkedIn fallback.</p>
+    <a class="page-card reveal" href="m4b-contact-mockup.html">
+      <span class="stage-tag">03 · Convert</span><h2>Contact</h2>
+      <p>Audience chips that adapt the form. Book-a-call card for senior inbound. Direct email + LinkedIn fallback.</p>
       <span class="go">Open the mockup</span>
     </a>
-    <a class="page-card" href="m4b-become-member-mockup.html">
-      <span class="stage-tag">03 · Convert</span>
-      <h2>Become a member</h2>
-      <p>Three-step wizard — About you · Your ambition · Confirm &amp; pay. Stripe-native. Sticky Onyx order summary with CHF 324.30 total and trust micro-copy.</p>
+    <a class="page-card reveal delay-1" href="m4b-become-member-mockup.html">
+      <span class="stage-tag">03 · Convert</span><h2>Become a member</h2>
+      <p>Three-step wizard — About you · Your ambition · Confirm &amp; pay. Sticky Onyx order summary with CHF 324.30 total.</p>
       <span class="go">Open the mockup</span>
     </a>
   </div>
@@ -315,7 +329,7 @@
 
 <footer><div class="container">
   <div class="foot-grid">
-    <div><a class="foot-logo" href="#"><img src="assets/photos/image6.png" alt=""/></a><p style="margin-top:16px;font-size:14px;color:rgba(244,244,249,.6);max-width:320px;font-weight:300;">Website concept review prepared for Millennials4Boards. All pages click through. Content and portraits are placeholder.</p></div>
+    <div><a class="foot-logo" href="#"><img src="assets/photos/image6.png" alt=""/></a><p style="margin-top:16px;font-size:13px;color:rgba(244,244,249,.6);max-width:320px;font-weight:300;">Website concept review prepared for Millennials4Boards. All pages click through. Portraits are placeholder.</p></div>
     <div><h4>Pages</h4><a href="m4b-home-mockup.html">Home</a><a href="m4b-about-mockup.html">About</a><a href="m4b-team-mockup.html">Team</a><a href="m4b-journal-mockup.html">Journal</a></div>
     <div><h4>Commercial</h4><a href="m4b-memberships-mockup.html">Memberships</a><a href="m4b-partnerships-mockup.html">Partnerships</a><a href="m4b-become-member-mockup.html">Become a member</a><a href="m4b-contact-mockup.html">Contact</a></div>
     <div><h4>Reference</h4><a href="https://millennials4boards.com/" target="_blank" rel="noopener">Current live site ↗</a><a href="#audit">What changes and why</a><a href="#pages">Page map</a></div>
@@ -323,5 +337,5 @@
   <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept v0.6 · Brand-strict</span></div>
 </div></footer>
 
-</div><!-- /page-body -->
+<script src="assets/motion.js" defer></script>
 </body></html>

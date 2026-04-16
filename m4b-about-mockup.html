@@ -22,9 +22,10 @@
   .model{padding:100px 0;background:var(--paper);}
   .model-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
   .model-card{padding:36px 28px;background:#fff;border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;gap:16px;min-height:240px;}
-  /* Onyx icon circle — high contrast on white card */
-  .model-card .ic{width:60px;height:60px;border-radius:999px;background:var(--onyx);display:flex;align-items:center;justify-content:center;padding:14px;margin-bottom:8px;}
-  .model-card .ic img{width:100%;height:100%;object-fit:contain;filter:invert(1);}
+  /* Mint icon circle — single accent, onyx line icons read clearly inside */
+  .model-card .ic{width:60px;height:60px;border-radius:999px;background:var(--mint);display:flex;align-items:center;justify-content:center;padding:14px;margin-bottom:8px;transition:transform .25s;}
+  .model-card:hover .ic{transform:scale(1.06) rotate(-3deg);}
+  .model-card .ic img{width:100%;height:100%;object-fit:contain;}
   .model-card h4{font-family:"Poppins",sans-serif;font-weight:600;font-size:22px;line-height:1.1;margin:0;letter-spacing:-0.005em;}
   .model-card p{font-size:14px;color:#333;line-height:1.55;margin:0;font-weight:300;}
 
@@ -49,11 +50,11 @@
 
 <header class="nav-floating">
   <div class="pill">
-    <nav><a class="active" href="#">About</a><a href="#">Team</a><a href="#">Memberships</a></nav>
-    <a class="pill-logo" href="#"><img src="assets/photos/image6.png" alt="M4B"/></a>
-    <nav><a href="#">Partnerships</a><a href="#">Journal</a><a href="#">Contact</a></nav>
+    <nav><a class="active" href="m4b-about-mockup.html">About</a><a href="m4b-team-mockup.html">Team</a><a href="m4b-memberships-mockup.html">Memberships</a></nav>
+    <a class="pill-logo" href="index.html"><img src="assets/photos/image6.png" alt="M4B"/></a>
+    <nav><a href="m4b-partnerships-mockup.html">Partnerships</a><a href="m4b-journal-mockup.html">Journal</a><a href="m4b-contact-mockup.html">Contact</a></nav>
   </div>
-  <a class="pill-cta" href="#"><span class="dot"></span>Join the network</a>
+  <a class="pill-cta" href="m4b-become-member-mockup.html"><span class="dot"></span>Join the network</a>
 </header>
 
 <section class="page-hero"><div class="container">

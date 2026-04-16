@@ -84,28 +84,48 @@
   /* ---------- BODY SECTIONS (reset to paper) ---------- */
   .page-body{background:var(--paper);position:relative;z-index:4;}
 
-  /* Momentum ticker — now sits below hero as first paper-section hand-off */
-  .ticker{background:var(--onyx);color:var(--paper);padding:14px 0;}
-  .ticker-inner{display:flex;justify-content:space-between;align-items:center;gap:40px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;flex-wrap:wrap;}
+  /* Momentum marquee — continuous left-scroll, pauses on hover */
+  .ticker{background:var(--onyx);color:var(--paper);padding:16px 0;overflow:hidden;}
+  .ticker .marquee-track{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;}
   .ticker .item{display:inline-flex;align-items:center;gap:10px;}
   .ticker .item b{color:var(--mint);font-weight:600;font-size:14px;letter-spacing:-0.005em;text-transform:none;}
   .ticker .sep{opacity:.3;}
 
-  .stats{padding:120px 0;border-bottom:1px solid var(--line);background:var(--paper);}
-  .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
-  .stat{padding-right:40px;border-right:1px solid var(--line);}
-  .stat:last-child{border-right:none;}
-  .stat .num{font-family:"Poppins",sans-serif;font-weight:600;font-size:110px;line-height:.92;letter-spacing:-0.04em;color:var(--onyx);display:flex;align-items:flex-start;}
-  .stat .num sup{font-size:.24em;font-weight:400;color:var(--muted);margin-left:6px;margin-top:.22em;}
+  /* Stats — asymmetric: lead stat large, two supporting stats stepped down */
+  .stats{padding:140px 0;border-bottom:1px solid var(--line);background:var(--paper);}
+  .stats-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:56px;align-items:start;}
+  .stat{padding-right:32px;}
+  .stat:nth-child(2){padding-top:64px;}
+  .stat:nth-child(3){padding-top:128px;}
+  .stat .num{font-family:"Poppins",sans-serif;font-weight:600;font-size:130px;line-height:.92;letter-spacing:-0.04em;color:var(--onyx);display:flex;align-items:flex-start;}
+  .stat:nth-child(1) .num{font-size:184px;}
+  .stat .num sup{font-size:.22em;font-weight:400;color:var(--muted);margin-left:6px;margin-top:.22em;}
   .stat .body-p{margin-top:18px;max-width:260px;}
   .stat .src{margin-top:12px;}
+  @media (max-width: 1100px){
+    .stats-grid{grid-template-columns:1fr;gap:40px;}
+    .stat:nth-child(2),.stat:nth-child(3){padding-top:0;}
+    .stat:nth-child(1) .num{font-size:120px;}
+  }
 
-  .paths{padding:120px 0;background:var(--paper);}
-  .paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .path{background:var(--paper);padding:44px 36px 36px;display:flex;flex-direction:column;min-height:440px;}
-  .path:hover{background:#eeeff2;}
-  .path .ic{width:64px;height:64px;border-radius:999px;background:var(--onyx);display:flex;align-items:center;justify-content:center;padding:14px;margin-bottom:28px;}
-  .path .ic img{width:100%;height:100%;object-fit:contain;filter:invert(1);}
+  /* Paths — staggered asymmetric grid, rounded cards */
+  .paths{padding:140px 0 160px;background:var(--paper);}
+  .paths-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:start;}
+  .path{background:#fff;border:1px solid var(--line);border-radius:6px;padding:40px 32px 32px;display:flex;flex-direction:column;min-height:400px;transition:transform .22s cubic-bezier(.2,.6,.2,1),box-shadow .22s,border-color .22s;}
+  .path:nth-child(2){margin-top:72px;background:var(--onyx);color:var(--paper);border-color:transparent;}
+  .path:nth-child(3){margin-top:24px;}
+  .path:hover{transform:translateY(-4px);box-shadow:0 18px 48px rgba(19,19,19,.1);border-color:var(--onyx);}
+  .path:nth-child(2):hover{box-shadow:0 18px 48px rgba(19,19,19,.35);}
+  .path:nth-child(2) h3,.path:nth-child(2) .go{color:var(--paper);}
+  .path:nth-child(2) p{color:rgba(244,244,249,.78);}
+  .path:nth-child(2) .ic{background:var(--mint);}
+  @media (max-width: 1100px){
+    .paths-grid{grid-template-columns:1fr;gap:16px;}
+    .path:nth-child(2),.path:nth-child(3){margin-top:0;}
+  }
+  .path .ic{width:64px;height:64px;border-radius:999px;background:var(--mint);display:flex;align-items:center;justify-content:center;padding:14px;margin-bottom:28px;transition:transform .25s;}
+  .path:hover .ic{transform:scale(1.06) rotate(-3deg);}
+  .path .ic img{width:100%;height:100%;object-fit:contain;}
   .path .n{font-size:12px;font-weight:600;color:var(--mint);letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;}
   .path h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:30px;line-height:1.1;letter-spacing:-0.01em;margin:0 0 14px;}
   .path p{font-size:14px;line-height:1.55;color:#333;margin:0 0 24px;font-weight:300;}
@@ -123,10 +143,22 @@
   .story-figure{aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:var(--mint);}
   .story-figure img{width:100%;height:100%;object-fit:cover;}
 
-  .testi{padding:120px 0;background:var(--paper);}
-  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .quote{padding:36px 32px;border:1px solid var(--line);border-radius:4px;background:#fff;display:flex;flex-direction:column;gap:28px;min-height:320px;}
-  .quote blockquote{margin:0;font-family:"Poppins",sans-serif;font-weight:500;font-size:20px;line-height:1.35;letter-spacing:-0.005em;}
+  /* Testimonials — 1 lead quote + 2 supporting, asymmetric alignment */
+  .testi{padding:140px 0;background:var(--paper);}
+  .testi-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:24px;align-items:start;}
+  .quote{padding:36px 32px;border:1px solid var(--line);border-radius:6px;background:#fff;display:flex;flex-direction:column;gap:28px;min-height:300px;transition:transform .22s,box-shadow .22s;}
+  .quote:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(19,19,19,.08);}
+  .quote:nth-child(1){padding:52px 44px;min-height:360px;}
+  .quote:nth-child(1) blockquote{font-size:28px;line-height:1.25;font-weight:500;}
+  .quote:nth-child(2){margin-top:40px;}
+  .quote:nth-child(3){margin-top:88px;}
+  .quote blockquote{margin:0;font-family:"Poppins",sans-serif;font-weight:500;font-size:19px;line-height:1.35;letter-spacing:-0.005em;}
+  @media (max-width: 1100px){
+    .testi-grid{grid-template-columns:1fr;}
+    .quote:nth-child(2),.quote:nth-child(3){margin-top:0;}
+    .quote:nth-child(1){padding:36px 32px;min-height:300px;}
+    .quote:nth-child(1) blockquote{font-size:22px;}
+  }
   .quote .who{display:flex;align-items:center;gap:14px;margin-top:auto;}
   .quote .av{width:48px;height:48px;border-radius:999px;overflow:hidden;background:#ddd;flex:0 0 auto;}
   .quote .av img{width:100%;height:100%;object-fit:cover;}
@@ -148,8 +180,13 @@
   .art.feat .more{color:var(--mint);}
 
   .press-quotes{padding:120px 0;background:var(--paper);border-top:1px solid var(--line);}
-  .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:24px;}
-  .pq{background:#fff;border:1px solid var(--line);border-radius:4px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;min-height:260px;}
+  .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:24px;align-items:start;}
+  .pq{background:#fff;border:1px solid var(--line);border-radius:6px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;min-height:260px;transition:transform .22s,box-shadow .22s;}
+  .pq:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(19,19,19,.08);}
+  .pq:nth-child(1){margin-top:0;}
+  .pq:nth-child(2){margin-top:56px;}
+  .pq:nth-child(3){margin-top:24px;}
+  @media (max-width: 1100px){ .pq:nth-child(2),.pq:nth-child(3){margin-top:0;} }
   .pq .media{font-family:"Poppins",sans-serif;font-size:16px;color:var(--onyx);font-weight:600;letter-spacing:-0.005em;}
   .pq blockquote{font-family:"Poppins",sans-serif;font-weight:300;font-size:20px;line-height:1.35;margin:0;letter-spacing:-0.005em;color:var(--onyx);}
   .pq blockquote::before{content:"\201C";color:var(--mint);font-weight:600;margin-right:2px;}
@@ -168,18 +205,18 @@
 <header class="nav-floating">
   <div class="pill">
     <nav>
-      <a href="#">About</a>
-      <a href="#">Team</a>
-      <a href="#">Memberships</a>
+      <a href="m4b-about-mockup.html">About</a>
+      <a href="m4b-team-mockup.html">Team</a>
+      <a href="m4b-memberships-mockup.html">Memberships</a>
     </nav>
-    <a class="pill-logo" href="#"><img src="assets/photos/image6.png" alt="M4B"/></a>
+    <a class="pill-logo" href="index.html"><img src="assets/photos/image6.png" alt="M4B"/></a>
     <nav>
-      <a href="#">Partnerships</a>
-      <a href="#">Journal</a>
-      <a href="#">Contact</a>
+      <a href="m4b-partnerships-mockup.html">Partnerships</a>
+      <a href="m4b-journal-mockup.html">Journal</a>
+      <a href="m4b-contact-mockup.html">Contact</a>
     </nav>
   </div>
-  <a class="pill-cta" href="#"><span class="dot"></span>Join the network</a>
+  <a class="pill-cta" href="m4b-become-member-mockup.html"><span class="dot"></span>Join the network</a>
 </header>
 
 <!-- ========== FULL-BLEED HERO ========== -->
@@ -190,14 +227,14 @@
   <div class="hero-inner">
     <div>
       <div class="hero-eyebrow"><span class="bar"></span><span class="caption">Zurich · A global board-readiness network</span></div>
-      <h1 class="hero-mega">Boardrooms, meet your <span class="emph">next leaders.</span></h1>
+      <h1 class="hero-mega word-reveal">Boardrooms, meet your <span class="emph">next leaders.</span></h1>
     </div>
-    <div class="hero-right">
+    <div class="hero-right reveal delay-2">
       <span class="small-label">Cohort '26 · Applications close 30 May</span>
       <p>A global community where the next generation of directors is paired with the operators already sitting in the seat — and the companies quietly looking for them.</p>
       <div class="hero-cta-row">
-        <a class="btn btn-primary" href="#"><span class="dot"></span>Apply to join</a>
-        <a class="btn btn-ghost-light" href="#">Partner with us</a>
+        <a class="btn btn-primary" href="m4b-become-member-mockup.html"><span class="dot"></span>Apply to join</a>
+        <a class="btn btn-ghost-light" href="m4b-partnerships-mockup.html">Partner with us</a>
       </div>
     </div>
   </div>
@@ -217,46 +254,55 @@
 
 <div class="page-body">
 
-<!-- Momentum ticker — live signal of network scale, first hand-off from hero -->
-<div class="ticker"><div class="container ticker-inner">
+<!-- Momentum marquee — live signal of network scale, continuously scrolling -->
+<div class="ticker marquee"><div class="marquee-track">
   <span class="item"><b>500+</b> members</span><span class="sep">·</span>
   <span class="item"><b>15</b> countries</span><span class="sep">·</span>
   <span class="item"><b>48</b> partnered boards</span><span class="sep">·</span>
-  <span class="item"><b>Cohort '26</b> · applications close 30 May</span>
+  <span class="item"><b>Cohort '26</b> — applications close 30 May</span><span class="sep">·</span>
+  <span class="item"><b>12</b> sitting directors mentoring</span><span class="sep">·</span>
+  <span class="item"><b>3</b> new partnerships in Q1</span><span class="sep">·</span>
+  <!-- duplicate for seamless loop -->
+  <span class="item"><b>500+</b> members</span><span class="sep">·</span>
+  <span class="item"><b>15</b> countries</span><span class="sep">·</span>
+  <span class="item"><b>48</b> partnered boards</span><span class="sep">·</span>
+  <span class="item"><b>Cohort '26</b> — applications close 30 May</span><span class="sep">·</span>
+  <span class="item"><b>12</b> sitting directors mentoring</span><span class="sep">·</span>
+  <span class="item"><b>3</b> new partnerships in Q1</span><span class="sep">·</span>
 </div></div>
 
 <section class="stats"><div class="container stats-grid">
-  <div class="stat"><div class="num">57<sup>yrs</sup></div><p class="body-p">Average age of a newly appointed European board director.</p><span class="caption src">Egon Zehnder, 2024</span></div>
-  <div class="stat"><div class="num">5<sup>%</sup></div><p class="body-p">Share of S&amp;P 500 directors under the age of fifty.</p><span class="caption src">Spencer Stuart Board Index</span></div>
-  <div class="stat"><div class="num">75<sup>%</sup></div><p class="body-p">Of the global workforce is now millennial or Gen Z.</p><span class="caption src">Deloitte Global, 2025</span></div>
+  <div class="stat reveal"><div class="num">57<sup>yrs</sup></div><p class="body-p">Average age of a newly appointed European board director.</p><span class="caption src">Egon Zehnder, 2024</span></div>
+  <div class="stat reveal delay-1"><div class="num">5<sup>%</sup></div><p class="body-p">Share of S&amp;P 500 directors under the age of fifty.</p><span class="caption src">Spencer Stuart Board Index</span></div>
+  <div class="stat reveal delay-2"><div class="num">75<sup>%</sup></div><p class="body-p">Of the global workforce is now millennial or Gen Z.</p><span class="caption src">Deloitte Global, 2025</span></div>
 </div></section>
 
 <section class="paths"><div class="container">
   <div class="section-head"><h2 class="section-h2">Three ways <span class="emph">into the room.</span></h2><p class="body-p side">Most new members arrive through one of these doors. Pick yours to see what the first ninety days look like.</p></div>
   <div class="paths-grid">
-    <a class="path" href="#"><div class="ic"><img src="assets/icons/growth-steps.png" alt=""/></div><div class="n">01</div><h3>For aspiring directors.</h3><p>Board-readiness assessment, a sitting-director mentor, and a shortlist of open seats our partners are quietly filling.</p><span class="go">Read the member path</span></a>
-    <a class="path" href="#"><div class="ic"><img src="assets/icons/collaboration.png" alt=""/></div><div class="n">02</div><h3>For sitting directors.</h3><p>Mentor a cohort, co-host an off-the-record session, and keep a pulse on how the next generation sees governance.</p><span class="go">Read the mentor path</span></a>
-    <a class="path" href="#"><div class="ic"><img src="assets/icons/bridge-building.png" alt=""/></div><div class="n">03</div><h3>For corporates.</h3><p>Recruit younger directors, sponsor a cohort, or partner on a governance series your board will actually read.</p><span class="go">Read the partner path</span></a>
+    <a class="path reveal" href="m4b-memberships-mockup.html"><div class="ic"><img src="assets/icons/growth-steps.png" alt=""/></div><div class="n">01</div><h3>For aspiring directors.</h3><p>Board-readiness assessment, a sitting-director mentor, and a shortlist of open seats our partners are quietly filling.</p><span class="go">Read the member path</span></a>
+    <a class="path reveal delay-1" href="m4b-team-mockup.html"><div class="ic"><img src="assets/icons/collaboration.png" alt=""/></div><div class="n">02</div><h3>For sitting directors.</h3><p>Mentor a cohort, co-host an off-the-record session, and keep a pulse on how the next generation sees governance.</p><span class="go">Read the mentor path</span></a>
+    <a class="path reveal delay-2" href="m4b-partnerships-mockup.html"><div class="ic"><img src="assets/icons/bridge-building.png" alt=""/></div><div class="n">03</div><h3>For corporates.</h3><p>Recruit younger directors, sponsor a cohort, or partner on a governance series your board will actually read.</p><span class="go">Read the partner path</span></a>
   </div>
 </div></section>
 
 <section class="story"><div class="container story-grid">
-  <div>
+  <div class="reveal">
     <span class="caption" style="color:rgba(244,244,249,.55);">The case for a new kind of director</span>
     <h2 style="margin-top:24px;">The risks have changed. The room <span class="emph">hasn't.</span></h2>
     <p>Climate, cyber, AI governance, workforce composition — the questions a board is now expected to answer are not the questions most boards were assembled to answer.</p>
     <p style="margin-top:12px;">Millennials4Boards exists to close that gap, deliberately and with the people already sitting in the seat.</p>
     <div class="pull">We don't want to disrupt the boardroom. We want to <span class="emph">finish building it.</span></div>
   </div>
-  <div class="story-figure"><img src="assets/photos/portrait-placeholder.png" alt=""/></div>
+  <div class="story-figure reveal delay-1"><img src="assets/photos/portrait-placeholder.png" alt=""/></div>
 </div></section>
 
 <section class="testi"><div class="container">
   <div class="section-head"><h2 class="section-h2">Named seats. <span class="emph">Real stories.</span></h2><p class="body-p side">Anonymity has its place. On this page, proof doesn't.</p></div>
   <div class="testi-grid">
-    <div class="quote"><blockquote>"The mentor pairing made the difference between reading about governance and doing it."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Olivia Kinghorst</b><span>Management Board · Cohort '24</span></div></div></div>
-    <div class="quote"><blockquote>"I've chaired boards for twenty years. This network reminded me why I started."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Stephan Hillert</b><span>Management Board · Chair</span></div></div></div>
-    <div class="quote"><blockquote>"We hired our first under-forty NED within a quarter of partnering."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Rosanna Cubelli</b><span>Management Board · Founder</span></div></div></div>
+    <div class="quote reveal"><blockquote>"The mentor pairing made the difference between reading about governance and doing it."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Olivia Kinghorst</b><span>Management Board · Cohort '24</span></div></div></div>
+    <div class="quote reveal delay-1"><blockquote>"I've chaired boards for twenty years. This network reminded me why I started."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Stephan Hillert</b><span>Management Board · Chair</span></div></div></div>
+    <div class="quote reveal delay-2"><blockquote>"We hired our first under-forty NED within a quarter of partnering."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Rosanna Cubelli</b><span>Management Board · Founder</span></div></div></div>
   </div>
 </div></section>
 
@@ -272,9 +318,9 @@
 <section class="press-quotes"><div class="container">
   <div class="section-head"><h2 class="section-h2">In the <span class="emph">press.</span></h2><p class="body-p side">Selected pull quotes from European business media.</p></div>
   <div class="pq-grid">
-    <div class="pq"><div class="media">Financial Times</div><blockquote>A corrective to Europe's boardroom demographic — run by directors already in the seat.</blockquote><span class="ref">Board Governance · Feb 2026</span></div>
-    <div class="pq"><div class="media">Handelsblatt</div><blockquote>The first peer network in DACH to take generational diversity as seriously as gender diversity.</blockquote><span class="ref">Leadership · Mar 2026</span></div>
-    <div class="pq"><div class="media">Neue Zürcher Zeitung</div><blockquote>A quiet Zurich network that keeps turning up on corporate shortlists.</blockquote><span class="ref">Wirtschaft · Jan 2026</span></div>
+    <div class="pq reveal"><div class="media">Financial Times</div><blockquote>A corrective to Europe's boardroom demographic — run by directors already in the seat.</blockquote><span class="ref">Board Governance · Feb 2026</span></div>
+    <div class="pq reveal delay-1"><div class="media">Handelsblatt</div><blockquote>The first peer network in DACH to take generational diversity as seriously as gender diversity.</blockquote><span class="ref">Leadership · Mar 2026</span></div>
+    <div class="pq reveal delay-2"><div class="media">Neue Zürcher Zeitung</div><blockquote>A quiet Zurich network that keeps turning up on corporate shortlists.</blockquote><span class="ref">Wirtschaft · Jan 2026</span></div>
   </div>
 </div></section>
 
@@ -294,4 +340,5 @@
 </div></footer>
 
 </div><!-- /page-body -->
+<script src="assets/motion.js" defer></script>
 </body></html>
