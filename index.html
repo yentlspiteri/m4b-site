@@ -102,18 +102,20 @@
   .page-card:hover .go::after{transform:translateX(4px);}
 
   /* ============ CLOSE — the ONE onyx moment ============ */
-  .close{padding:96px 0;background:var(--onyx);color:var(--paper);}
-  .close-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;max-width:1280px;margin:0 auto;padding:0 40px;}
+  .close{padding:120px 0;background:var(--onyx);color:var(--paper);}
+  .close-inner{max-width:880px;margin:0 auto;padding:0 40px;text-align:center;display:flex;flex-direction:column;gap:28px;align-items:center;}
   .close h2{
-    font-family:"Poppins",sans-serif;font-weight:300;
-    font-size:clamp(21px,2.4vw,32px);line-height:1.06;letter-spacing:-0.015em;margin:0;
+    font-family:"Poppins",sans-serif;font-weight:300;color:#fff;
+    font-size:clamp(32px,4.8vw,56px);line-height:1.05;letter-spacing:-0.025em;margin:0;
   }
   .close h2 .emph{font-weight:600;color:var(--mint);}
-  .close p{color:rgba(244,244,249,.78);font-size:13px;max-width:360px;line-height:1.6;}
-  .close .cta-row{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;}
-  .close .cta-row .btn{font-size:12px;padding:12px 20px;}
-  .close .btn-on-dark{background:var(--mint);color:var(--onyx);}
-  .close .btn-outline-light{border:1px solid rgba(244,244,249,.4);color:#fff;background:transparent;}
+  .close p{color:rgba(244,244,249,.72);font-size:15px;max-width:520px;line-height:1.55;margin:0;font-weight:300;}
+  .close .cta-row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:4px;}
+  .close .cta-row .btn{font-size:12px;padding:14px 24px;}
+  .close .btn-on-dark{background:var(--mint);color:var(--onyx);border:1px solid var(--mint);}
+  .close .btn-on-dark .dot{background:var(--onyx);}
+  .close .btn-outline-light{border:1px solid rgba(244,244,249,.35);color:#fff;background:transparent;}
+  .close .btn-outline-light:hover{background:rgba(244,244,249,.08);}
 
   /* ============ DESIGN SYSTEM ============ */
   .ds{padding:96px 0;background:var(--paper);border-top:1px solid var(--line);}
@@ -262,8 +264,8 @@
     <a class="toc-chip" href="#audit"><span class="n">01</span>Audit</a>
     <a class="toc-chip" href="#principles"><span class="n">02</span>Principles</a>
     <a class="toc-chip" href="#nav-ba"><span class="n">03</span>Nav</a>
-    <a class="toc-chip" href="#pages"><span class="n">04</span>Pages</a>
-    <a class="toc-chip" href="#design-system"><span class="n">05</span>Design system</a>
+    <a class="toc-chip" href="#design-system"><span class="n">04</span>Design system</a>
+    <a class="toc-chip" href="#pages"><span class="n">05</span>Pages</a>
     <a class="toc-chip" href="#close"><span class="n">06</span>Next</a>
   </div>
 </nav>
@@ -397,77 +399,13 @@
   </div>
 </div>
 
-<!-- ========== PAGE MAP ========== -->
-<div class="sec-wrap" data-sec="pages">
-  <button class="sec-toggle" aria-label="Collapse section" aria-expanded="true"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
-  <div class="sec-body">
-<section class="pages" id="pages"><div class="container">
-  <div class="pm-head">
-    <div class="eyebrow"><span class="bar"></span><span class="caption">04 · The eight pages</span></div>
-    <h2 class="section-h2">Eight pages, <span class="emph">one path.</span></h2>
-    <p>Click any card to open the full mockup. Discover · Decide · Convert — left-to-right.</p>
-  </div>
-
-  <div class="funnel">
-    <div class="stage"><span class="n">Discover</span><h3>Meet the network.</h3><p>Home · About · Team · Journal — trust and interest, in under ninety seconds.</p></div>
-    <div class="stage"><span class="n">Decide</span><h3>Price, fit, and proof.</h3><p>Memberships · Partnerships — one screen each, one decision each.</p></div>
-    <div class="stage"><span class="n">Convert</span><h3>Two minutes to member.</h3><p>Contact · Become a member — audience-aware forms, transparent total, Stripe.</p></div>
-  </div>
-
-  <div class="page-grid">
-    <a class="page-card reveal" href="m4b-home-mockup.html">
-      <span class="stage-tag">01 · Discover</span><h2>Home</h2>
-      <p>Full-bleed hero, three audience paths, named testimonials, press strip.</p>
-      <span class="go">Open the mockup</span>
-    </a>
-    <a class="page-card reveal delay-1" href="m4b-about-mockup.html">
-      <span class="stage-tag">01 · Discover</span><h2>About</h2>
-      <p>The problem, the shift, the timeline, a signed founders' note.</p>
-      <span class="go">Open the mockup</span>
-    </a>
-    <a class="page-card reveal" href="m4b-team-mockup.html">
-      <span class="stage-tag">01 · Discover</span><h2>Team</h2>
-      <p>Masonry of named portraits — role, sector, LinkedIn.</p>
-      <span class="go">Open the mockup</span>
-    </a>
-    <a class="page-card reveal delay-1" href="m4b-journal-mockup.html">
-      <span class="stage-tag">01 · Discover</span><h2>Journal</h2>
-      <p>Essays, events, member wins — editorial credibility in one place.</p>
-      <span class="go">Open the mockup</span>
-    </a>
-    <a class="page-card reveal" href="m4b-memberships-mockup.html">
-      <span class="stage-tag">02 · Decide</span><h2>Memberships</h2>
-      <p>Two pricing cards — Individual (CHF 300) and Corporate (from CHF 15k).</p>
-      <span class="go">Open the mockup</span>
-    </a>
-    <a class="page-card reveal delay-1" href="m4b-partnerships-mockup.html">
-      <span class="stage-tag">02 · Decide</span><h2>Partnerships</h2>
-      <p>Logo wall, three tiers, four case stories — one slot reserved for the next partner.</p>
-      <span class="go">Open the mockup</span>
-    </a>
-    <a class="page-card reveal" href="m4b-contact-mockup.html">
-      <span class="stage-tag">03 · Convert</span><h2>Contact</h2>
-      <p>Audience-aware form, book-a-call card, direct email fallback.</p>
-      <span class="go">Open the mockup</span>
-    </a>
-    <a class="page-card reveal delay-1" href="m4b-become-member-mockup.html">
-      <span class="stage-tag">03 · Convert</span><h2>Become a member</h2>
-      <p>Three-step wizard, sticky order summary, Stripe at the end.</p>
-      <span class="go">Open the mockup</span>
-    </a>
-  </div>
-</div></section>
-
-  </div>
-</div>
-
 <!-- ========== DESIGN SYSTEM ========== -->
 <div class="sec-wrap" data-sec="design-system">
   <button class="sec-toggle" aria-label="Collapse section" aria-expanded="true"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
   <div class="sec-body">
 <section class="ds" id="design-system"><div class="container">
   <div class="ds-head reveal">
-    <div class="eyebrow"><span class="bar"></span><span class="caption">05 · For the dev team</span></div>
+    <div class="eyebrow"><span class="bar"></span><span class="caption">04 · For the dev team</span></div>
     <h2 class="section-h2">The <span class="emph">design system.</span></h2>
     <p>Colour, type, spacing, components, motion. Hand this to a developer and they can ship the site brand-accurate.</p>
   </div>
@@ -595,18 +533,80 @@
   </div>
 </div>
 
+<!-- ========== PAGE MAP ========== -->
+<div class="sec-wrap" data-sec="pages">
+  <button class="sec-toggle" aria-label="Collapse section" aria-expanded="true"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+  <div class="sec-body">
+<section class="pages" id="pages"><div class="container">
+  <div class="pm-head">
+    <div class="eyebrow"><span class="bar"></span><span class="caption">05 · The eight pages</span></div>
+    <h2 class="section-h2">Eight pages, <span class="emph">one path.</span></h2>
+    <p>Click any card to open the full mockup. Discover · Decide · Convert — left-to-right.</p>
+  </div>
+
+  <div class="funnel">
+    <div class="stage"><span class="n">Discover</span><h3>Meet the network.</h3><p>Home · About · Team · Journal — trust and interest, in under ninety seconds.</p></div>
+    <div class="stage"><span class="n">Decide</span><h3>Price, fit, and proof.</h3><p>Memberships · Partnerships — one screen each, one decision each.</p></div>
+    <div class="stage"><span class="n">Convert</span><h3>Two minutes to member.</h3><p>Contact · Become a member — audience-aware forms, transparent total, Stripe.</p></div>
+  </div>
+
+  <div class="page-grid">
+    <a class="page-card reveal" href="m4b-home-mockup.html">
+      <span class="stage-tag">01 · Discover</span><h2>Home</h2>
+      <p>Full-bleed hero, three audience paths, named testimonials, press strip.</p>
+      <span class="go">Open the mockup</span>
+    </a>
+    <a class="page-card reveal delay-1" href="m4b-about-mockup.html">
+      <span class="stage-tag">01 · Discover</span><h2>About</h2>
+      <p>The problem, the shift, the timeline, a signed founders' note.</p>
+      <span class="go">Open the mockup</span>
+    </a>
+    <a class="page-card reveal" href="m4b-team-mockup.html">
+      <span class="stage-tag">01 · Discover</span><h2>Team</h2>
+      <p>Masonry of named portraits — role, sector, LinkedIn.</p>
+      <span class="go">Open the mockup</span>
+    </a>
+    <a class="page-card reveal delay-1" href="m4b-journal-mockup.html">
+      <span class="stage-tag">01 · Discover</span><h2>Journal</h2>
+      <p>Essays, events, member wins — editorial credibility in one place.</p>
+      <span class="go">Open the mockup</span>
+    </a>
+    <a class="page-card reveal" href="m4b-memberships-mockup.html">
+      <span class="stage-tag">02 · Decide</span><h2>Memberships</h2>
+      <p>Two pricing cards — Individual (CHF 300) and Corporate (from CHF 15k).</p>
+      <span class="go">Open the mockup</span>
+    </a>
+    <a class="page-card reveal delay-1" href="m4b-partnerships-mockup.html">
+      <span class="stage-tag">02 · Decide</span><h2>Partnerships</h2>
+      <p>Logo wall, three tiers, four case stories — one slot reserved for the next partner.</p>
+      <span class="go">Open the mockup</span>
+    </a>
+    <a class="page-card reveal" href="m4b-contact-mockup.html">
+      <span class="stage-tag">03 · Convert</span><h2>Contact</h2>
+      <p>Audience-aware form, book-a-call card, direct email fallback.</p>
+      <span class="go">Open the mockup</span>
+    </a>
+    <a class="page-card reveal delay-1" href="m4b-become-member-mockup.html">
+      <span class="stage-tag">03 · Convert</span><h2>Become a member</h2>
+      <p>Three-step wizard, sticky order summary, Stripe at the end.</p>
+      <span class="go">Open the mockup</span>
+    </a>
+  </div>
+</div></section>
+
+  </div>
+</div>
+
 <!-- ========== CLOSE ========== -->
 <div class="sec-wrap" data-sec="close" id="close">
   <button class="sec-toggle" aria-label="Collapse section" aria-expanded="true"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
   <div class="sec-body">
 <section class="close"><div class="close-inner">
   <h2>Ready when <span class="emph">you are.</span></h2>
-  <div>
-    <p>A clickable prototype, a design system, and every page in one archive — ready to hand to engineering.</p>
-    <div class="cta-row">
-      <a class="btn btn-on-dark" href="m4b-home-mockup.html"><span class="dot"></span>Start with the home page</a>
-      <a class="btn btn-outline-light" href="m4b-contact-mockup.html">Send feedback</a>
-    </div>
+  <p>A clickable prototype, a design system, and every page in one archive — ready to hand to engineering.</p>
+  <div class="cta-row">
+    <a class="btn btn-on-dark" href="m4b-home-mockup.html"><span class="dot"></span>Start with the home page</a>
+    <a class="btn btn-outline-light" href="m4b-contact-mockup.html">Send feedback</a>
   </div>
 </div></section>
   </div>
