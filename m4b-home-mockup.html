@@ -180,19 +180,38 @@
   .art .more{margin-top:auto;font-size:13px;font-weight:500;}
   .art.feat .more{color:var(--mint);}
 
-  .press-quotes{padding:120px 0;background:var(--paper);border-top:1px solid var(--line);}
-  .pq-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:24px;align-items:start;}
-  .pq{background:#fff;border:1px solid var(--line);border-radius:6px;padding:32px 28px;display:flex;flex-direction:column;gap:20px;min-height:260px;transition:transform .22s,box-shadow .22s;}
-  .pq:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(19,19,19,.08);}
-  .pq:nth-child(1){margin-top:0;}
-  .pq:nth-child(2){margin-top:56px;}
-  .pq:nth-child(3){margin-top:24px;}
-  @media (max-width: 1100px){ .pq:nth-child(2),.pq:nth-child(3){margin-top:0;} }
-  .pq .media{font-family:"Poppins",sans-serif;font-size:14px;color:var(--onyx);font-weight:600;letter-spacing:-0.005em;}
-  .pq blockquote{font-family:"Poppins",sans-serif;font-weight:300;font-size:14px;line-height:1.4;margin:0;letter-spacing:-0.005em;color:var(--onyx);}
-  .pq blockquote::before{content:"\201C";color:var(--mint);font-weight:600;margin-right:2px;}
-  .pq blockquote::after{content:"\201D";color:var(--mint);font-weight:600;}
-  .pq .ref{margin-top:auto;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+  /* Press-logo strip — continuously scrolling wordmarks */
+  .press-logos{padding:96px 0 40px;background:var(--paper);border-top:1px solid var(--line);}
+  .press-marquee{padding:20px 0 80px;overflow:hidden;}
+  .press-marquee{
+    -webkit-mask-image:linear-gradient(to right,transparent 0,#000 120px,#000 calc(100% - 120px),transparent 100%);
+            mask-image:linear-gradient(to right,transparent 0,#000 120px,#000 calc(100% - 120px),transparent 100%);
+  }
+  .press-marquee .marquee-track{gap:72px;align-items:center;}
+  .press-logo{
+    display:inline-flex;align-items:center;color:var(--onyx);opacity:.5;
+    transition:opacity .25s;white-space:nowrap;line-height:1;
+  }
+  .press-logo:hover{opacity:1;}
+  .press-logo .lg-ft{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:#BE3A34;font-style:italic;}
+  .press-logo .lg-hb{font-family:Georgia,serif;font-weight:700;font-size:22px;letter-spacing:-0.005em;}
+  .press-logo .lg-nzz{font-family:Georgia,serif;font-weight:800;font-size:20px;letter-spacing:0.02em;}
+  .press-logo .lg-bbg{font-family:"Poppins",sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.02em;text-transform:none;}
+  .press-logo .lg-reu{font-family:"Poppins",sans-serif;font-weight:700;font-size:15px;letter-spacing:0.22em;}
+  .press-logo .lg-eco{font-family:Georgia,serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;background:#BE3A34;color:#fff;padding:5px 12px;}
+  .press-logo .lg-eco em{font-style:italic;font-weight:400;margin-right:5px;}
+  .press-logo .lg-faz{font-family:Georgia,serif;font-weight:700;font-size:19px;font-variant:small-caps;letter-spacing:0.04em;}
+  .press-logo .lg-leche{font-family:"Poppins",sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;text-transform:uppercase;}
+  .press-logo .lg-sz{font-family:Georgia,serif;font-weight:700;font-size:20px;color:#005AA7;letter-spacing:-0.005em;}
+  .press-logo .lg-bz{font-family:Georgia,serif;font-weight:700;font-size:20px;font-style:italic;letter-spacing:-0.005em;}
+  .press-logo .lg-fbs{font-family:Georgia,serif;font-weight:900;font-size:23px;letter-spacing:-0.025em;}
+  .press-logo .lg-fuw{font-family:Georgia,serif;font-weight:600;font-size:18px;letter-spacing:-0.005em;}
+  .press-logo .lg-mm{font-family:"Poppins",sans-serif;font-weight:600;font-size:18px;letter-spacing:-0.01em;font-style:italic;}
+  /* In reduced-motion mode, freeze the marquee and wrap logos instead */
+  @media (prefers-reduced-motion: reduce){
+    .press-marquee{mask-image:none;-webkit-mask-image:none;}
+    .press-marquee .marquee-track{flex-wrap:wrap;justify-content:center;min-width:0;gap:40px 56px;}
+  }
 
   @media (max-width: 1100px){
     .hero-inner{grid-template-columns:1fr;gap:36px;padding:160px 32px 64px;}
@@ -299,7 +318,7 @@
 </div></section>
 
 <section class="testi"><div class="container">
-  <div class="section-head"><h2 class="section-h2">Named seats. <span class="emph">Real stories.</span></h2><p class="body-p side">Anonymity has its place. On this page, proof doesn't.</p></div>
+  <div class="section-head"><h2 class="section-h2">Members, <span class="emph">in their own words.</span></h2><p class="body-p side">Three appointments from the past twelve months.</p></div>
   <div class="testi-grid">
     <div class="quote reveal"><blockquote>"The mentor pairing made the difference between reading about governance and doing it."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Olivia Kinghorst</b><span>Management Board · Cohort '24</span></div></div></div>
     <div class="quote reveal delay-1"><blockquote>"I've chaired boards for twenty years. This network reminded me why I started."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Stephan Hillert</b><span>Management Board · Chair</span></div></div></div>
@@ -316,14 +335,40 @@
   </div>
 </div></section>
 
-<section class="press-quotes"><div class="container">
-  <div class="section-head"><h2 class="section-h2">In the <span class="emph">press.</span></h2><p class="body-p side">Selected pull quotes from European business media.</p></div>
-  <div class="pq-grid">
-    <div class="pq reveal"><div class="media">Financial Times</div><blockquote>A corrective to Europe's boardroom demographic — run by directors already in the seat.</blockquote><span class="ref">Board Governance · Feb 2026</span></div>
-    <div class="pq reveal delay-1"><div class="media">Handelsblatt</div><blockquote>The first peer network in DACH to take generational diversity as seriously as gender diversity.</blockquote><span class="ref">Leadership · Mar 2026</span></div>
-    <div class="pq reveal delay-2"><div class="media">Neue Zürcher Zeitung</div><blockquote>A quiet Zurich network that keeps turning up on corporate shortlists.</blockquote><span class="ref">Wirtschaft · Jan 2026</span></div>
+<section class="press-logos reveal">
+  <div class="container">
+    <div class="section-head"><h2 class="section-h2">In the <span class="emph">press.</span></h2><p class="body-p side">Recent mentions across European business media.</p></div>
   </div>
-</div></section>
+  <div class="press-marquee marquee"><div class="marquee-track">
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-ft">Financial Times</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-hb">Handelsblatt</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-nzz">Neue Zürcher Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-bbg">Bloomberg</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-reu">REUTERS</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-eco"><em>The</em>Economist</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-faz">Frankfurter Allgemeine</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-leche">Les Echos</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-sz">Süddeutsche Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-bz">Börsen-Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-fbs">Forbes</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-fuw">Finanz und Wirtschaft</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-mm">Manager Magazin</span></a>
+    <!-- duplicate for seamless loop -->
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-ft">Financial Times</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-hb">Handelsblatt</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-nzz">Neue Zürcher Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-bbg">Bloomberg</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-reu">REUTERS</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-eco"><em>The</em>Economist</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-faz">Frankfurter Allgemeine</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-leche">Les Echos</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-sz">Süddeutsche Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-bz">Börsen-Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-fbs">Forbes</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-fuw">Finanz und Wirtschaft</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-mm">Manager Magazin</span></a>
+  </div></div>
+</section>
 
 <section class="final"><div class="container final-inner">
   <h2>Welcoming a new generation to the <span class="emph">table.</span></h2>

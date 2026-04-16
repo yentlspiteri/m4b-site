@@ -46,6 +46,23 @@
   .case.dark{background:var(--onyx);color:var(--paper);border-color:transparent;}
   .case.dark .ctx{color:rgba(244,244,249,.75);}
   .case.dark .q{color:var(--paper);border-color:rgba(244,244,249,.18);}
+
+  /* Hero with image */
+  .page-hero.with-figure{padding-top:120px;padding-bottom:80px;}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:72px;align-items:end;}
+  .hero-figure{aspect-ratio:4/5;overflow:hidden;border-radius:4px;background:var(--paper);}
+  .hero-figure img{width:100%;height:100%;object-fit:cover;display:block;}
+  @media (max-width:1100px){.hero-grid{grid-template-columns:1fr;gap:32px;} .hero-figure{aspect-ratio:16/10;}}
+
+  /* Cinematic full-bleed break */
+  .cinema{position:relative;background:var(--onyx);}
+  .cinema .cin-img{width:100%;height:clamp(320px,42vw,540px);object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);}
+  .cinema .cin-cap{position:absolute;left:0;right:0;bottom:0;padding:28px 40px;background:linear-gradient(to top,rgba(19,19,19,.65),transparent);color:var(--paper);font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;}
+  .cinema .cin-cap b{color:var(--mint);font-weight:600;margin-right:14px;}
+
+  /* Accent strip */
+  .accent{padding:0;background:var(--paper);}
+  .accent-img{width:100%;height:clamp(220px,32vw,360px);object-fit:cover;object-position:center 40%;display:block;filter:grayscale(1) contrast(1.05) brightness(.98);}
 </style></head>
 <body>
 
@@ -58,10 +75,15 @@
   <a class="pill-cta" href="m4b-become-member-mockup.html"><span class="dot"></span>Partner with us</a>
 </header>
 
-<section class="page-hero"><div class="container">
-  <div class="eyebrow"><span class="bar"></span><span class="caption">Partnerships · 06 of 08</span></div>
-  <h1 class="hero-h1">Partners who build the <span class="emph">bridge</span> with us.</h1>
-  <p class="lede">The organisations we work with to open boardrooms to the next generation — and the companies quietly recruiting through them.</p>
+<section class="page-hero with-figure"><div class="container">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow"><span class="bar"></span><span class="caption">Partnerships · 06 of 08</span></div>
+      <h1 class="hero-h1 reveal">Partners who build the <span class="emph">bridge</span> with us.</h1>
+      <p class="lede reveal delay-1">The organisations we work with to open boardrooms to the next generation — and the companies quietly recruiting through them.</p>
+    </div>
+    <div class="hero-figure reveal delay-2"><img src="assets/photos/drive/06.png" alt="Partnership handshake"/></div>
+  </div>
 </div></section>
 
 <section class="logo-wall"><div class="container">
@@ -85,6 +107,11 @@
     <div class="why-card"><div class="ic"><img src="assets/icons/bridge-building.png" alt=""/></div><h3>Shape the conversation.</h3><p>Co-author governance essays and host roundtables your board will actually read.</p></div>
   </div>
 </div></section>
+
+<section class="cinema reveal">
+  <img class="cin-img" src="assets/photos/drive/10.png" alt="Partners walking together"/>
+  <div class="cin-cap"><b>Zurich · 2026</b>Partner briefing — recruit, sponsor, publish.</div>
+</section>
 
 <section class="tiers"><div class="container">
   <div class="section-head"><h2 class="section-h2">Three ways <span class="emph">to partner.</span></h2><p class="body-p side">Corporate · Network · Media.</p></div>
@@ -122,6 +149,8 @@
     <div class="case dark"><div class="name" style="color:var(--mint);">+ Your partnership</div><div class="ctx">The next case study on this page could be yours. Whether you recruit, sponsor, or publish — there's a tier that fits. The first conversation takes twenty minutes.</div><div class="q">"Interested to partner with us? Get in touch today."</div><a class="btn btn-primary" style="margin-top:auto;align-self:flex-start;"><span class="dot"></span>Start a conversation</a></div>
   </div>
 </div></section>
+
+<section class="accent reveal"><img class="accent-img" src="assets/photos/drive/11.png" alt="Bridge detail"/></section>
 
 <section class="final"><div class="container final-inner">
   <h2>Ready to build the bridge <span class="emph">with us?</span></h2>

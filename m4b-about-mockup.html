@@ -45,6 +45,23 @@
   .note .sig{margin-top:32px;padding-top:28px;border-top:1px solid rgba(244,244,249,.2);display:flex;gap:48px;flex-wrap:wrap;}
   .note .sig div{font-family:"Poppins",sans-serif;font-weight:500;font-size:14px;}
   .note .sig div span{display:block;font-size:11px;color:rgba(244,244,249,.5);font-weight:400;letter-spacing:.2em;text-transform:uppercase;margin-top:4px;}
+
+  /* Hero with image */
+  .page-hero.with-figure{padding-top:120px;padding-bottom:80px;}
+  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:72px;align-items:end;}
+  .hero-figure{aspect-ratio:4/5;overflow:hidden;border-radius:4px;background:var(--paper);}
+  .hero-figure img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.04);display:block;}
+  @media (max-width:1100px){.hero-grid{grid-template-columns:1fr;gap:32px;} .hero-figure{aspect-ratio:16/10;}}
+
+  /* Cinematic full-bleed break */
+  .cinema{position:relative;background:var(--onyx);}
+  .cinema .cin-img{width:100%;height:clamp(320px,42vw,540px);object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);}
+  .cinema .cin-cap{position:absolute;left:0;right:0;bottom:0;padding:28px 40px;background:linear-gradient(to top,rgba(19,19,19,.65),transparent);color:var(--paper);font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;}
+  .cinema .cin-cap b{color:var(--mint);font-weight:600;margin-right:14px;}
+
+  /* Accent decorative image above note */
+  .accent{padding:0;background:var(--paper);}
+  .accent-img{width:100%;height:clamp(220px,32vw,360px);object-fit:cover;object-position:center 30%;display:block;filter:grayscale(1) contrast(1.05) brightness(.98);}
 </style></head>
 <body>
 
@@ -57,10 +74,15 @@
   <a class="pill-cta" href="m4b-become-member-mockup.html"><span class="dot"></span>Join the network</a>
 </header>
 
-<section class="page-hero"><div class="container">
-  <div class="eyebrow"><span class="bar"></span><span class="caption">About · 03 of 08</span></div>
-  <h1 class="hero-h1">Welcoming a new generation to the <span class="emph">table.</span></h1>
-  <p class="lede">Why we started Millennials4Boards — and what we are building next.</p>
+<section class="page-hero with-figure"><div class="container">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow"><span class="bar"></span><span class="caption">About · 03 of 08</span></div>
+      <h1 class="hero-h1 reveal">Welcoming a new generation to the <span class="emph">table.</span></h1>
+      <p class="lede reveal delay-1">Why we started Millennials4Boards — and what we are building next.</p>
+    </div>
+    <div class="hero-figure reveal delay-2"><img src="assets/photos/drive/01.png" alt="Two directors in conversation"/></div>
+  </div>
 </div></section>
 
 <section class="problem"><div class="container p-grid">
@@ -76,6 +98,11 @@
     <div class="shift-block"><span class="num">03</span><h3>A new kind of director.</h3><p>Digitally fluent, internationally mobile, mentored by those already in the seat. The network exists to find and form them.</p></div>
   </div>
 </div></section>
+
+<section class="cinema reveal">
+  <img class="cin-img" src="assets/photos/drive/05.png" alt="A cross-generational board session"/>
+  <div class="cin-cap"><b>Kilchberg · 2026</b>Cross-generational board session — cohort mentoring in the same room.</div>
+</section>
 
 <section class="model"><div class="container">
   <div class="section-head"><h2 class="section-h2">Our model, in <span class="emph">three parts.</span></h2><p class="body-p side">Community · Mentorship · Access.</p></div>
@@ -96,6 +123,8 @@
     <div class="tl-item"><div class="tl-year">2026</div><h4>500+ members.</h4><p>Three cohorts a year. Corporate partners growing.</p></div>
   </div>
 </div></section>
+
+<section class="accent reveal"><img class="accent-img" src="assets/photos/drive/02.png" alt="Bridge architecture — building between generations"/></section>
 
 <section class="note"><div class="container note-grid">
   <div><span class="caption" style="color:rgba(244,244,249,.55);">A note from the founders</span><h2 class="section-h2" style="margin-top:20px;">We don't want to disrupt the boardroom. We want to <span class="emph">finish building it.</span></h2></div>
