@@ -98,8 +98,12 @@
   .ba h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:15px;margin:0;line-height:1.25;letter-spacing:-0.005em;}
   .ba p{font-size:12px;line-height:1.55;color:#333;margin:0;font-weight:300;}
   .ba .nav-mock{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:12px 16px;font-size:10px;color:#555;font-weight:500;}
-  .ba.after .nav-mock{background:var(--onyx);color:var(--paper);border-color:transparent;display:flex;gap:12px;align-items:center;justify-content:center;}
+  /* Proposed nav: two pills side by side, matching the real floating nav */
+  .ba.after .nav-row{display:flex;gap:8px;align-items:center;justify-content:center;}
+  .ba.after .nav-mock{background:var(--onyx);color:var(--paper);border-color:transparent;border-radius:999px;display:inline-flex;gap:12px;align-items:center;justify-content:center;padding:10px 20px;font-size:10px;font-weight:500;}
   .ba.after .nav-mock .logo-dot{width:16px;height:16px;border-radius:999px;background:var(--mint);flex:0 0 auto;}
+  .ba.after .join-pill{background:var(--onyx);color:var(--paper);border-radius:999px;display:inline-flex;gap:6px;align-items:center;padding:10px 16px;font-size:10px;font-weight:500;}
+  .ba.after .join-pill .dot{width:6px;height:6px;border-radius:999px;background:var(--mint);}
 
   /* ============ PAGE MAP ============ */
   .pages{padding:96px 0;background:var(--paper);border-top:1px solid var(--line);}
@@ -323,7 +327,7 @@
 <section class="cover">
   <div class="cover-grid">
     <div>
-      <div class="cover-eyebrow"><span class="bar"></span><span class="caption">Millennials4Boards · Website refresh · v0.9</span></div>
+      <div class="cover-eyebrow"><span class="bar"></span><span class="caption">Millennials4Boards · Website refresh</span></div>
       <h1 class="reveal">A clearer <span class="emph">path in.</span></h1>
       <p class="cover-lede reveal delay-1">A refresh of <b>millennials4boards.com</b> focused on making it easier for the right people to become members. Same story, same brand — clearer navigation and a faster path to join.</p>
       <div class="cover-cta-row reveal delay-2">
@@ -344,7 +348,7 @@
     <span><b class="counter" data-target="1">0</b> funnel</span>
     <span><b class="counter" data-target="1">0</b> design system</span>
     <span>Same story, clearer path</span>
-    <span>Refresh · v0.9 · Apr 2026</span>
+    <span>Refresh · Apr 2026</span>
   </div>
 </div>
 
@@ -377,7 +381,7 @@
     </div>
     <div class="audit-card">
       <span class="n">04 · One nav</span>
-      <h3>Six links on a floating pill nav.</h3>
+      <h3>Five links on a floating pill nav.</h3>
       <p>Logo centred, "Join" button alongside. One click from joining, on every page.</p>
     </div>
     <div class="audit-card">
@@ -425,7 +429,7 @@
 <section class="nav-ba" id="nav-ba"><div class="container">
   <div class="ba-head">
     <div class="eyebrow"><span class="bar"></span><span class="caption">03 · The navigation, simplified</span></div>
-    <h2 class="section-h2">Six destinations, <span class="emph">one click.</span></h2>
+    <h2 class="section-h2">Five destinations, <span class="emph">one click.</span></h2>
     <p>A floating pill with the logo at its centre. The "Join" button sits alongside, so joining is always one click away.</p>
   </div>
   <div class="ba-grid">
@@ -433,13 +437,16 @@
       <span class="label">Today</span>
       <div class="nav-mock">Home · Team · About us · Memberships · News and events · Partnerships · Contact us</div>
       <h3>Seven items, single "Join Us!" CTA.</h3>
-      <p>Currently a flat row of seven links. The refresh consolidates to six and puts the logo and join action front and centre.</p>
+      <p>Currently a flat row of seven links. The refresh consolidates to five and puts the logo and join action front and centre.</p>
     </div>
     <div class="ba after reveal delay-1">
       <span class="label">Proposed</span>
-      <div class="nav-mock">About · Team · Memberships · <span class="logo-dot"></span> · Partnerships · Journal · Contact</div>
+      <div class="nav-row">
+        <div class="nav-mock">About · Team · Memberships · <span class="logo-dot"></span> · Partnerships · Journal</div>
+        <div class="join-pill"><span class="dot"></span> Join the network</div>
+      </div>
       <h3>Floating pill, logo-centred, CTA alongside.</h3>
-      <p>Six links split around the logo. "Journal" replaces "News and events." A separate "Join" pill sits next to it.</p>
+      <p>Five links split around the logo. "Journal" replaces "News and events." Contact moves to the footer. A separate "Join" pill sits next to it.</p>
     </div>
   </div>
 </div></section>
@@ -528,7 +535,7 @@
       <div class="ds-comp">
         <h4>Floating pill nav</h4>
         <div class="demo" style="justify-content:flex-start;">
-          <span class="ds-pill"><span>About</span><span>Team</span><span style="background:var(--mint);width:18px;height:18px;border-radius:999px;"></span><span>Partnerships</span><span>Journal</span></span>
+          <span class="ds-pill"><span>About</span><span>Team</span><span>Memberships</span><span style="background:var(--mint);width:18px;height:18px;border-radius:999px;"></span><span>Partnerships</span><span>Journal</span></span>
           <span class="ds-pill" style="background:var(--onyx);color:var(--paper);"><span class="dot"></span>Join</span>
         </div>
         <p class="rule">Two pills, centered, fixed at top with 24px inset. Logo dot is Mint inside a white pill. CTA pill is Onyx with Mint dot.</p>
@@ -729,7 +736,7 @@
     <div><h4>Commercial</h4><a href="m4b-memberships-mockup.html">Memberships</a><a href="m4b-partnerships-mockup.html">Partnerships</a><a href="m4b-become-member-mockup.html">Become a member</a><a href="m4b-contact-mockup.html">Contact</a></div>
     <div><h4>Reference</h4><a href="https://millennials4boards.com/" target="_blank" rel="noopener">Current live site ↗</a><a href="#audit">What changes and why</a><a href="#pages">Page map</a><a href="#design-system">Design system</a></div>
   </div>
-  <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept v0.9 · Brand-strict</span></div>
+  <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept · Brand-strict</span></div>
 </div></footer>
 
 <script>
