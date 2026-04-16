@@ -2,6 +2,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/brand.css"/>
 <style>
+  /* ============ NAV — hidden until the reader reaches the pages section ============ */
+  /* On this index (concept doc) we want the reader to read through first, then
+     reveal the nav to "kick off" exploring the actual site pages. */
+  body:not(.nav-revealed) .nav-floating{
+    opacity:0;
+    transform:translateY(-80px);
+    pointer-events:none;
+    transition:opacity .55s cubic-bezier(.2,.6,.2,1), transform .55s cubic-bezier(.2,.6,.2,1);
+  }
+  body.nav-revealed .nav-floating{
+    opacity:1;
+    transform:none;
+    transition:opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1);
+  }
+  /* Scroll hint — tiny caption that appears briefly when the nav is revealed */
+  .nav-hint{
+    position:fixed;top:82px;left:50%;transform:translateX(-50%) translateY(-6px);
+    font-family:"Poppins",sans-serif;font-weight:500;
+    font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+    color:var(--muted);
+    background:rgba(244,244,249,.86);backdrop-filter:blur(10px);
+    border:1px solid var(--line);border-radius:999px;
+    padding:6px 12px;
+    opacity:0;pointer-events:none;z-index:39;
+    transition:opacity .6s cubic-bezier(.2,.6,.2,1) .25s, transform .6s cubic-bezier(.2,.6,.2,1) .25s;
+  }
+  body.nav-revealed .nav-hint{opacity:1;transform:translateX(-50%) translateY(0);}
+  body.nav-revealed .nav-hint.fade-out{opacity:0;}
+  @media (prefers-reduced-motion: reduce){
+    body:not(.nav-revealed) .nav-floating{opacity:1;transform:none;pointer-events:auto;}
+    .nav-hint{display:none;}
+  }
+
   /* ============ COVER — paper, editorial ============ */
   .cover{
     position:relative;padding:140px 0 80px;background:var(--paper);overflow:hidden;
@@ -192,7 +225,7 @@
 </style></head>
 <body>
 
-<!-- ========== FLOATING PILL NAV ========== -->
+<!-- ========== FLOATING PILL NAV (hidden until reader hits #pages) ========== -->
 <header class="nav-floating">
   <div class="pill">
     <nav>
@@ -209,6 +242,7 @@
   </div>
   <a class="pill-cta" href="m4b-become-member-mockup.html"><span class="dot"></span>Join the network</a>
 </header>
+<div class="nav-hint" aria-hidden="true">Start exploring — click any page</div>
 
 <!-- ========== COVER (paper) ========== -->
 <section class="cover">
@@ -529,5 +563,26 @@
   <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept v0.9 · Brand-strict</span></div>
 </div></footer>
 
+<script>
+/* Index-only: reveal the floating nav when the reader reaches the pages section.
+   Signals "now go explore the site." */
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) { document.body.classList.add('nav-revealed'); return; }
+  const target = document.getElementById('pages');
+  if (!target) { document.body.classList.add('nav-revealed'); return; }
+  const hint = document.querySelector('.nav-hint');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.body.classList.add('nav-revealed');
+        io.disconnect();
+        if (hint) setTimeout(() => hint.classList.add('fade-out'), 3200);
+      }
+    });
+  }, { threshold: 0, rootMargin: '0px 0px -25% 0px' });
+  io.observe(target);
+})();
+</script>
 <script src="assets/motion.js" defer></script>
 </body></html>
