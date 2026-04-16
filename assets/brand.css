@@ -1,0 +1,266 @@
+/* M4B shared brand styles — v3 (matches social template patterns).
+   - Poppins Light + SemiBold only
+   - Mint Leaf as the single accent across all pages
+   - Photos used NATURAL — no grayscale filters, no multiply blend overlays
+   - Portraits in circular / organic rounded frames
+   - Names: initial caps, Poppins Light, large
+   - Labels / CTAs: ALL CAPS, Poppins SemiBold
+*/
+:root {
+  --mint:   #05CEAA;
+  --brick:  #BA2D0B;
+  --onyx:   #131313;
+  --paper:  #F4F4F9;
+  --line:   rgba(19,19,19,0.10);
+  --muted:  rgba(19,19,19,0.58);
+}
+* { box-sizing: border-box; }
+html,body { margin:0; padding:0; }
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  font-weight: 300;
+  color: var(--onyx);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+
+/* TYPE SYSTEM — matches social templates */
+
+/* Hero / large statements: Poppins Light, sentence case — matches social templates */
+.hero-h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: clamp(56px, 7vw, 112px);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  margin: 0 0 28px;
+}
+.hero-h1 .emph { font-weight: 600; }
+.hero-h1 .emph-brick { font-weight: 600; color: var(--brick); }
+
+/* Section titles: Poppins SemiBold, sentence case (not all caps) */
+.section-h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: clamp(32px, 3.8vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0 0 20px;
+}
+.section-h2 .emph { color: var(--mint); }
+.section-h2 .emph-brick { color: var(--brick); }
+
+/* Name display — big sentence-case Poppins Light, matches social templates */
+.name-display {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: clamp(40px, 4.4vw, 72px);
+  line-height: 1.0;
+  letter-spacing: -0.015em;
+  margin: 0 0 16px;
+}
+
+/* Sub-heading / card title */
+.sub-h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+}
+
+/* Lede / body */
+.lede {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 19px;
+  line-height: 1.5;
+  color: #2a2a2a;
+  max-width: 640px;
+}
+.body-p { font-family: "Poppins", sans-serif; font-weight: 300; font-size: 15px; line-height: 1.65; color: #333; }
+.body-p .emph { font-weight: 600; color: var(--onyx); }
+
+/* Label: ALL CAPS, Poppins SemiBold */
+.label { font-family: "Poppins", sans-serif; font-weight: 600; font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--onyx); }
+
+/* Caption: tracked out, Poppins Light */
+.caption {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.eyebrow { display:flex; align-items:center; gap:14px; margin-bottom:28px; }
+.eyebrow .bar { width:36px; height:1px; background:var(--onyx); opacity:.5; }
+
+/* ============================================================
+   NAV — Floating centered pill (Acreage-style), site-wide
+   ============================================================ */
+.nav-floating{
+  position:fixed;top:24px;left:0;right:0;z-index:40;
+  display:flex;justify-content:center;align-items:center;
+  padding:0 32px;pointer-events:none;
+}
+.pill{
+  pointer-events:auto;
+  background:rgba(244,244,249,0.92);
+  backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:999px;
+  padding:8px 18px;
+  display:flex;align-items:center;gap:8px;
+  box-shadow:0 8px 32px rgba(0,0,0,.18);
+}
+.pill nav{display:flex;align-items:center;gap:4px;}
+.pill nav a{
+  font-size:13px;font-weight:500;color:var(--onyx);
+  padding:10px 16px;border-radius:999px;letter-spacing:.01em;
+  transition:background .2s;
+}
+.pill nav a:hover,.pill nav a.active{background:rgba(19,19,19,.06);}
+.pill-logo{
+  width:42px;height:42px;border-radius:999px;background:var(--onyx);
+  display:flex;align-items:center;justify-content:center;padding:8px;
+  margin:0 8px;flex:0 0 auto;
+}
+.pill-logo img{width:100%;height:100%;object-fit:contain;}
+.pill-cta{
+  pointer-events:auto;
+  position:absolute;right:32px;top:50%;transform:translateY(-50%);
+  background:var(--onyx);color:var(--paper);
+  padding:12px 20px 12px 18px;border-radius:999px;
+  font-size:13px;font-weight:500;
+  display:inline-flex;align-items:center;gap:10px;
+  box-shadow:0 8px 24px rgba(0,0,0,.22);
+}
+.pill-cta .dot{width:6px;height:6px;border-radius:999px;background:var(--mint);}
+.pill-cta::after{content:"→";margin-left:2px;font-weight:500;}
+
+/* Default top spacing for inner pages (home overrides with full-bleed hero) */
+.has-floating-nav{padding-top:96px;}
+
+/* Page header */
+.page-hero { padding: 120px 0 88px; }
+.page-hero .lede { max-width:700px; }
+
+/* Section heads */
+.section-head { display:flex; justify-content:space-between; align-items:end; margin-bottom:48px; gap:40px; flex-wrap:wrap; }
+.section-head .side { max-width:340px; }
+
+/* Buttons */
+.btn {
+  display:inline-flex; align-items:center; gap:10px;
+  padding:14px 22px; border-radius:999px;
+  font-size:13px; font-weight:600; letter-spacing: .05em; text-transform: uppercase;
+  font-family:"Poppins", sans-serif;
+  transition: transform .15s, background .2s;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background:var(--mint); color:var(--onyx); }
+.btn-primary:hover { background:#04b094; }
+.btn-dark { background:var(--onyx); color:var(--paper); }
+.btn-ghost { border:1px solid var(--line); }
+.btn-ghost:hover { border-color: var(--onyx); }
+.btn .dot { width:6px; height:6px; border-radius:999px; background: var(--mint); }
+
+/* PHOTO TREATMENTS */
+/* Pure B&W (for portraits on coloured backgrounds per Image Treatment spec) */
+.bw { filter: grayscale(1) contrast(1.04); }
+
+/* Icon in a mint/onyx circle — solves low-contrast of Onyx icons on paper */
+.ic-circle { width: 56px; height: 56px; border-radius: 999px; background: var(--mint); display:flex; align-items:center; justify-content:center; padding: 14px; flex: 0 0 auto; }
+.ic-circle img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.ic-circle.onyx { background: var(--onyx); }
+.ic-circle.onyx img { filter: invert(1); }
+.ic-circle.lg { width: 72px; height: 72px; padding: 18px; }
+
+/* PHOTO TREATMENTS — natural, no overlays */
+.photo-circle {
+  border-radius: 999px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.photo-circle img { width:100%; height:100%; object-fit:cover; display:block; }
+
+.photo-rounded {
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.photo-rounded img { width:100%; height:100%; object-fit:cover; display:block; }
+
+/* Organic arch shape — matches social template silhouettes */
+.photo-arch {
+  border-radius: 50% 50% 8px 8px / 60% 60% 8px 8px;
+  overflow: hidden;
+  background: var(--paper);
+}
+.photo-arch img { width:100%; height:100%; object-fit:cover; display:block; }
+
+/* Split mint/onyx cards — used on team cards */
+.split-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 380px;
+}
+.split-card .photo { background: var(--paper); overflow:hidden; }
+.split-card .photo img { width:100%; height:100%; object-fit:cover; display:block; }
+.split-card .meta { padding: 36px 32px; display:flex; flex-direction:column; justify-content:space-between; }
+.split-card.on-onyx { background: var(--onyx); color: var(--paper); }
+.split-card.on-mint { background: var(--mint); color: var(--onyx); }
+.split-card .name { font-family:"Poppins",sans-serif; font-weight:300; font-size:32px; line-height:1.0; letter-spacing:-0.005em; margin-bottom: 16px; }
+.split-card .role { font-family:"Poppins",sans-serif; font-weight:300; font-size:14px; line-height:1.3; }
+.split-card .role b { display:block; font-weight:600; letter-spacing:.12em; text-transform:uppercase; font-size:12px; margin-bottom:4px; }
+
+/* FINAL CTA band — Onyx, mint accent only */
+.final {
+  background: var(--onyx);
+  color: var(--paper);
+  padding: 112px 0 100px;
+}
+.final-inner { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; }
+.final h2 {
+  font-family:"Poppins", sans-serif;
+  font-weight: 300;
+  font-size: clamp(44px, 5.5vw, 80px);
+  line-height: 1.02;
+  letter-spacing: -0.015em;
+  margin: 0;
+}
+.final h2 .emph { font-weight: 600; color: var(--mint); }
+.final h2 .emph-brick { font-weight: 600; color: var(--brick); }
+.final p { color: rgba(244,244,249,.78); font-size: 16px; max-width: 440px; line-height:1.6; }
+.final .cta-row { display:flex; gap:12px; margin-top:24px; }
+.final .btn-on-dark { background: var(--mint); color: var(--onyx); }
+.final .btn-outline-light { border:1px solid rgba(244,244,249,.4); color:#fff; }
+
+/* Footer */
+footer { background: var(--onyx); color: rgba(244,244,249,0.78); padding: 72px 0 36px; border-top:1px solid rgba(244,244,249,.08); }
+.foot-grid { display:grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap:40px; align-items:start; }
+.foot-grid h4 { font-family:"Poppins", sans-serif; font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:#fff; margin:0 0 16px; font-weight:500; }
+.foot-grid a { display:block; padding:5px 0; font-size:14px; color:rgba(244,244,249,0.62); font-weight:300; }
+.foot-grid a:hover { color:#fff; }
+.foot-logo { width:42px; height:42px; border-radius:8px; background:rgba(244,244,249,.06); display:inline-flex; align-items:center; justify-content:center; padding:6px; }
+.foot-logo img { width:100%; height:100%; object-fit:contain; }
+.foot-bottom { display:flex; justify-content:space-between; margin-top:56px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.1); font-size:11px; color:rgba(244,244,249,0.45); font-weight:300; letter-spacing:.15em; text-transform:uppercase; }
+
+@media (max-width: 1100px){
+  .pill nav{gap:0;}
+  .pill nav a{padding:8px 10px;font-size:12px;}
+  .pill-cta{display:none;}
+}
+@media (max-width: 900px) {
+  .final-inner, .foot-grid, .split-card { grid-template-columns:1fr; }
+  .container { padding: 0 24px; }
+}

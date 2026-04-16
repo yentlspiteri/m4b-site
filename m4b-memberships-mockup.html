@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>M4B — Memberships</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/brand.css"/>
+<style>
+  .pricing{padding:0 0 120px;}
+  .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+  .pc{padding:48px;border-radius:4px;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;gap:18px;min-height:620px;}
+  .pc.primary{background:var(--onyx);color:var(--paper);border-color:transparent;}
+  .pc .tag{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--onyx);font-weight:600;}
+  .pc.primary .tag{color:var(--mint);}
+  .pc h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:36px;line-height:1.05;letter-spacing:-0.01em;margin:0;}
+  .pc .sub{font-size:15px;color:#444;line-height:1.5;font-weight:300;}
+  .pc.primary .sub{color:rgba(244,244,249,.75);}
+  .pc .price{font-family:"Poppins",sans-serif;font-weight:600;font-size:60px;letter-spacing:-0.025em;line-height:1;margin-top:8px;}
+  .pc .price small{font-weight:300;font-size:16px;color:var(--muted);margin-left:8px;}
+  .pc.primary .price small{color:rgba(244,244,249,.6);}
+  .pc ul{list-style:none;padding:0;margin:10px 0;display:flex;flex-direction:column;gap:12px;}
+  .pc li{font-size:14px;line-height:1.5;padding-left:24px;position:relative;font-weight:300;}
+  .pc li::before{content:"";position:absolute;left:0;top:9px;width:12px;height:2px;background:var(--mint);}
+  .pc .cta{margin-top:auto;padding:14px 22px;border-radius:999px;font-size:14px;font-weight:500;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;}
+  .pc .cta .dot{width:6px;height:6px;border-radius:999px;background:var(--mint);}
+  .pc .cta{background:var(--onyx);color:#fff;}
+  .pc.primary .cta{background:var(--mint);color:var(--onyx);}
+  .pc.primary .cta .dot{background:var(--onyx);}
+
+  .outcomes{padding:120px 0;background:var(--paper);border-top:1px solid var(--line);}
+  .out-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .out{padding:32px 28px;background:#fff;border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;gap:22px;min-height:280px;}
+  .out blockquote{font-family:"Poppins",sans-serif;font-weight:500;font-size:19px;line-height:1.35;margin:0;letter-spacing:-0.005em;}
+  .out .who{display:flex;align-items:center;gap:12px;margin-top:auto;}
+  .out .av{width:44px;height:44px;border-radius:999px;overflow:hidden;background:var(--mint);flex:0 0 auto;}
+  .out .av img{width:100%;height:100%;object-fit:cover;}
+  .out .meta{font-size:12px;line-height:1.4;}
+  .out .meta b{display:block;font-weight:600;font-size:13px;}
+  .out .meta span{color:var(--muted);}
+
+  .faq{padding:120px 0;}
+  .faq-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line);}
+  .faq-item{padding:28px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:1fr 2fr;gap:60px;}
+  .faq-item .q{font-family:"Poppins",sans-serif;font-weight:600;font-size:20px;letter-spacing:-0.005em;}
+  .faq-item .a{font-size:15px;color:#333;line-height:1.6;font-weight:300;}
+</style></head>
+<body>
+
+<header class="nav-floating">
+  <div class="pill">
+    <nav><a href="#">About</a><a href="#">Team</a><a class="active" href="#">Memberships</a></nav>
+    <a class="pill-logo" href="#"><img src="assets/photos/image6.png" alt="M4B"/></a>
+    <nav><a href="#">Partnerships</a><a href="#">Journal</a><a href="#">Contact</a></nav>
+  </div>
+  <a class="pill-cta" href="#"><span class="dot"></span>Become a member</a>
+</header>
+
+<section class="page-hero"><div class="container">
+  <div class="eyebrow"><span class="bar"></span><span class="caption">Memberships · 04 of 08</span></div>
+  <h1 class="hero-h1">Two ways <span class="emph">to join.</span></h1>
+  <p class="lede">Pick the seat that fits — as an individual director-in-the-making, or as a company shaping the next boardroom.</p>
+</div></section>
+
+<section class="pricing"><div class="container pricing-grid">
+  <div class="pc">
+    <span class="tag">Individual</span>
+    <h3>For aspiring and first-time <span style="color:var(--mint);">directors.</span></h3>
+    <div class="sub">A year in the network — built for your first seat and the ones after it.</div>
+    <div class="price">CHF 300 <small>/ year</small></div>
+    <ul><li>Global peer network of 500+ members</li><li>Monthly masterclasses with sitting directors</li><li>1:1 mentor pairing each cohort</li><li>Board-readiness assessment, reviewed quarterly</li><li>Priority access to open board roles via partners</li><li>Invite-only events in Zurich, London, Singapore</li></ul>
+    <a class="cta"><span class="dot"></span>Apply to join</a>
+  </div>
+  <div class="pc primary">
+    <span class="tag">Corporate</span>
+    <h3>For companies recruiting or <span style="color:var(--mint);">sponsoring.</span></h3>
+    <div class="sub">For boards that would rather build the next director than keep looking for them.</div>
+    <div class="price">From CHF 15k <small>/ year</small></div>
+    <ul style="color:rgba(244,244,249,.85);"><li>Access to the full member directory and curated shortlists</li><li>Branded partnership content and co-hosted events</li><li>Sponsor a cohort of emerging directors</li><li>Governance workshops for your exec team</li><li>Named seat on the Advisory Council</li></ul>
+    <a class="cta"><span class="dot"></span>Talk to us</a>
+  </div>
+</div></section>
+
+<section class="outcomes"><div class="container">
+  <div class="section-head"><h2 class="section-h2">Member <span class="emph">outcomes.</span></h2><p class="body-p side">Named seats. Real stories. Not testimonials — outcomes.</p></div>
+  <div class="out-grid">
+    <div class="out"><blockquote>"After the program I joined my first board within nine months."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Olivia Kinghorst</b><span>Management Board · Cohort '24</span></div></div></div>
+    <div class="out"><blockquote>"Mentoring this cohort reminded me why I took my first board seat."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Stephan Hillert</b><span>Chair · Management Board</span></div></div></div>
+    <div class="out"><blockquote>"We hired our first under-forty NED within a quarter of partnering."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Rosanna Cubelli</b><span>CHRO · Management Board</span></div></div></div>
+  </div>
+</div></section>
+
+<section class="faq"><div class="container">
+  <div class="section-head"><h2 class="section-h2">Questions, <span class="emph">answered.</span></h2><p class="body-p side">Five questions that always come up before "apply".</p></div>
+  <div class="faq-list">
+    <div class="faq-item"><div class="q">Who is eligible?</div><div class="a">Professionals actively pursuing their first or next board seat, with 7+ years of leadership experience. Selection is intentional — cohorts are small on purpose.</div></div>
+    <div class="faq-item"><div class="q">How does selection work?</div><div class="a">Applications are reviewed by the Management Board within five working days. Short interview, short waitlist, small cohort — deliberately.</div></div>
+    <div class="faq-item"><div class="q">Where does it meet?</div><div class="a">Europe-wide. In-person events in Zurich, London, Frankfurt, Singapore. Monthly masterclasses are virtual. Annual summit rotates cities.</div></div>
+    <div class="faq-item"><div class="q">Is it refundable?</div><div class="a">Cancel anytime in the first 30 days for a full refund. After that, annual memberships are non-refundable but fully transferable within your cohort.</div></div>
+    <div class="faq-item"><div class="q">How does corporate invoicing work?</div><div class="a">Annual invoice, Swiss VAT where applicable. Corporate memberships are priced per scope.</div></div>
+  </div>
+</div></section>
+
+<section class="final"><div class="container final-inner">
+  <h2>A seat at the table takes more than <span class="emph">ambition.</span></h2>
+  <div><p>Apply as an individual or talk to us about a corporate partnership.</p><div class="cta-row"><a class="btn btn-on-dark"><span class="dot"></span>Apply to join</a><a class="btn btn-outline-light">Talk to us</a></div></div>
+</div></section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><a class="foot-logo"><img src="assets/photos/image6.png" alt=""/></a><p style="margin-top:16px;font-size:14px;color:rgba(244,244,249,.6);max-width:320px;font-weight:300;">A global board-readiness network based in Zurich.</p></div>
+    <div><h4>Community</h4><a href="#">Memberships</a><a href="#">Become a member</a><a href="#">Events</a><a href="#">Journal</a></div>
+    <div><h4>Company</h4><a href="#">About</a><a href="#">Team</a><a href="#">Partnerships</a><a href="#">Press</a></div>
+    <div><h4>Legal</h4><a href="#">Imprint</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept v0.5 · Brand-strict</span></div>
+</div></footer>
+</body></html>

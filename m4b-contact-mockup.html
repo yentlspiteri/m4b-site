@@ -1,0 +1,125 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>M4B — Contact</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/brand.css"/>
+<style>
+  .c-main{padding:0 0 120px;}
+  .c-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:48px;}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px;}
+  .chip{padding:11px 18px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:500;display:inline-flex;align-items:center;gap:8px;}
+  .chip .dot{width:7px;height:7px;border-radius:999px;background:transparent;border:1px solid var(--line);}
+  .chip.selected{background:var(--onyx);color:#fff;border-color:transparent;}
+  .chip.selected .dot{background:var(--mint);border-color:var(--mint);}
+
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+  .field label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+  .field input,.field textarea{padding:13px 16px;border:1px solid var(--line);border-radius:4px;font-size:14px;font-family:"Poppins",sans-serif;background:var(--paper);font-weight:300;}
+  .field textarea{min-height:110px;resize:vertical;}
+  .field .hint{font-size:11px;color:var(--muted);font-weight:300;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .submit-row{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:24px;border-top:1px solid var(--line);}
+
+  .direct-block{display:flex;flex-direction:column;gap:20px;}
+  .direct-card{padding:36px 30px;background:var(--paper);border:1px solid var(--line);border-radius:4px;}
+  .direct-card h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:22px;margin:0 0 14px;letter-spacing:-0.005em;line-height:1.1;}
+  .direct-card p{font-size:14px;color:#333;line-height:1.55;margin:0 0 12px;font-weight:300;}
+  .direct-card .email{font-family:"Poppins",sans-serif;font-weight:500;font-size:14px;color:var(--onyx);}
+  .direct-card .ln{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:var(--onyx);margin-top:12px;letter-spacing:.1em;text-transform:uppercase;}
+  .book-card{background:var(--onyx);color:var(--paper);padding:36px 30px;border-radius:4px;display:flex;flex-direction:column;gap:16px;}
+  .book-card h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:22px;margin:0;letter-spacing:-0.005em;color:var(--paper);line-height:1.1;}
+  .book-card h3 .emph{color:var(--mint);}
+  .book-card p{color:rgba(244,244,249,.78);font-size:13px;line-height:1.5;margin:0;font-weight:300;}
+  .book-card .team{display:flex;gap:12px;margin:8px 0;}
+  .book-card .av{width:40px;height:40px;border-radius:999px;background:var(--mint);overflow:hidden;border:2px solid var(--onyx);}
+  .book-card .av img{width:100%;height:100%;object-fit:cover;}
+  .book-card .av:nth-child(n+2){margin-left:-16px;}
+  .book-card .av-names{font-size:12px;color:rgba(244,244,249,.6);margin-top:-4px;font-weight:300;}
+
+  .address-strip{padding:48px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .a-inner{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+  .a-inner h4{font-size:10px;letter-spacing:.22em;color:var(--muted);margin:0 0 8px;font-weight:500;}
+  .a-inner div p{margin:0;font-size:14px;color:var(--onyx);line-height:1.5;font-weight:300;}
+  .a-inner div .link{color:var(--onyx);font-weight:500;}
+</style></head>
+<body>
+
+<header class="nav-floating">
+  <div class="pill">
+    <nav><a href="#">About</a><a href="#">Team</a><a href="#">Memberships</a></nav>
+    <a class="pill-logo" href="#"><img src="assets/photos/image6.png" alt="M4B"/></a>
+    <nav><a href="#">Partnerships</a><a href="#">Journal</a><a class="active" href="#">Contact</a></nav>
+  </div>
+  <a class="pill-cta" href="#"><span class="dot"></span>Join the network</a>
+</header>
+
+<section class="page-hero"><div class="container">
+  <div class="eyebrow"><span class="bar"></span><span class="caption">Contact · 07 of 08</span></div>
+  <h1 class="hero-h1">Talk <span class="emph">to us.</span></h1>
+  <p class="lede">Whatever brings you here, someone at Millennials4Boards will reply within two working days.</p>
+</div></section>
+
+<section class="c-main"><div class="container c-grid">
+  <div class="form-card">
+    <span class="caption" style="margin-bottom:14px;display:block;">Step 01 · What brings you here?</span>
+    <div class="chips">
+      <span class="chip"><span class="dot"></span>I want to become a member</span>
+      <span class="chip selected"><span class="dot"></span>Corporate partnership</span>
+      <span class="chip"><span class="dot"></span>I'd like to mentor or speak</span>
+      <span class="chip"><span class="dot"></span>Media / press</span>
+      <span class="chip"><span class="dot"></span>Something else</span>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Full name</label><input type="text" value="Anna Meier"/></div>
+      <div class="field"><label>Work email</label><input type="email" value="anna.meier@example.com"/></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Company</label><input type="text" value="Helvetia Industries AG"/></div>
+      <div class="field"><label>Your role</label><input type="text" value="Head of Talent Strategy"/></div>
+    </div>
+    <div class="row2">
+      <div class="field"><label>Country</label><input type="text" value="Switzerland"/></div>
+      <div class="field"><label>Budget range · corporate</label><input type="text" value="CHF 15k – 50k / year"/><span class="hint">Field appears based on your selection above.</span></div>
+    </div>
+    <div class="field"><label>What's the best first conversation?</label><textarea>Exploring a sponsored cohort for our European business — recruiting under-40 directors and hosting a joint governance roundtable in Q3.</textarea></div>
+    <div class="submit-row"><span class="caption">Replied within two working days</span><a class="btn btn-primary"><span class="dot"></span>Send message</a></div>
+  </div>
+  <div class="direct-block">
+    <div class="direct-card">
+      <span class="caption">Direct</span>
+      <h3 style="margin-top:10px;">Prefer email?</h3>
+      <p>Write directly to the inbox closest to your reason for getting in touch.</p>
+      <p class="email">hello@millennials4boards.com</p>
+      <a class="ln">LinkedIn →</a>
+    </div>
+    <div class="book-card">
+      <span class="caption" style="color:rgba(244,244,249,.6);">Senior inbound</span>
+      <h3 style="margin-top:4px;">Or skip the form. Book a call <span class="emph">directly.</span></h3>
+      <p>For corporate partners and directors — three of us hold open slots each week.</p>
+      <div class="team"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div></div>
+      <div class="av-names">Stephan, Olivia, Rosanna</div>
+      <a class="btn" style="background:var(--mint);color:var(--onyx);align-self:flex-start;margin-top:4px;"><span class="dot" style="background:var(--onyx);"></span>Book a 20-min call</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="address-strip"><div class="container a-inner">
+  <div><h4>Address</h4><p>Seestrasse 81<br/>Kilchberg, 8802<br/>Switzerland</p></div>
+  <div><h4>Legal entity</h4><p>Millennials4Boards Association<br/>Registered in Zurich<br/>Non-profit · UID CHE-XXX.XXX.XXX</p></div>
+  <div><h4>Press + partnerships</h4><p><span class="link">press@millennials4boards.com</span><br/><span class="link">partners@millennials4boards.com</span></p></div>
+</div></section>
+
+<section class="final"><div class="container final-inner">
+  <h2>Not ready to reach out? <span class="emph">Start here.</span></h2>
+  <div><p>Read about the network, meet the team, or browse the Journal before the first conversation.</p><div class="cta-row"><a class="btn btn-on-dark"><span class="dot"></span>Read About</a><a class="btn btn-outline-light">Journal</a></div></div>
+</div></section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><a class="foot-logo"><img src="assets/photos/image6.png" alt=""/></a><p style="margin-top:16px;font-size:14px;color:rgba(244,244,249,.6);max-width:320px;font-weight:300;">A global board-readiness network based in Zurich.</p></div>
+    <div><h4>Community</h4><a href="#">Memberships</a><a href="#">Become a member</a><a href="#">Events</a><a href="#">Journal</a></div>
+    <div><h4>Company</h4><a href="#">About</a><a href="#">Team</a><a href="#">Partnerships</a><a href="#">Press</a></div>
+    <div><h4>Legal</h4><a href="#">Imprint</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept v0.5 · Brand-strict</span></div>
+</div></footer>
+</body></html>

@@ -1,0 +1,153 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>M4B — Become a member</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/brand.css"/>
+<style>
+  .progress-bar{padding:24px 0 56px;border-bottom:1px solid var(--line);}
+  .progress-inner{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+  .step{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--muted);font-weight:500;}
+  .step .n{width:28px;height:28px;border-radius:999px;border:1px solid var(--line);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:600;}
+  .step.active{color:var(--onyx);}
+  .step.active .n{background:var(--mint);color:var(--onyx);border-color:transparent;}
+  .step.done .n{background:var(--onyx);color:#fff;border-color:transparent;}
+  .step-divider{height:1px;width:32px;background:var(--line);}
+
+  .apply{padding:48px 0 120px;}
+  .apply-grid{display:grid;grid-template-columns:2fr 1fr;gap:48px;align-items:start;}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:48px;}
+  .form-card h2{margin:10px 0;font-family:"Poppins",sans-serif;font-weight:600;font-size:36px;line-height:1.05;letter-spacing:-0.005em;}
+  .form-card h2 .emph{color:var(--mint);}
+  .form-card .lede{font-size:15px;color:var(--muted);margin:0 0 28px;font-weight:300;}
+  .field{display:flex;flex-direction:column;gap:6px;margin-bottom:18px;}
+  .field label{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+  .field input,.field textarea{padding:13px 16px;border:1px solid var(--line);border-radius:4px;font-size:14px;font-family:"Poppins",sans-serif;background:var(--paper);font-weight:300;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .radio-grp{display:flex;gap:8px;flex-wrap:wrap;}
+  .radio-grp label{padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:500;}
+  .radio-grp label.selected{background:var(--onyx);color:#fff;border-color:transparent;}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;}
+  .chips .chip{padding:8px 14px;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:500;}
+  .chips .chip.selected{background:var(--mint);color:var(--onyx);border-color:transparent;font-weight:600;}
+
+  .summary{background:var(--onyx);color:var(--paper);border-radius:4px;padding:32px;display:flex;flex-direction:column;gap:16px;position:sticky;top:96px;}
+  .summary h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:22px;line-height:1.1;margin:0;letter-spacing:-0.005em;color:var(--paper);}
+  .summary h3 .emph{color:var(--mint);}
+  .summary .line{display:flex;justify-content:space-between;font-size:13px;font-weight:300;}
+  .summary hr{border:none;border-top:1px solid rgba(244,244,249,.2);margin:2px 0;}
+  .summary .total{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:var(--paper);}
+  .summary .total .amt{font-family:"Poppins",sans-serif;font-size:28px;font-weight:600;letter-spacing:-0.005em;}
+  .summary .trust{font-size:11px;color:rgba(244,244,249,.6);line-height:1.55;display:flex;flex-direction:column;gap:3px;padding-top:14px;border-top:1px solid rgba(244,244,249,.2);font-weight:300;}
+  .summary .cta{padding:14px 22px;background:var(--mint);color:var(--onyx);border-radius:999px;text-align:center;font-weight:600;font-size:14px;margin-top:4px;display:inline-flex;align-items:center;gap:10px;justify-content:center;}
+  .summary .cta .dot{width:6px;height:6px;border-radius:999px;background:var(--onyx);}
+  .summary .alt{font-size:11px;color:rgba(244,244,249,.55);text-align:center;margin-top:4px;}
+  .summary .alt a{color:var(--mint);font-weight:500;}
+
+  .card-fields{padding:20px;background:var(--paper);border-radius:4px;border:1px solid var(--line);display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;align-items:end;}
+  .card-fields .field{margin:0;}
+
+  .step-divider-lg{margin:32px 0;padding-top:32px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--onyx);font-weight:600;}
+</style></head>
+<body>
+
+<header class="nav-floating">
+  <div class="pill">
+    <nav><a href="#">About</a><a href="#">Team</a><a class="active" href="#">Memberships</a></nav>
+    <a class="pill-logo" href="#"><img src="assets/photos/image6.png" alt="M4B"/></a>
+    <nav><a href="#">Partnerships</a><a href="#">Journal</a><a href="#">Contact</a></nav>
+  </div>
+  <a class="pill-cta" href="#"><span class="dot"></span>Save &amp; exit</a>
+</header>
+
+<section class="page-hero" style="padding-bottom:20px;"><div class="container">
+  <div class="eyebrow"><span class="bar"></span><span class="caption">Apply · 08 of 08</span></div>
+  <h1 class="hero-h1" style="font-size:clamp(48px,5vw,80px);">Apply to <span class="emph">join</span> the network.</h1>
+  <p class="lede">Three short steps. Applications reviewed by the Management Board within five working days.</p>
+</div></section>
+
+<section class="progress-bar"><div class="container progress-inner">
+  <span class="step done"><span class="n">✓</span>About you</span>
+  <span class="step-divider"></span>
+  <span class="step active"><span class="n">02</span>Your ambition</span>
+  <span class="step-divider"></span>
+  <span class="step"><span class="n">03</span>Confirm &amp; pay</span>
+</div></section>
+
+<section class="apply"><div class="container apply-grid">
+  <div>
+    <div class="form-card">
+      <span class="caption">Step 02 of 03</span>
+      <h2>Where are you on your <span class="emph">board journey?</span></h2>
+      <p class="lede">Three questions. Short answers. We're looking for intent, not polish.</p>
+
+      <div class="field"><label>Where are you right now?</label>
+        <div class="radio-grp">
+          <label>Aspiring · no seat yet</label>
+          <label class="selected">First NED seat in progress</label>
+          <label>Serving on 1 board</label>
+          <label>Serving on 2+ boards</label>
+        </div>
+      </div>
+
+      <div class="field"><label>What sectors interest you? · pick up to 3</label>
+        <div class="chips">
+          <span class="chip selected">Financial services</span>
+          <span class="chip selected">Technology / SaaS</span>
+          <span class="chip">Healthcare</span>
+          <span class="chip selected">Sustainability</span>
+          <span class="chip">Industrial</span>
+          <span class="chip">Consumer</span>
+          <span class="chip">Media &amp; entertainment</span>
+          <span class="chip">Public sector</span>
+        </div>
+      </div>
+
+      <div class="field"><label>What do you want from the network? · 120 chars</label><textarea style="min-height:90px;">A mentor, a cohort, and two events per year that push me past governance reading into governance practice.</textarea></div>
+
+      <div class="step-divider-lg">Step 03 preview · Confirm &amp; pay</div>
+
+      <div class="field"><label>Billing country</label><input type="text" value="Switzerland"/></div>
+
+      <div class="card-fields">
+        <div class="field"><label>Card number</label><input type="text" value="•••• •••• •••• 4242"/></div>
+        <div class="field"><label>MM / YY</label><input type="text" value="09 / 28"/></div>
+        <div class="field"><label>CVC</label><input type="text" value="•••"/></div>
+      </div>
+
+      <div style="margin-top:22px;display:flex;align-items:center;gap:12px;font-size:12px;color:#333;font-weight:300;">
+        <span style="width:16px;height:16px;border-radius:3px;background:var(--mint);flex:0 0 auto;"></span>
+        I agree to the <a style="color:var(--onyx);font-weight:600;">Terms</a> and the <a style="color:var(--onyx);font-weight:600;">Privacy statement</a>.
+      </div>
+    </div>
+  </div>
+
+  <div class="summary">
+    <span class="caption" style="color:rgba(244,244,249,.6);">Order summary</span>
+    <h3>Individual <span class="emph">membership.</span></h3>
+    <div class="line"><span>Annual membership</span><span>CHF 300.00</span></div>
+    <div class="line" style="color:rgba(244,244,249,.6);"><span>Swiss VAT · 8.1%</span><span>CHF 24.30</span></div>
+    <hr/>
+    <div class="total"><span>Total today</span><span class="amt">CHF 324.30</span></div>
+    <a class="cta"><span class="dot"></span>Submit application &amp; pay</a>
+    <span class="alt">Not ready? <a>Talk to us first →</a></span>
+    <div class="trust">
+      <span>· Secure payment via Stripe</span>
+      <span>· Cancel anytime in 30 days for a full refund</span>
+      <span>· Application reviewed within 5 working days</span>
+    </div>
+  </div>
+</div></section>
+
+<section class="final"><div class="container final-inner">
+  <h2>Still thinking <span class="emph">it over?</span></h2>
+  <div><p>Read about the network, meet the team, or browse the Journal before applying.</p><div class="cta-row"><a class="btn btn-on-dark"><span class="dot"></span>Read About</a><a class="btn btn-outline-light">Talk to us</a></div></div>
+</div></section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><a class="foot-logo"><img src="assets/photos/image6.png" alt=""/></a><p style="margin-top:16px;font-size:14px;color:rgba(244,244,249,.6);max-width:320px;font-weight:300;">A global board-readiness network based in Zurich.</p></div>
+    <div><h4>Community</h4><a href="#">Memberships</a><a href="#">Become a member</a><a href="#">Events</a><a href="#">Journal</a></div>
+    <div><h4>Company</h4><a href="#">About</a><a href="#">Team</a><a href="#">Partnerships</a><a href="#">Press</a></div>
+    <div><h4>Legal</h4><a href="#">Imprint</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept v0.5 · Brand-strict</span></div>
+</div></footer>
+</body></html>

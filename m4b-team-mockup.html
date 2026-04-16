@@ -1,0 +1,111 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>M4B — Team</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/brand.css"/>
+<style>
+  .mb-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;padding:0 0 120px;}
+  .mb-card{background:var(--paper);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex;flex-direction:column;}
+  /* Management Board portraits: pure B&W, consistent 4:5 crop, face centered. Mint Leaf frame shows around via card border. */
+  .mb-card .portrait{aspect-ratio:4/5;background:#e9e9ec;overflow:hidden;}
+  .mb-card .portrait img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:grayscale(1) contrast(1.05);}
+  .mb-card .bio{padding:24px 24px 26px;display:flex;flex-direction:column;gap:10px;flex:1;}
+  .mb-card .bio .cap{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:500;}
+  .mb-card .bio h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:22px;line-height:1.1;letter-spacing:-0.01em;margin:0;}
+  .mb-card .bio .role{font-size:13px;color:#444;font-weight:400;}
+  .mb-card .bio .ln{margin-top:auto;font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--onyx);}
+  .mb-card .bio .ln::after{content:" →";}
+
+  .founders{padding:60px 0 120px;}
+  .f-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .founder{background:#fff;border:1px solid var(--line);border-radius:4px;padding:16px;display:flex;align-items:center;gap:14px;}
+  .founder .av{width:48px;height:48px;border-radius:999px;overflow:hidden;background:var(--mint);flex:0 0 auto;}
+  .founder .av img{width:100%;height:100%;object-fit:cover;}
+  .founder .tx{min-width:0;}
+  .founder .name{font-family:"Poppins",sans-serif;font-weight:600;font-size:14px;line-height:1.2;letter-spacing:-0.005em;}
+  .founder .role{font-size:11px;color:var(--muted);line-height:1.3;margin-top:2px;font-weight:400;}
+
+  .advisory{padding:100px 0;background:var(--onyx);color:var(--paper);}
+  .advisory h2{color:var(--paper);}
+  .advisory h2 .emph{color:var(--mint);}
+  .adv-slots{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .adv-slot{border:1px dashed rgba(244,244,249,.2);border-radius:4px;padding:32px 20px;min-height:180px;display:flex;align-items:end;color:rgba(244,244,249,.45);font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;}
+
+  .press{padding:80px 0 120px;}
+  .press-logos{display:grid;grid-template-columns:repeat(5,1fr);gap:48px;align-items:center;padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:32px;}
+  .press-logos span{font-family:"Poppins",sans-serif;font-weight:400;font-size:18px;color:#555;letter-spacing:-0.01em;text-align:center;}
+</style></head>
+<body>
+
+<header class="nav-floating">
+  <div class="pill">
+    <nav><a href="#">About</a><a class="active" href="#">Team</a><a href="#">Memberships</a></nav>
+    <a class="pill-logo" href="#"><img src="assets/photos/image6.png" alt="M4B"/></a>
+    <nav><a href="#">Partnerships</a><a href="#">Journal</a><a href="#">Contact</a></nav>
+  </div>
+  <a class="pill-cta" href="#"><span class="dot"></span>Join the network</a>
+</header>
+
+<section class="page-hero"><div class="container">
+  <div class="eyebrow"><span class="bar"></span><span class="caption">Team · 02 of 08</span></div>
+  <h1 class="hero-h1">The people behind the <span class="emph">bridge.</span></h1>
+  <p class="lede">Seven directors and operators on the Management Board, fourteen founders, a growing Advisory Council — the ones already doing the work, not talking about it.</p>
+</div></section>
+
+<div class="container">
+  <div class="section-head"><h2 class="section-h2">Management <span class="emph">Board.</span></h2><p class="body-p side">Named seats. Real credentials. Real roles on real boards.</p></div>
+  <div class="mb-grid">
+    <div class="mb-card"><div class="portrait"><img src="assets/photos/portrait-placeholder.png" alt=""/></div><div class="bio"><span class="cap">Chair · Financial Services</span><h3>Stephan Hillert</h3><span class="role">Chair of the Management Board · Founder</span><span class="ln">LinkedIn</span></div></div>
+    <div class="mb-card"><div class="portrait"><img src="assets/photos/portrait-placeholder.png" alt=""/></div><div class="bio"><span class="cap">Governance · EU</span><h3>Dr. Gabriele Castegnaro</h3><span class="role">Management Board · NED</span><span class="ln">LinkedIn</span></div></div>
+    <div class="mb-card"><div class="portrait"><img src="assets/photos/portrait-placeholder.png" alt=""/></div><div class="bio"><span class="cap">CHRO · Industrial</span><h3>Rosanna Cubelli</h3><span class="role">Management Board · Founder</span><span class="ln">LinkedIn</span></div></div>
+    <div class="mb-card"><div class="portrait"><img src="assets/photos/portrait-placeholder.png" alt=""/></div><div class="bio"><span class="cap">Finance NED · EU</span><h3>Mirela Dimofte</h3><span class="role">Management Board · Founder</span><span class="ln">LinkedIn</span></div></div>
+    <div class="mb-card"><div class="portrait"><img src="assets/photos/portrait-placeholder.png" alt=""/></div><div class="bio"><span class="cap">NED · SaaS · Cohort '24</span><h3>Olivia Kinghorst</h3><span class="role">Management Board · Founder</span><span class="ln">LinkedIn</span></div></div>
+    <div class="mb-card"><div class="portrait"><img src="assets/photos/portrait-placeholder.png" alt=""/></div><div class="bio"><span class="cap">Finance NED · UK</span><h3>Ian Thompson</h3><span class="role">Management Board · Founder</span><span class="ln">LinkedIn</span></div></div>
+  </div>
+</div>
+
+<div class="container founders">
+  <div class="section-head"><h2 class="section-h2">Founders.</h2><p class="body-p side">Fourteen people who started the conversation this network was built on.</p></div>
+  <div class="f-grid">
+    <div class="founder"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="tx"><div class="name">Stephan Hillert</div><div class="role">Chair · Zurich</div></div></div>
+    <div class="founder"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="tx"><div class="name">Rosanna Cubelli</div><div class="role">CHRO · Milan</div></div></div>
+    <div class="founder"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="tx"><div class="name">Marin Ćurković</div><div class="role">Strategy · Zagreb</div></div></div>
+    <div class="founder"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="tx"><div class="name">Mirela Dimofte</div><div class="role">Finance NED · Bucharest</div></div></div>
+    <div class="founder"><div class="av" style="background:var(--mint);"></div><div class="tx"><div class="name">Cornelius Fröscher</div><div class="role">Counsel · Zurich</div></div></div>
+    <div class="founder"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="tx"><div class="name">Olivia Kinghorst</div><div class="role">NED · SaaS</div></div></div>
+    <div class="founder"><div class="av" style="background:var(--mint);"></div><div class="tx"><div class="name">Dr. Christoph Müller</div><div class="role">Governance · Munich</div></div></div>
+    <div class="founder"><div class="av" style="background:var(--mint);"></div><div class="tx"><div class="name">Roman Rapoport</div><div class="role">Venture · Berlin</div></div></div>
+    <div class="founder"><div class="av" style="background:var(--mint);"></div><div class="tx"><div class="name">Prof. Dr. Stefan Remhof</div><div class="role">Academic · Frankfurt</div></div></div>
+    <div class="founder"><div class="av" style="background:var(--mint);"></div><div class="tx"><div class="name">Prof. Dr. Christian Schlicht</div><div class="role">Advisor · Zurich</div></div></div>
+    <div class="founder"><div class="av" style="background:var(--mint);"></div><div class="tx"><div class="name">Dr. Philipp Staudacher</div><div class="role">Private markets · Zurich</div></div></div>
+    <div class="founder"><div class="av" style="background:var(--mint);"></div><div class="tx"><div class="name">Rachel Than</div><div class="role">Operator · Singapore</div></div></div>
+    <div class="founder"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="tx"><div class="name">Ian Thompson</div><div class="role">Finance NED · London</div></div></div>
+    <div class="founder"><div class="av" style="background:var(--mint);"></div><div class="tx"><div class="name">Tommaso Vanotti</div><div class="role">Strategy · Milan</div></div></div>
+  </div>
+</div>
+
+<section class="advisory"><div class="container">
+  <div class="eyebrow" style="margin-bottom:20px;"><span class="bar" style="background:rgba(244,244,249,.5);"></span><span class="caption" style="color:rgba(244,244,249,.55);">New · Advisory Council</span></div>
+  <h2 class="section-h2">A seat reserved for <span class="emph">senior advisors.</span></h2>
+  <p class="body-p" style="color:rgba(244,244,249,.78);max-width:720px;">Space for external advisors who shape strategy, open doors, and lend credibility to the network — even before the list is filled.</p>
+  <div class="adv-slots"><div class="adv-slot">Reserved</div><div class="adv-slot">Reserved</div><div class="adv-slot">Reserved</div><div class="adv-slot">Reserved</div></div>
+</div></section>
+
+<section class="press"><div class="container">
+  <div class="section-head"><h2 class="section-h2">In the <span class="emph">press.</span></h2><p class="body-p side">Selected mentions across EU, UK, DACH.</p></div>
+  <div class="press-logos"><span>Financial Times</span><span>Handelsblatt</span><span>Neue Zürcher Zeitung</span><span>Bilanz</span><span>Forbes DACH</span></div>
+</div></section>
+
+<section class="final"><div class="container final-inner">
+  <h2>Want to join them around the <span class="emph">table?</span></h2>
+  <div><p>Apply as a member, or talk to us about mentoring a cohort.</p><div class="cta-row"><a class="btn btn-on-dark"><span class="dot"></span>Apply to join</a><a class="btn btn-outline-light">Mentor a cohort</a></div></div>
+</div></section>
+
+<footer><div class="container">
+  <div class="foot-grid">
+    <div><a class="foot-logo"><img src="assets/photos/image6.png" alt=""/></a><p style="margin-top:16px;font-size:14px;color:rgba(244,244,249,.6);max-width:320px;font-weight:300;">A global board-readiness network based in Zurich, operating across Europe, the UK, and Asia.</p></div>
+    <div><h4>Community</h4><a href="#">Memberships</a><a href="#">Become a member</a><a href="#">Events</a><a href="#">Journal</a></div>
+    <div><h4>Company</h4><a href="#">About</a><a href="#">Team</a><a href="#">Partnerships</a><a href="#">Press</a></div>
+    <div><h4>Legal</h4><a href="#">Imprint</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Cookies</a></div>
+  </div>
+  <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Concept v0.5 · Brand-strict</span></div>
+</div></footer>
+</body></html>
