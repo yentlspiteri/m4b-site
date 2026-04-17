@@ -62,12 +62,21 @@
   .case.dark .ctx{color:rgba(244,244,249,.75);}
   .case.dark .q{color:var(--paper);border-color:rgba(244,244,249,.18);}
 
-  /* Hero with image */
-  .page-hero.with-figure{padding-top:120px;padding-bottom:80px;}
-  .hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:72px;align-items:end;}
-  .hero-figure{aspect-ratio:4/5;overflow:hidden;border-radius:4px;background:var(--paper);}
-  .hero-figure img{width:100%;height:100%;object-fit:cover;display:block;}
-  @media (max-width:1100px){.hero-grid{grid-template-columns:1fr;gap:32px;} .hero-figure{aspect-ratio:16/10;}}
+  /* Hero — full-width photo banner */
+  .page-hero.banner{
+    position:relative;min-height:clamp(420px,50vw,600px);
+    background:var(--onyx);overflow:hidden;
+    display:flex;align-items:flex-end;
+    padding:0;
+  }
+  .page-hero.banner .hero-bg{position:absolute;inset:0;z-index:0;}
+  .page-hero.banner .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+  .page-hero.banner .hero-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(19,19,19,.82) 0%,rgba(19,19,19,.25) 55%,rgba(19,19,19,.4) 100%);}
+  .page-hero.banner .hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:80px 40px 60px;width:100%;}
+  .page-hero.banner .hero-h1{color:#fff;}
+  .page-hero.banner .lede{color:rgba(244,244,249,.75);}
+  .page-hero.banner .eyebrow .caption{color:rgba(244,244,249,.6);}
+  .page-hero.banner .eyebrow .bar{background:var(--mint);}
 
   /* Cinematic full-bleed break */
   .cinema{position:relative;background:var(--onyx);}
@@ -90,16 +99,15 @@
   <a class="pill-cta" href="m4b-contact-mockup.html"><span class="dot"></span>Partner with us</a>
 </header>
 
-<section class="page-hero with-figure"><div class="container">
-  <div class="hero-grid">
-    <div>
-      <div class="eyebrow"><span class="bar"></span><span class="caption">Partnerships · 06 of 08</span></div>
-      <h1 class="hero-h1 reveal">Partners who build the <span class="emph">bridge</span> with us.</h1>
-      <p class="lede reveal delay-1">The organisations we work with to open boardrooms to the next generation.</p>
-    </div>
-    <div class="hero-figure reveal delay-2"><img src="assets/photos/06.png" alt="Partnership handshake"/></div>
+<section class="page-hero banner">
+  <div class="hero-bg"><img src="assets/photos/06.png" alt="Partnership handshake"/></div>
+  <div class="hero-veil"></div>
+  <div class="hero-content">
+    <div class="eyebrow"><span class="bar"></span><span class="caption">Partnerships · 06 of 08</span></div>
+    <h1 class="hero-h1 reveal">Partners who build the <span class="emph">bridge</span> with us.</h1>
+    <p class="lede reveal delay-1">The organisations we work with to open boardrooms to the next generation.</p>
   </div>
-</div></section>
+</section>
 
 <section class="logo-wall"><div class="container">
   <div class="wall-grid">
