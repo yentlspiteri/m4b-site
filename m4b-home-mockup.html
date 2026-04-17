@@ -213,32 +213,29 @@
   .art .more{margin-top:auto;font-size:12px;font-weight:500;color:var(--onyx);}
   .art .more::after{content:" →";color:var(--mint);font-weight:600;}
 
-  /* Press-logo strip — now inside the dark final section */
-  .press-logos{padding:0 0 40px;background:transparent;}
-  .press-logos .section-head{margin-bottom:8px;}
-  .press-logos .section-h2{color:#fff;}
-  .press-logos .section-h2 .emph{color:var(--mint);}
-  .press-marquee{padding:20px 0 40px;overflow:hidden;}
+  /* Press-logo strip — paper background, original logo colours */
+  .press-logos{padding:80px 0 40px;background:var(--paper);border-top:1px solid var(--line);}
+  .press-marquee{padding:20px 0 60px;overflow:hidden;}
   .press-marquee{
     -webkit-mask-image:linear-gradient(to right,transparent 0,#000 120px,#000 calc(100% - 120px),transparent 100%);
             mask-image:linear-gradient(to right,transparent 0,#000 120px,#000 calc(100% - 120px),transparent 100%);
   }
   .press-marquee .marquee-track{gap:72px;align-items:center;}
   .press-logo{
-    display:inline-flex;align-items:center;color:rgba(244,244,249,.85);opacity:.4;
+    display:inline-flex;align-items:center;color:var(--onyx);opacity:.5;
     transition:opacity .25s;white-space:nowrap;line-height:1;
   }
-  .press-logo:hover{opacity:.85;}
-  .press-logo .lg-ft{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:inherit;font-style:italic;}
+  .press-logo:hover{opacity:1;}
+  .press-logo .lg-ft{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:#BE3A34;font-style:italic;}
   .press-logo .lg-hb{font-family:Georgia,serif;font-weight:700;font-size:22px;letter-spacing:-0.005em;}
   .press-logo .lg-nzz{font-family:Georgia,serif;font-weight:800;font-size:20px;letter-spacing:0.02em;}
   .press-logo .lg-bbg{font-family:"Poppins",sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.02em;text-transform:none;}
   .press-logo .lg-reu{font-family:"Poppins",sans-serif;font-weight:700;font-size:15px;letter-spacing:0.22em;}
-  .press-logo .lg-eco{font-family:Georgia,serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;background:transparent;color:inherit;padding:0;}
+  .press-logo .lg-eco{font-family:Georgia,serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;background:#BE3A34;color:#fff;padding:5px 12px;}
   .press-logo .lg-eco em{font-style:italic;font-weight:400;margin-right:5px;}
   .press-logo .lg-faz{font-family:Georgia,serif;font-weight:700;font-size:19px;font-variant:small-caps;letter-spacing:0.04em;}
   .press-logo .lg-leche{font-family:"Poppins",sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;text-transform:uppercase;}
-  .press-logo .lg-sz{font-family:Georgia,serif;font-weight:700;font-size:20px;color:inherit;letter-spacing:-0.005em;}
+  .press-logo .lg-sz{font-family:Georgia,serif;font-weight:700;font-size:20px;color:#005AA7;letter-spacing:-0.005em;}
   .press-logo .lg-bz{font-family:Georgia,serif;font-weight:700;font-size:20px;font-style:italic;letter-spacing:-0.005em;}
   .press-logo .lg-fbs{font-family:Georgia,serif;font-weight:900;font-size:23px;letter-spacing:-0.025em;}
   .press-logo .lg-fuw{font-family:Georgia,serif;font-weight:600;font-size:18px;letter-spacing:-0.005em;}
@@ -344,6 +341,40 @@
   </div>
 </div></section>
 
+<section class="press-logos reveal">
+  <div class="container">
+    <div class="section-head"><h2 class="section-h2">In the <span class="emph">press.</span></h2></div>
+  </div>
+  <div class="press-marquee marquee"><div class="marquee-track">
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-ft">Financial Times</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-hb">Handelsblatt</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-nzz">Neue Zürcher Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-bbg">Bloomberg</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-reu">REUTERS</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-eco"><em>The</em>Economist</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-faz">Frankfurter Allgemeine</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-leche">Les Echos</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-sz">Süddeutsche Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-bz">Börsen-Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-fbs">Forbes</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-fuw">Finanz und Wirtschaft</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-mm">Manager Magazin</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-ft">Financial Times</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-hb">Handelsblatt</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-nzz">Neue Zürcher Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-bbg">Bloomberg</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-reu">REUTERS</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-eco"><em>The</em>Economist</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-faz">Frankfurter Allgemeine</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-leche">Les Echos</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-sz">Süddeutsche Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-bz">Börsen-Zeitung</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-fbs">Forbes</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-fuw">Finanz und Wirtschaft</span></a>
+    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-mm">Manager Magazin</span></a>
+  </div></div>
+</section>
+
 <!-- Cinematic pull-quote — full-width photo banner -->
 <section class="testi-cinema reveal">
   <div class="tc-bg"><img src="assets/photos/09.png" alt=""/></div>
@@ -387,42 +418,7 @@
 <section class="final"><div class="container final-inner">
   <h2>Ready to join the <span class="emph">table?</span></h2>
   <div><div class="cta-row"><a class="btn btn-on-dark" href="m4b-become-member-mockup.html"><span class="dot"></span>Apply to join</a><a class="btn btn-outline-light" href="m4b-contact-mockup.html">Talk to us</a></div></div>
-</div>
-<!-- Press logos — inside dark final section -->
-<div class="press-logos reveal" style="padding-top:80px;">
-  <div class="container">
-    <div class="section-head"><h2 class="section-h2">In the <span class="emph">press.</span></h2></div>
-  </div>
-  <div class="press-marquee marquee"><div class="marquee-track">
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-ft">Financial Times</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-hb">Handelsblatt</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-nzz">Neue Zürcher Zeitung</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-bbg">Bloomberg</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-reu">REUTERS</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-eco"><em>The</em>Economist</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-faz">Frankfurter Allgemeine</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-leche">Les Echos</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-sz">Süddeutsche Zeitung</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-bz">Börsen-Zeitung</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-fbs">Forbes</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-fuw">Finanz und Wirtschaft</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-mm">Manager Magazin</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-ft">Financial Times</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-hb">Handelsblatt</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-nzz">Neue Zürcher Zeitung</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-bbg">Bloomberg</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-reu">REUTERS</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-eco"><em>The</em>Economist</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-faz">Frankfurter Allgemeine</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-leche">Les Echos</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-sz">Süddeutsche Zeitung</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-bz">Börsen-Zeitung</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-fbs">Forbes</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-fuw">Finanz und Wirtschaft</span></a>
-    <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-mm">Manager Magazin</span></a>
-  </div></div>
-</div>
-</section>
+</div></section>
 
 <footer><div class="container">
   <div class="foot-grid">
