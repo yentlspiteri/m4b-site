@@ -97,14 +97,14 @@
   .ticker .item b{color:var(--mint);font-weight:600;font-size:14px;letter-spacing:-0.005em;text-transform:none;}
   .ticker .sep{opacity:.3;}
 
-  /* Stats — three even columns, baseline-aligned numbers */
-  .stats{padding:120px 0;border-bottom:1px solid var(--line);background:var(--paper);}
+  /* Stats — dark proof band, continuous with ticker */
+  .stats{padding:100px 0 110px;background:var(--onyx);color:var(--paper);}
   .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;align-items:start;}
   .stat{padding-right:12px;display:flex;flex-direction:column;}
-  .stat .num{font-family:"Poppins",sans-serif;font-weight:600;font-size:92px;line-height:1;letter-spacing:-0.035em;color:var(--onyx);display:flex;align-items:baseline;gap:8px;}
-  .stat .num .unit{font-size:20px;font-weight:400;color:var(--muted);letter-spacing:-0.005em;line-height:1;}
-  .stat .body-p{margin-top:20px;max-width:280px;}
-  .stat .src{margin-top:10px;}
+  .stat .num{font-family:"Poppins",sans-serif;font-weight:600;font-size:92px;line-height:1;letter-spacing:-0.035em;color:#fff;display:flex;align-items:baseline;gap:8px;}
+  .stat .num .unit{font-size:20px;font-weight:400;color:var(--mint);letter-spacing:-0.005em;line-height:1;}
+  .stat .body-p{margin-top:20px;max-width:280px;color:rgba(244,244,249,.72);}
+  .stat .src{margin-top:10px;color:rgba(244,244,249,.45);}
   @media (max-width: 1100px){
     .stats-grid{grid-template-columns:1fr;gap:40px;}
     .stat .num{font-size:64px;}
@@ -165,65 +165,86 @@
   .story-figure{aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:var(--mint);}
   .story-figure img{width:100%;height:100%;object-fit:cover;}
 
-  /* Testimonials — 1 lead quote + 2 supporting, asymmetric alignment */
-  .testi{padding:140px 0;background:var(--paper);}
-  .testi-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:24px;align-items:start;}
-  .quote{padding:36px 32px;border:1px solid var(--line);border-radius:6px;background:#fff;display:flex;flex-direction:column;gap:28px;min-height:300px;transition:transform .22s,box-shadow .22s;}
-  .quote:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(19,19,19,.08);}
-  .quote:nth-child(1){padding:44px 36px;min-height:320px;}
-  .quote:nth-child(1) blockquote{font-size:18px;line-height:1.28;font-weight:500;}
-  .quote:nth-child(2){margin-top:40px;}
-  .quote:nth-child(3){margin-top:88px;}
-  .quote blockquote{margin:0;font-family:"Poppins",sans-serif;font-weight:500;font-size:14px;line-height:1.4;letter-spacing:-0.005em;}
-  @media (max-width: 1100px){
-    .testi-grid{grid-template-columns:1fr;}
-    .quote:nth-child(2),.quote:nth-child(3){margin-top:0;}
-    .quote:nth-child(1){padding:32px 28px;min-height:280px;}
-    .quote:nth-child(1) blockquote{font-size:16px;}
+  /* Testimonial — cinematic full-width pull-quote over photo */
+  .testi-cinema{position:relative;min-height:clamp(400px,48vw,580px);background:var(--onyx);overflow:hidden;display:flex;align-items:center;}
+  .testi-cinema .tc-bg{position:absolute;inset:0;z-index:0;}
+  .testi-cinema .tc-bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) brightness(.5);}
+  .testi-cinema .tc-veil{position:absolute;inset:0;z-index:1;background:linear-gradient(135deg,rgba(19,19,19,.88) 0%,rgba(19,19,19,.45) 100%);}
+  .testi-cinema .tc-inner{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:80px 48px;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;width:100%;}
+  .testi-cinema blockquote{
+    font-family:"Poppins",sans-serif;font-weight:300;
+    font-size:clamp(24px,3.2vw,42px);line-height:1.15;letter-spacing:-0.02em;
+    color:#fff;margin:0;max-width:720px;
   }
-  .quote .who{display:flex;align-items:center;gap:14px;margin-top:auto;}
-  .quote .av{width:48px;height:48px;border-radius:999px;overflow:hidden;background:#ddd;flex:0 0 auto;}
-  .quote .av img{width:100%;height:100%;object-fit:cover;}
-  .quote .meta{font-size:12px;line-height:1.35;}
-  .quote .meta b{display:block;font-weight:600;}
-  .quote .meta span{color:var(--muted);}
+  .testi-cinema blockquote .emph{font-weight:600;color:var(--mint);}
+  .testi-cinema .tc-who{display:flex;flex-direction:column;gap:8px;align-items:flex-start;min-width:180px;}
+  .testi-cinema .tc-av{width:64px;height:64px;border-radius:999px;overflow:hidden;border:2px solid rgba(255,255,255,.2);}
+  .testi-cinema .tc-av img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);}
+  .testi-cinema .tc-name{font-family:"Poppins",sans-serif;font-weight:600;font-size:14px;color:#fff;}
+  .testi-cinema .tc-role{font-size:11px;color:rgba(244,244,249,.55);letter-spacing:.18em;text-transform:uppercase;font-weight:500;}
+  /* Supporting quotes — compact strip below the cinema */
+  .testi-strip{background:var(--paper);border-bottom:1px solid var(--line);padding:0;}
+  .testi-strip-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1280px;margin:0 auto;}
+  .testi-strip-q{padding:36px 40px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px;}
+  .testi-strip-q:last-child{border-right:none;}
+  .testi-strip-q blockquote{margin:0;font-family:"Poppins",sans-serif;font-weight:500;font-size:15px;line-height:1.35;letter-spacing:-0.005em;color:var(--onyx);}
+  .testi-strip-q .ts-who{font-size:11px;color:var(--muted);font-weight:500;}
+  .testi-strip-q .ts-who b{color:var(--onyx);font-weight:600;}
+  @media(max-width:900px){
+    .testi-cinema .tc-inner{grid-template-columns:1fr;gap:28px;padding:60px 32px;}
+    .testi-strip-inner{grid-template-columns:1fr;}
+    .testi-strip-q{border-right:none;border-bottom:1px solid var(--line);}
+  }
 
-  .rail{padding:0 0 120px;background:var(--paper);}
-  .rail-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:24px;}
-  .art{background:#fff;border:1px solid var(--line);padding:28px;border-radius:4px;display:flex;flex-direction:column;gap:16px;min-height:300px;}
-  .art.feat{background:var(--onyx);color:#fff;border-color:transparent;}
-  .art h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:14px;line-height:1.22;letter-spacing:-0.005em;margin:0;}
-  .art.feat h3{font-size:18px;}
+  /* Journal — asymmetric: wide featured banner left, two stacked right */
+  .rail{padding:96px 0 120px;background:var(--paper);border-top:1px solid var(--line);}
+  .rail-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;}
+  .rail-stack{display:flex;flex-direction:column;gap:16px;}
+  @media(max-width:900px){.rail-grid{grid-template-columns:1fr;}}
+  /* Featured article — photo banner with overlay */
+  .art-feat{position:relative;border-radius:6px;overflow:hidden;background:var(--onyx);display:flex;flex-direction:column;justify-content:flex-end;min-height:100%;text-decoration:none;}
+  .art-feat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) brightness(.55);transition:transform .6s cubic-bezier(.2,.6,.2,1);}
+  .art-feat:hover img{transform:scale(1.03);}
+  .art-feat .art-ov{position:relative;z-index:1;padding:36px;background:linear-gradient(to top,rgba(19,19,19,.9) 0%,rgba(19,19,19,0) 100%);display:flex;flex-direction:column;gap:12px;min-height:260px;justify-content:flex-end;}
+  .art-feat .cat{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:rgba(244,244,249,.5);}
+  .art-feat h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:20px;line-height:1.15;letter-spacing:-0.005em;margin:0;color:#fff;}
+  .art-feat p{font-size:13px;color:rgba(244,244,249,.72);line-height:1.5;margin:0;font-weight:300;max-width:420px;}
+  .art-feat .more{font-size:13px;font-weight:500;color:var(--mint);}
+  /* Supporting articles — simple cards */
+  .art{background:#fff;border:1px solid var(--line);padding:28px;border-radius:6px;display:flex;flex-direction:column;gap:14px;flex:1;text-decoration:none;transition:transform .22s cubic-bezier(.2,.6,.2,1),border-color .2s;}
+  .art:hover{transform:translateY(-2px);border-color:var(--onyx);}
+  .art h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:14px;line-height:1.22;letter-spacing:-0.005em;margin:0;color:var(--onyx);}
   .art p{font-size:12px;color:#444;line-height:1.55;margin:0;font-weight:300;}
-  .art.feat p{color:rgba(244,244,249,.78);}
   .art .cat{font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--muted);}
-  .art.feat .cat{color:rgba(244,244,249,.55);}
-  .art .more{margin-top:auto;font-size:13px;font-weight:500;}
-  .art.feat .more{color:var(--mint);}
+  .art .more{margin-top:auto;font-size:12px;font-weight:500;color:var(--onyx);}
+  .art .more::after{content:" →";color:var(--mint);font-weight:600;}
 
-  /* Press-logo strip — continuously scrolling wordmarks */
-  .press-logos{padding:96px 0 40px;background:var(--paper);border-top:1px solid var(--line);}
-  .press-marquee{padding:20px 0 80px;overflow:hidden;}
+  /* Press-logo strip — now inside the dark final section */
+  .press-logos{padding:0 0 40px;background:transparent;}
+  .press-logos .section-head{margin-bottom:8px;}
+  .press-logos .section-h2{color:#fff;}
+  .press-logos .section-h2 .emph{color:var(--mint);}
+  .press-marquee{padding:20px 0 40px;overflow:hidden;}
   .press-marquee{
     -webkit-mask-image:linear-gradient(to right,transparent 0,#000 120px,#000 calc(100% - 120px),transparent 100%);
             mask-image:linear-gradient(to right,transparent 0,#000 120px,#000 calc(100% - 120px),transparent 100%);
   }
   .press-marquee .marquee-track{gap:72px;align-items:center;}
   .press-logo{
-    display:inline-flex;align-items:center;color:var(--onyx);opacity:.5;
+    display:inline-flex;align-items:center;color:rgba(244,244,249,.85);opacity:.4;
     transition:opacity .25s;white-space:nowrap;line-height:1;
   }
-  .press-logo:hover{opacity:1;}
-  .press-logo .lg-ft{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:#BE3A34;font-style:italic;}
+  .press-logo:hover{opacity:.85;}
+  .press-logo .lg-ft{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:inherit;font-style:italic;}
   .press-logo .lg-hb{font-family:Georgia,serif;font-weight:700;font-size:22px;letter-spacing:-0.005em;}
   .press-logo .lg-nzz{font-family:Georgia,serif;font-weight:800;font-size:20px;letter-spacing:0.02em;}
   .press-logo .lg-bbg{font-family:"Poppins",sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.02em;text-transform:none;}
   .press-logo .lg-reu{font-family:"Poppins",sans-serif;font-weight:700;font-size:15px;letter-spacing:0.22em;}
-  .press-logo .lg-eco{font-family:Georgia,serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;background:#BE3A34;color:#fff;padding:5px 12px;}
+  .press-logo .lg-eco{font-family:Georgia,serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;background:transparent;color:inherit;padding:0;}
   .press-logo .lg-eco em{font-style:italic;font-weight:400;margin-right:5px;}
   .press-logo .lg-faz{font-family:Georgia,serif;font-weight:700;font-size:19px;font-variant:small-caps;letter-spacing:0.04em;}
   .press-logo .lg-leche{font-family:"Poppins",sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;text-transform:uppercase;}
-  .press-logo .lg-sz{font-family:Georgia,serif;font-weight:700;font-size:20px;color:#005AA7;letter-spacing:-0.005em;}
+  .press-logo .lg-sz{font-family:Georgia,serif;font-weight:700;font-size:20px;color:inherit;letter-spacing:-0.005em;}
   .press-logo .lg-bz{font-family:Georgia,serif;font-weight:700;font-size:20px;font-style:italic;letter-spacing:-0.005em;}
   .press-logo .lg-fbs{font-family:Georgia,serif;font-weight:900;font-size:23px;letter-spacing:-0.025em;}
   .press-logo .lg-fuw{font-family:Georgia,serif;font-weight:600;font-size:18px;letter-spacing:-0.005em;}
@@ -335,25 +356,52 @@
   </div>
 </div></section>
 
-<section class="testi"><div class="container">
-  <div class="section-head"><h2 class="section-h2">What members <span class="emph">say.</span></h2></div>
-  <div class="testi-grid">
-    <div class="quote reveal"><blockquote>"The mentor pairing made the difference between reading about governance and doing it."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Olivia Kinghorst</b><span>Management Board · NED, SaaS</span></div></div></div>
-    <div class="quote reveal delay-1"><blockquote>"I've chaired boards for twenty years. This network reminded me why I started."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Stephan Hillert</b><span>Management Board · Chair</span></div></div></div>
-    <div class="quote reveal delay-2"><blockquote>"We hired our first under-forty NED within a quarter of partnering."</blockquote><div class="who"><div class="av"><img src="assets/photos/avatar-placeholder.png" alt=""/></div><div class="meta"><b>Rosanna Cubelli</b><span>Management Board · Founder</span></div></div></div>
+<!-- Cinematic pull-quote — full-width photo banner -->
+<section class="testi-cinema reveal">
+  <div class="tc-bg"><img src="assets/photos/09.png" alt=""/></div>
+  <div class="tc-veil"></div>
+  <div class="tc-inner">
+    <blockquote>"The mentor pairing made the difference between reading about governance and <span class="emph">doing it.</span>"</blockquote>
+    <div class="tc-who">
+      <div class="tc-av"><img src="assets/photos/olivia-kinghorst.jpg" alt=""/></div>
+      <span class="tc-name">Olivia Kinghorst</span>
+      <span class="tc-role">NED · SaaS</span>
+    </div>
   </div>
-</div></section>
+</section>
+<!-- Supporting quotes — compact two-column strip -->
+<div class="testi-strip">
+  <div class="testi-strip-inner">
+    <div class="testi-strip-q"><blockquote>"I've chaired boards for twenty years. This network reminded me why I started."</blockquote><span class="ts-who"><b>Stephan Hillert</b> · Chair</span></div>
+    <div class="testi-strip-q"><blockquote>"We hired our first under-forty NED within a quarter of partnering."</blockquote><span class="ts-who"><b>Rosanna Cubelli</b> · Founder</span></div>
+  </div>
+</div>
 
 <section class="rail"><div class="container">
   <div class="section-head"><h2 class="section-h2">From the <span class="emph">Journal.</span></h2></div>
   <div class="rail-grid">
-    <a href="m4b-journal-mockup.html" class="art feat"><div class="cat">Partnership · Apr 2026 · 3 min read</div><h3>HeadsQuarters &amp; M4B: the first under-forty director shortlist in DACH.</h3><p>A new recruiting lane for boards that have, frankly, run out of ideas on where to look.</p><span class="more">Read the announcement →</span></a>
-    <a href="m4b-journal-mockup.html" class="art"><div class="cat">Essay · Mar 2026 · 5 min read</div><h3>What a board needs to know about AI governance.</h3><p>Seven questions we wish every director was being asked — and the ones they are instead.</p><span class="more">Read →</span></a>
-    <a href="m4b-journal-mockup.html" class="art"><div class="cat">Member win · Feb 2026 · 4 min read</div><h3>From program to first NED seat, in nine months.</h3><p>How one member landed her first non-exec role — and what she negotiated on day one.</p><span class="more">Read →</span></a>
+    <a href="m4b-journal-mockup.html" class="art-feat reveal">
+      <img src="assets/photos/12.png" alt=""/>
+      <div class="art-ov">
+        <div class="cat">Partnership · Apr 2026 · 3 min read</div>
+        <h3>HeadsQuarters &amp; M4B: the first under-forty director shortlist in DACH.</h3>
+        <p>A new recruiting lane for boards that have run out of ideas on where to look.</p>
+        <span class="more">Read the announcement →</span>
+      </div>
+    </a>
+    <div class="rail-stack">
+      <a href="m4b-journal-mockup.html" class="art reveal delay-1"><div class="cat">Essay · Mar 2026 · 5 min read</div><h3>What a board needs to know about AI governance.</h3><p>Seven questions we wish every director was being asked.</p><span class="more">Read</span></a>
+      <a href="m4b-journal-mockup.html" class="art reveal delay-2"><div class="cat">Member win · Feb 2026 · 4 min read</div><h3>From program to first NED seat, in nine months.</h3><p>How one member landed her first non-exec role.</p><span class="more">Read</span></a>
+    </div>
   </div>
 </div></section>
 
-<section class="press-logos reveal">
+<section class="final"><div class="container final-inner">
+  <h2>Ready to join the <span class="emph">table?</span></h2>
+  <div><div class="cta-row"><a class="btn btn-on-dark" href="m4b-become-member-mockup.html"><span class="dot"></span>Apply to join</a><a class="btn btn-outline-light" href="m4b-contact-mockup.html">Talk to us</a></div></div>
+</div>
+<!-- Press logos — inside dark final section -->
+<div class="press-logos reveal" style="padding-top:80px;">
   <div class="container">
     <div class="section-head"><h2 class="section-h2">In the <span class="emph">press.</span></h2></div>
   </div>
@@ -371,7 +419,6 @@
     <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-fbs">Forbes</span></a>
     <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-fuw">Finanz und Wirtschaft</span></a>
     <a class="press-logo" href="m4b-journal-mockup.html"><span class="lg-mm">Manager Magazin</span></a>
-    <!-- duplicate for seamless loop -->
     <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-ft">Financial Times</span></a>
     <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-hb">Handelsblatt</span></a>
     <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-nzz">Neue Zürcher Zeitung</span></a>
@@ -386,12 +433,8 @@
     <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-fuw">Finanz und Wirtschaft</span></a>
     <a class="press-logo" href="m4b-journal-mockup.html" aria-hidden="true"><span class="lg-mm">Manager Magazin</span></a>
   </div></div>
+</div>
 </section>
-
-<section class="final"><div class="container final-inner">
-  <h2>Ready to join the <span class="emph">table?</span></h2>
-  <div><div class="cta-row"><a class="btn btn-on-dark" href="m4b-become-member-mockup.html"><span class="dot"></span>Apply to join</a><a class="btn btn-outline-light" href="m4b-contact-mockup.html">Talk to us</a></div></div>
-</div></section>
 
 <footer><div class="container">
   <div class="foot-grid">

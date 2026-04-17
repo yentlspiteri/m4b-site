@@ -5,8 +5,8 @@
   /* Brick Ember used once — anchors the "problem" section per styleguide: "Brick Ember is the hero, adding depth and presence, anchoring bold sections" */
   .problem{padding:100px 0;background:var(--brick);color:#fff;}
   .p-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
-  .p-num{font-family:"Poppins",sans-serif;font-weight:600;font-size:clamp(144px,16.5vw,240px);line-height:.85;letter-spacing:-0.05em;color:#fff;}
-  .p-num sup{font-size:.2em;color:rgba(255,255,255,.65);margin-left:8px;font-weight:400;}
+  .p-num{font-family:"Poppins",sans-serif;font-weight:600;font-size:clamp(144px,16.5vw,240px);line-height:.85;letter-spacing:-0.05em;color:#fff;display:flex;align-items:baseline;gap:12px;}
+  .p-num .unit{font-size:.18em;color:rgba(255,255,255,.55);font-weight:300;letter-spacing:0;}
   .problem h2{color:#fff;}
   .problem h2 .emph{color:#fff;font-weight:600;}
   .problem p{color:rgba(255,255,255,.85);font-size:14px;line-height:1.6;font-weight:300;max-width:480px;}
@@ -86,7 +86,7 @@
 </div></section>
 
 <section class="problem"><div class="container p-grid">
-  <div><span class="caption" style="color:rgba(244,244,249,.55);">The gap, in one number</span><div class="p-num" style="margin-top:16px;">57<sup>yrs</sup></div></div>
+  <div><span class="caption" style="color:rgba(244,244,249,.55);">The gap, in one number</span><div class="p-num" style="margin-top:16px;">57<span class="unit">yrs</span></div></div>
   <div><h2 class="section-h2">Average age of a newly appointed <span class="emph">European director.</span></h2><p>The boards facing AI, climate, and cyber governance are the least generationally diverse they have ever been. The gap isn't ambition — it's access.</p></div>
 </div></section>
 

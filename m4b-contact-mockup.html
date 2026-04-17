@@ -94,18 +94,18 @@
       <label class="chip"><input type="radio" name="inquiry_type" value="Something else" style="display:none;"><span class="dot"></span>Something else</label>
     </div>
     <div class="row2">
-      <div class="field"><label>Full name</label><input type="text" name="full_name" value="Anna Meier" required/></div>
-      <div class="field"><label>Work email</label><input type="email" name="email" value="anna.meier@example.com" required/></div>
+      <div class="field"><label>Full name</label><input type="text" name="full_name" placeholder="Anna Meier" required/></div>
+      <div class="field"><label>Work email</label><input type="email" name="email" placeholder="anna@example.com" required/></div>
     </div>
     <div class="row2">
-      <div class="field"><label>Company</label><input type="text" name="company" value="Helvetia Industries AG"/></div>
-      <div class="field"><label>Your role</label><input type="text" name="role" value="Head of Talent Strategy"/></div>
+      <div class="field"><label>Company</label><input type="text" name="company" placeholder="Helvetia Industries AG"/></div>
+      <div class="field"><label>Your role</label><input type="text" name="role" placeholder="Head of Talent Strategy"/></div>
     </div>
     <div class="row2">
-      <div class="field"><label>Country</label><input type="text" name="country" value="Switzerland"/></div>
-      <div class="field"><label>Budget range · corporate</label><input type="text" name="budget_range" value="CHF 15k – 50k / year"/><span class="hint">Field appears based on your selection above.</span></div>
+      <div class="field"><label>Country</label><input type="text" name="country" placeholder="Switzerland"/></div>
+      <div class="field"><label>Budget range · corporate</label><input type="text" name="budget_range" placeholder="CHF 15k – 50k / year"/><span class="hint">Field appears based on your selection above.</span></div>
     </div>
-    <div class="field"><label>What's the best first conversation?</label><textarea name="message">Exploring a sponsored cohort for our European business — recruiting under-40 directors and hosting a joint governance roundtable in Q3.</textarea></div>
+    <div class="field"><label>What's the best first conversation?</label><textarea name="message" placeholder="Tell us what you're looking for..."></textarea></div>
     <div class="submit-row"><span class="caption">Replied within two working days</span><button type="submit" class="btn btn-primary"><span class="dot"></span>Send message</button></div>
     </form>
   </div>
@@ -157,6 +157,15 @@
   </div>
   <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Brand-strict</span></div>
 </div></footer>
+<script>
+/* Interactive chip toggle for the contact form */
+document.querySelectorAll('.chips .chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    chip.closest('.chips').querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
+    chip.classList.add('selected');
+  });
+});
+</script>
 <script src="assets/motion.js" defer></script>
 <noscript><style>.reveal,.word-reveal .w{opacity:1!important;transform:none!important;}</style></noscript>
 </body></html>

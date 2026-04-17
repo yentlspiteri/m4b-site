@@ -104,11 +104,11 @@
         </div>
       </div>
 
-      <div class="field"><label>What do you want from the network? · 120 chars</label><textarea name="network_goals" style="min-height:90px;" required>A mentor, a cohort, and two events per year that push me past governance reading into governance practice.</textarea></div>
+      <div class="field"><label>What do you want from the network? · 120 chars</label><textarea name="network_goals" style="min-height:90px;" required placeholder="A mentor, two events per year, and a path from governance reading to governance practice."></textarea></div>
 
       <div class="step-divider-lg">Step 03 · Confirm</div>
 
-      <div class="field"><label>Country of residence</label><input type="text" name="billing_country" value="Switzerland" required/></div>
+      <div class="field"><label>Country of residence</label><input type="text" name="billing_country" placeholder="Switzerland" required/></div>
 
       <div style="margin-top:22px;display:flex;align-items:center;gap:12px;font-size:12px;color:#333;font-weight:300;">
         <input type="checkbox" name="agree_terms" value="yes" required style="width:16px;height:16px;border-radius:3px;accent-color:var(--mint);flex:0 0 auto;">
@@ -149,6 +149,22 @@
   </div>
   <div class="foot-bottom"><span>© 2026 Millennials4Boards · Kilchberg CH</span><span>Brand-strict</span></div>
 </div></footer>
+<script>
+/* Interactive chip/radio toggle for the application form */
+document.querySelectorAll('.radio-grp label').forEach(label => {
+  label.addEventListener('click', () => {
+    label.closest('.radio-grp').querySelectorAll('label').forEach(l => l.classList.remove('selected'));
+    label.classList.add('selected');
+  });
+});
+document.querySelectorAll('.chips .chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    const cb = chip.querySelector('input[type="checkbox"]');
+    if (cb) { cb.checked = !cb.checked; }
+    chip.classList.toggle('selected', cb ? cb.checked : !chip.classList.contains('selected'));
+  });
+});
+</script>
 <script src="assets/motion.js" defer></script>
 <noscript><style>.reveal,.word-reveal .w{opacity:1!important;transform:none!important;}</style></noscript>
 </body></html>

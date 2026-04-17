@@ -56,8 +56,14 @@
 
   /* ========== PRESS ========== */
   .press{padding:80px 0 120px;}
-  .press-logos{display:grid;grid-template-columns:repeat(5,1fr);gap:48px;align-items:center;padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:32px;}
-  .press-logos span{font-family:"Poppins",sans-serif;font-weight:400;font-size:15px;color:#555;letter-spacing:-0.01em;text-align:center;}
+  .press-logos{display:grid;grid-template-columns:repeat(5,1fr);gap:48px;align-items:center;justify-items:center;padding:40px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:32px;}
+  .press-logos .lg{display:inline-flex;align-items:center;color:var(--onyx);opacity:.55;white-space:nowrap;line-height:1;transition:opacity .25s;}
+  .press-logos .lg:hover{opacity:1;}
+  .press-logos .lg-ft{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:22px;letter-spacing:-0.01em;color:#BE3A34;font-style:italic;}
+  .press-logos .lg-hb{font-family:Georgia,serif;font-weight:700;font-size:20px;letter-spacing:-0.005em;}
+  .press-logos .lg-nzz{font-family:Georgia,serif;font-weight:800;font-size:18px;letter-spacing:0.02em;}
+  .press-logos .lg-bilanz{font-family:"Poppins",sans-serif;font-weight:700;font-size:17px;letter-spacing:-0.01em;text-transform:uppercase;}
+  .press-logos .lg-fbs{font-family:Georgia,serif;font-weight:900;font-size:21px;letter-spacing:-0.025em;}
 
   /* Mobile fallback — two uniform columns */
   @media (max-width: 1100px){
@@ -169,7 +175,7 @@
 
 <section class="press"><div class="container">
   <div class="section-head"><h2 class="section-h2">In the <span class="emph">press.</span></h2></div>
-  <div class="press-logos reveal"><span>Financial Times</span><span>Handelsblatt</span><span>Neue Zürcher Zeitung</span><span>Bilanz</span><span>Forbes DACH</span></div>
+  <div class="press-logos reveal"><span class="lg"><span class="lg-ft">Financial Times</span></span><span class="lg"><span class="lg-hb">Handelsblatt</span></span><span class="lg"><span class="lg-nzz">Neue Zürcher Zeitung</span></span><span class="lg"><span class="lg-bilanz">Bilanz</span></span><span class="lg"><span class="lg-fbs">Forbes</span></span></div>
 </div></section>
 
 <section class="final"><div class="container final-inner">
