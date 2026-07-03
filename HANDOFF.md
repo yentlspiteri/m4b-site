@@ -51,7 +51,7 @@ Desired feeling: **smooth and fluid, understated** — motion is subtle (small d
 
 ## 5. Assets
 
-- **Photography**: `assets/photos/` — currently **unoptimised PNGs (~69 MB total)**. These are placeholders in the guideline sense: final, optimised images (WebP/AVIF, responsive sizes) will be delivered separately via Google Drive with a placement map. B&W treatment is applied in CSS (`grayscale(1) contrast(1.04)` + per-context brightness) — ship colour originals; do not bake the filter into files.
+- **Photography**: `assets/photos/` — currently **unoptimised PNGs (~69 MB total)**. These are placeholders in the guideline sense: final, optimised images (WebP/AVIF, responsive sizes) will be delivered separately via Google Drive with a placement map. B&W treatment is applied in CSS (`grayscale(1) contrast(1.04)` + per-context brightness) — ship colour originals; do not bake the filter into files. Exception: homepage explore-card photos are shown in colour (no grayscale) by design.
 - **Icons**: `assets/icons/` — SVG (Paper `#F4F4F9` shapes, sit inside 60px mint circles).
 - **Logos**: `assets/logo/` — SVG.
 - **Portraits in use**: miro-portrait, miro-people-1, stephan-hillert, rosanna-cubelli, olivia-kinghorst, mirela-dimofte, ian-thompson, marin-curkovic, gabriele-castegnaro. Remaining slots: `avatar-placeholder.png`. All portrait usage is per-page — grep `photos/` in each HTML file for the placement map.

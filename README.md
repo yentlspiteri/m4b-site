@@ -28,7 +28,7 @@ Static HTML/CSS mockup of a proposed new millennials4boards.com. Eight page mock
 - **Type**: Poppins — Light (300) + SemiBold (600) only; these are the only two weights loaded from Google Fonts.
 - **Colour**: Mint Leaf `#05CEAA` as the single accent · Brick `#BA2D0B` reserved for "problem" moments (About problem section, one partnerships case story, concept-cover callouts) · Onyx `#131313` · Paper `#F4F4F9`
 - **Nav**: Floating centered pill with logo at centre, six links split 3/3, "Join the network" CTA floating alongside. *Hidden on `index.html` (concept cover has its own sticky TOC).*
-- **Photography**: Pure B&W (`filter: grayscale(1) contrast(1.04)`, with per-context brightness tweaks), no overlays or blend modes
+- **Photography**: B&W (`filter: grayscale(1) contrast(1.04)`, with per-context brightness tweaks), no overlays or blend modes. One deliberate exception: the homepage explore cards use colour photos.
 - **Icons**: SVG, Paper-on-Mint circles (`assets/icons/`)
 - **Motion**: Scroll-reveal via IntersectionObserver, word-by-word hero reveal, counter roll-up on stats, continuous-scroll marquees (press + ticker), nav shrink on scroll, reading-progress bar. All respect `prefers-reduced-motion`.
 - **Shared assets**: `assets/brand.css` (tokens + shared components), `assets/motion.js` (all behaviours above)
