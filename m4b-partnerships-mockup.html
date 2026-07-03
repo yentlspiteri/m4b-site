@@ -1,25 +1,25 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>M4B — Partnerships</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/brand.css"/>
 <style>
   .logo-wall{padding:0 0 100px;}
   .wall-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--line);}
   .slot{background:#fff;padding:44px 20px;display:flex;align-items:center;justify-content:center;min-height:120px;transition:background .2s;}
   .slot:hover{background:var(--paper);}
-  .slot.dim{color:#bbb;font-family:"Poppins",sans-serif;font-weight:400;font-size:13px;letter-spacing:.06em;text-align:center;}
+  .slot.dim{color:#bbb;font-family:"Poppins",sans-serif;font-weight:300;font-size:13px;letter-spacing:.06em;text-align:center;}
   /* Typographic wordmarks */
   .lg{font-family:"Poppins",sans-serif;color:#1a1a1a;line-height:1;white-space:nowrap;}
   .lg-hq{font-weight:600;font-size:20px;letter-spacing:-0.02em;}
   .lg-hq em{font-style:normal;color:var(--mint);font-weight:600;}
   .lg-wbn{font-weight:300;font-size:14px;letter-spacing:.18em;text-transform:uppercase;}
   .lg-wbn b{font-weight:600;color:#1a1a1a;}
-  .lg-fln{font-weight:500;font-size:18px;letter-spacing:-0.01em;font-style:italic;}
+  .lg-fln{font-weight:600;font-size:18px;letter-spacing:-0.01em;font-style:italic;}
   .lg-fln::before{content:"◆ ";font-style:normal;color:var(--brick);font-size:10px;vertical-align:middle;margin-right:4px;}
-  .lg-ez{font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:22px;letter-spacing:-0.01em;color:#222;}
-  .lg-ez span{font-weight:700;}
-  .lg-ss{font-weight:700;font-size:14px;letter-spacing:.22em;text-transform:uppercase;}
+  .lg-ez{font-family:Georgia,"Times New Roman",serif;font-weight:300;font-size:22px;letter-spacing:-0.01em;color:#222;}
+  .lg-ez span{font-weight:600;}
+  .lg-ss{font-weight:600;font-size:14px;letter-spacing:.22em;text-transform:uppercase;}
   .lg-ss::after{content:" ·";color:var(--mint);}
-  .lg-del{font-weight:700;font-size:22px;letter-spacing:-0.02em;color:#111;}
+  .lg-del{font-weight:600;font-size:22px;letter-spacing:-0.02em;color:#111;}
   .lg-del span{color:var(--mint);}
 
   .why{padding:0 0 120px;}
@@ -43,7 +43,7 @@
   .tier ul{list-style:none;padding:0;margin:8px 0;display:flex;flex-direction:column;gap:8px;}
   .tier li{font-size:13px;padding-left:22px;position:relative;line-height:1.4;font-weight:300;}
   .tier li::before{content:"";position:absolute;left:0;top:9px;width:10px;height:2px;background:var(--mint);}
-  .tier .cta{margin-top:auto;padding:12px 18px;border-radius:999px;font-size:13px;font-weight:500;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:var(--onyx);color:#fff;}
+  .tier .cta{margin-top:auto;padding:12px 18px;border-radius:999px;font-size:13px;font-weight:600;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;background:var(--onyx);color:#fff;}
   .tier.primary .cta{background:var(--mint);color:var(--onyx);}
   .tier .cta .dot{width:6px;height:6px;border-radius:999px;background:var(--mint);}
   .tier.primary .cta .dot{background:var(--onyx);}
@@ -53,7 +53,7 @@
   .case{padding:36px;background:#fff;border:1px solid var(--line);border-radius:4px;display:flex;flex-direction:column;gap:18px;min-height:440px;}
   .case .name{font-family:"Poppins",sans-serif;font-weight:600;font-size:22px;letter-spacing:-0.005em;}
   .case .ctx{font-size:14px;color:#333;line-height:1.6;font-weight:300;}
-  .case .q{font-family:"Poppins",sans-serif;font-weight:500;font-size:15px;line-height:1.35;color:var(--onyx);padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .case .q{font-family:"Poppins",sans-serif;font-weight:600;font-size:15px;line-height:1.35;color:var(--onyx);padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .case .person{display:flex;align-items:center;gap:12px;margin-top:auto;}
   .case .av{width:42px;height:42px;border-radius:999px;overflow:hidden;background:var(--mint);}
   .case .av img{width:100%;height:100%;object-fit:cover;}
@@ -81,7 +81,7 @@
   /* Cinematic full-bleed break */
   .cinema{position:relative;background:var(--onyx);}
   .cinema .cin-img{width:100%;height:clamp(320px,42vw,540px);object-fit:cover;display:block;filter:grayscale(1) contrast(1.05);}
-  .cinema .cin-cap{position:absolute;left:0;right:0;bottom:0;padding:28px 40px;background:linear-gradient(to top,rgba(19,19,19,.65),transparent);color:var(--paper);font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;}
+  .cinema .cin-cap{position:absolute;left:0;right:0;bottom:0;padding:28px 40px;background:linear-gradient(to top,rgba(19,19,19,.65),transparent);color:var(--paper);font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;}
   .cinema .cin-cap b{color:var(--mint);font-weight:600;margin-right:14px;}
 
   /* Accent strip */
@@ -125,9 +125,9 @@
 <section class="why"><div class="container">
   <div class="section-head"><h2 class="section-h2">Why partner <span class="emph">with us.</span></h2></div>
   <div class="why-grid">
-    <div class="why-card"><div class="ic"><img src="assets/icons/growth-steps.png" alt=""/></div><h3>Recruit the next generation.</h3><p>Curated shortlist of board-ready directors under 50, screened and mentored by our Management Board.</p></div>
-    <div class="why-card"><div class="ic"><img src="assets/icons/collaboration.png" alt=""/></div><h3>Sponsor future directors.</h3><p>Fund a cohort in your sector. Brand association, co-hosted events, direct access to emerging talent.</p></div>
-    <div class="why-card"><div class="ic"><img src="assets/icons/bridge-building.png" alt=""/></div><h3>Shape the conversation.</h3><p>Co-author governance essays and host roundtables your board will actually read.</p></div>
+    <div class="why-card"><div class="ic"><img src="assets/icons/growth-steps.svg" alt=""/></div><h3>Recruit the next generation.</h3><p>Curated shortlist of board-ready directors under 50, screened and mentored by our Management Board.</p></div>
+    <div class="why-card"><div class="ic"><img src="assets/icons/collaboration.svg" alt=""/></div><h3>Sponsor future directors.</h3><p>Fund a cohort in your sector. Brand association, co-hosted events, direct access to emerging talent.</p></div>
+    <div class="why-card"><div class="ic"><img src="assets/icons/bridge-building.svg" alt=""/></div><h3>Shape the conversation.</h3><p>Co-author governance essays and host roundtables your board will actually read.</p></div>
   </div>
 </div></section>
 

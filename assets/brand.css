@@ -1,8 +1,9 @@
-/* M4B shared brand styles — v3 (matches social template patterns).
-   - Poppins Light + SemiBold only
-   - Mint Leaf as the single accent across all pages
-   - Photos used NATURAL — no grayscale filters, no multiply blend overlays
-   - Portraits in circular / organic rounded frames
+/* M4B shared brand styles — v4.
+   - Poppins Light (300) + SemiBold (600) only — the only two weights loaded
+   - Mint Leaf as the single accent; Brick reserved for "problem" moments
+   - Photography: B&W — filter:grayscale(1) contrast(1.04) (.bw helper below;
+     pages apply local variants with brightness tweaks)
+   - Portraits in circular / rounded frames
    - Names: initial caps, Poppins Light, large
    - Labels / CTAs: ALL CAPS, Poppins SemiBold
 */
@@ -91,7 +92,7 @@ a { color: inherit; text-decoration: none; }
 /* Caption: tracked out, Poppins Light */
 .caption {
   font-family: "Poppins", sans-serif;
-  font-weight: 400;
+  font-weight:300;
   font-size: 11px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -121,7 +122,7 @@ a { color: inherit; text-decoration: none; }
 }
 .pill nav{display:flex;align-items:center;gap:4px;}
 .pill nav a{
-  font-size:13px;font-weight:500;color:var(--onyx);
+  font-size:13px;font-weight:600;color:var(--onyx);
   padding:10px 16px;border-radius:999px;letter-spacing:.01em;
   transition:background .2s;
 }
@@ -137,12 +138,12 @@ a { color: inherit; text-decoration: none; }
   position:absolute;right:32px;top:50%;transform:translateY(-50%);
   background:var(--onyx);color:var(--paper);
   padding:12px 20px 12px 18px;border-radius:999px;
-  font-size:13px;font-weight:500;
+  font-size:13px;font-weight:600;
   display:inline-flex;align-items:center;gap:10px;
   box-shadow:0 8px 24px rgba(0,0,0,.22);
 }
 .pill-cta .dot{width:6px;height:6px;border-radius:999px;background:var(--mint);}
-.pill-cta::after{content:"→";margin-left:2px;font-weight:500;}
+.pill-cta::after{content:"→";margin-left:2px;font-weight:600;}
 
 /* Sticky-nav shrink — applied by motion.js after scrollY > 120 */
 .nav-floating,.pill,.pill-cta,.pill-logo,.pill nav a{
@@ -284,7 +285,7 @@ a { color: inherit; text-decoration: none; }
 /* Footer */
 footer { background: var(--onyx); color: rgba(244,244,249,0.78); padding: 72px 0 36px; border-top:1px solid rgba(244,244,249,.08); }
 .foot-grid { display:grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap:40px; align-items:start; }
-.foot-grid h4 { font-family:"Poppins", sans-serif; font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:#fff; margin:0 0 16px; font-weight:500; }
+.foot-grid h4 { font-family:"Poppins", sans-serif; font-size:10px; letter-spacing:.24em; text-transform:uppercase; color:#fff; margin:0 0 16px; font-weight:600; }
 .foot-grid a { display:block; padding:5px 0; font-size:14px; color:rgba(244,244,249,0.62); font-weight:300; }
 .foot-grid a:hover { color:#fff; }
 .foot-logo { width:42px; height:42px; border-radius:8px; background:rgba(244,244,249,.06); display:inline-flex; align-items:center; justify-content:center; padding:6px; }

@@ -1,5 +1,5 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>M4B — Home</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/brand.css"/>
 <style>
   body{background:#0c0c0c;} /* hero sits on dark; body resets below */
@@ -79,14 +79,14 @@
     font-size:12px;letter-spacing:.04em;color:rgba(244,244,249,.62);font-weight:300;
     max-width:1440px;margin:0 auto;width:100%;
   }
-  .hero-foot .right{letter-spacing:.22em;text-transform:uppercase;font-weight:500;}
+  .hero-foot .right{letter-spacing:.22em;text-transform:uppercase;font-weight:600;}
 
   /* ---------- BODY SECTIONS (reset to paper) ---------- */
   .page-body{background:var(--paper);position:relative;z-index:4;}
 
   /* Momentum marquee — continuous left-scroll, pauses on hover */
   .ticker{background:var(--onyx);color:var(--paper);padding:16px 0;overflow:hidden;}
-  .ticker .marquee-track{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;}
+  .ticker .marquee-track{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;}
   .ticker .item{display:inline-flex;align-items:center;gap:10px;}
   .ticker .item b{color:var(--mint);font-weight:600;font-size:14px;letter-spacing:-0.005em;text-transform:none;}
   .ticker .sep{opacity:.3;}
@@ -96,7 +96,7 @@
   .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:56px;align-items:start;}
   .stat{padding-right:12px;display:flex;flex-direction:column;}
   .stat .num{font-family:"Poppins",sans-serif;font-weight:600;font-size:92px;line-height:1;letter-spacing:-0.035em;color:#fff;display:flex;align-items:baseline;gap:8px;}
-  .stat .num .unit{font-size:20px;font-weight:400;color:var(--mint);letter-spacing:-0.005em;line-height:1;}
+  .stat .num .unit{font-size:20px;font-weight:300;color:var(--mint);letter-spacing:-0.005em;line-height:1;}
   .stat .body-p{margin-top:20px;max-width:280px;color:rgba(244,244,249,.72);}
   .stat .src{margin-top:10px;color:rgba(244,244,249,.45);}
   @media (max-width: 1100px){
@@ -145,7 +145,7 @@
   .path .n{font-size:12px;font-weight:600;color:var(--mint);letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;}
   .path h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:18px;line-height:1.12;letter-spacing:-0.005em;margin:0 0 12px;}
   .path p{font-size:13px;line-height:1.55;color:#333;margin:0 0 24px;font-weight:300;}
-  .path .go{margin-top:auto;font-size:12px;font-weight:500;}
+  .path .go{margin-top:auto;font-size:12px;font-weight:600;}
   .path .go::after{content:" →";transition:transform .2s;display:inline-block;}
   .path:hover .go::after{transform:translateX(4px);}
 
@@ -175,14 +175,14 @@
   .testi-cinema .tc-av{width:64px;height:64px;border-radius:999px;overflow:hidden;border:2px solid rgba(255,255,255,.2);}
   .testi-cinema .tc-av img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);}
   .testi-cinema .tc-name{font-family:"Poppins",sans-serif;font-weight:600;font-size:14px;color:#fff;}
-  .testi-cinema .tc-role{font-size:11px;color:rgba(244,244,249,.55);letter-spacing:.18em;text-transform:uppercase;font-weight:500;}
+  .testi-cinema .tc-role{font-size:11px;color:rgba(244,244,249,.55);letter-spacing:.18em;text-transform:uppercase;font-weight:600;}
   /* Supporting quotes — compact strip below the cinema */
   .testi-strip{background:var(--paper);border-bottom:1px solid var(--line);padding:0;}
   .testi-strip-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1280px;margin:0 auto;}
   .testi-strip-q{padding:36px 40px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px;}
   .testi-strip-q:last-child{border-right:none;}
-  .testi-strip-q blockquote{margin:0;font-family:"Poppins",sans-serif;font-weight:500;font-size:15px;line-height:1.35;letter-spacing:-0.005em;color:var(--onyx);}
-  .testi-strip-q .ts-who{font-size:11px;color:var(--muted);font-weight:500;}
+  .testi-strip-q blockquote{margin:0;font-family:"Poppins",sans-serif;font-weight:600;font-size:15px;line-height:1.35;letter-spacing:-0.005em;color:var(--onyx);}
+  .testi-strip-q .ts-who{font-size:11px;color:var(--muted);font-weight:600;}
   .testi-strip-q .ts-who b{color:var(--onyx);font-weight:600;}
   @media(max-width:900px){
     .testi-cinema .tc-inner{grid-template-columns:1fr;gap:28px;padding:60px 32px;}
@@ -200,17 +200,17 @@
   .art-feat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05) brightness(.55);transition:transform .6s cubic-bezier(.2,.6,.2,1);}
   .art-feat:hover img{transform:scale(1.03);}
   .art-feat .art-ov{position:relative;z-index:1;padding:36px;background:linear-gradient(to top,rgba(19,19,19,.9) 0%,rgba(19,19,19,0) 100%);display:flex;flex-direction:column;gap:12px;min-height:260px;justify-content:flex-end;}
-  .art-feat .cat{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:rgba(244,244,249,.5);}
+  .art-feat .cat{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:rgba(244,244,249,.5);}
   .art-feat h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:20px;line-height:1.15;letter-spacing:-0.005em;margin:0;color:#fff;}
   .art-feat p{font-size:13px;color:rgba(244,244,249,.72);line-height:1.5;margin:0;font-weight:300;max-width:420px;}
-  .art-feat .more{font-size:13px;font-weight:500;color:var(--mint);}
+  .art-feat .more{font-size:13px;font-weight:600;color:var(--mint);}
   /* Supporting articles — simple cards */
   .art{background:#fff;border:1px solid var(--line);padding:28px;border-radius:6px;display:flex;flex-direction:column;gap:14px;flex:1;text-decoration:none;transition:transform .22s cubic-bezier(.2,.6,.2,1),border-color .2s;}
   .art:hover{transform:translateY(-2px);border-color:var(--onyx);}
   .art h3{font-family:"Poppins",sans-serif;font-weight:600;font-size:14px;line-height:1.22;letter-spacing:-0.005em;margin:0;color:var(--onyx);}
   .art p{font-size:12px;color:#444;line-height:1.55;margin:0;font-weight:300;}
-  .art .cat{font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--muted);}
-  .art .more{margin-top:auto;font-size:12px;font-weight:500;color:var(--onyx);}
+  .art .cat{font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--muted);}
+  .art .more{margin-top:auto;font-size:12px;font-weight:600;color:var(--onyx);}
   .art .more::after{content:" →";color:var(--mint);font-weight:600;}
 
   /* Press-logo strip — paper background, original logo colours */
@@ -226,18 +226,18 @@
     transition:opacity .25s;white-space:nowrap;line-height:1;
   }
   .press-logo:hover{opacity:1;}
-  .press-logo .lg-ft{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:24px;letter-spacing:-0.01em;color:#BE3A34;font-style:italic;}
-  .press-logo .lg-hb{font-family:Georgia,serif;font-weight:700;font-size:22px;letter-spacing:-0.005em;}
-  .press-logo .lg-nzz{font-family:Georgia,serif;font-weight:800;font-size:20px;letter-spacing:0.02em;}
-  .press-logo .lg-bbg{font-family:"Poppins",sans-serif;font-weight:700;font-size:21px;letter-spacing:-0.02em;text-transform:none;}
-  .press-logo .lg-reu{font-family:"Poppins",sans-serif;font-weight:700;font-size:15px;letter-spacing:0.22em;}
-  .press-logo .lg-eco{font-family:Georgia,serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;background:#BE3A34;color:#fff;padding:5px 12px;}
-  .press-logo .lg-eco em{font-style:italic;font-weight:400;margin-right:5px;}
-  .press-logo .lg-faz{font-family:Georgia,serif;font-weight:700;font-size:19px;font-variant:small-caps;letter-spacing:0.04em;}
-  .press-logo .lg-leche{font-family:"Poppins",sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.005em;text-transform:uppercase;}
-  .press-logo .lg-sz{font-family:Georgia,serif;font-weight:700;font-size:20px;color:#005AA7;letter-spacing:-0.005em;}
-  .press-logo .lg-bz{font-family:Georgia,serif;font-weight:700;font-size:20px;font-style:italic;letter-spacing:-0.005em;}
-  .press-logo .lg-fbs{font-family:Georgia,serif;font-weight:900;font-size:23px;letter-spacing:-0.025em;}
+  .press-logo .lg-ft{font-family:Georgia,'Times New Roman',serif;font-weight:600;font-size:24px;letter-spacing:-0.01em;color:#BE3A34;font-style:italic;}
+  .press-logo .lg-hb{font-family:Georgia,serif;font-weight:600;font-size:22px;letter-spacing:-0.005em;}
+  .press-logo .lg-nzz{font-family:Georgia,serif;font-weight:600;font-size:20px;letter-spacing:0.02em;}
+  .press-logo .lg-bbg{font-family:"Poppins",sans-serif;font-weight:600;font-size:21px;letter-spacing:-0.02em;text-transform:none;}
+  .press-logo .lg-reu{font-family:"Poppins",sans-serif;font-weight:600;font-size:15px;letter-spacing:0.22em;}
+  .press-logo .lg-eco{font-family:Georgia,serif;font-weight:600;font-size:19px;letter-spacing:-0.005em;background:#BE3A34;color:#fff;padding:5px 12px;}
+  .press-logo .lg-eco em{font-style:italic;font-weight:300;margin-right:5px;}
+  .press-logo .lg-faz{font-family:Georgia,serif;font-weight:600;font-size:19px;font-variant:small-caps;letter-spacing:0.04em;}
+  .press-logo .lg-leche{font-family:"Poppins",sans-serif;font-weight:600;font-size:19px;letter-spacing:-0.005em;text-transform:uppercase;}
+  .press-logo .lg-sz{font-family:Georgia,serif;font-weight:600;font-size:20px;color:#005AA7;letter-spacing:-0.005em;}
+  .press-logo .lg-bz{font-family:Georgia,serif;font-weight:600;font-size:20px;font-style:italic;letter-spacing:-0.005em;}
+  .press-logo .lg-fbs{font-family:Georgia,serif;font-weight:600;font-size:23px;letter-spacing:-0.025em;}
   .press-logo .lg-fuw{font-family:Georgia,serif;font-weight:600;font-size:18px;letter-spacing:-0.005em;}
   .press-logo .lg-mm{font-family:"Poppins",sans-serif;font-weight:600;font-size:18px;letter-spacing:-0.01em;font-style:italic;}
   /* In reduced-motion mode, freeze the marquee and wrap logos instead */
